@@ -30,22 +30,18 @@ const NavItems = styled(Nav)`
 
 
 
-
     const NavbarMain = () => (
-
-        <NavbarStyle>
-            <Navbar fixed='top' expand="lg" variant='default'>
-                <Brand><Navbar.Brand href="#home">Medium</Navbar.Brand></Brand>
-                <NavItems>
-                    <Nav className="ml-auto">
-                        <Nav.Link href='/subscribe' className='nav-link'> Subscribe </Nav.Link>
-                        <Nav.Link href="#link" className='nav-link'> Write </Nav.Link>
-                        <Nav.Link href="#link"> Sign in </Nav.Link>
-                    </Nav>
-                </NavItems>
+        <>
+            <Navbar bg="dark" variant="dark">
+                <Navbar.Brand href="#home">Medium</Navbar.Brand>
+                <Nav className="ml-auto">
+                <Nav.Link href="#home">Subscribe</Nav.Link>
+                <Nav.Link href="#features">Write</Nav.Link>
+                <Nav.Link href="#pricing">Sign in</Nav.Link>
+                </Nav>
                 <ButtonPrimary />
-            </Navbar>    
-        </NavbarStyle>
+            </Navbar>
+        </>
     );
 
 
