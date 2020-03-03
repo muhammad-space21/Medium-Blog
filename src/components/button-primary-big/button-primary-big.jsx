@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 const StyledButton = styled(Button)`
     width: ${props=> props.primary ? '337px' : '150px' };
     height: ${props=> props.primary ? '61px' : '36px' };
-    background: #029E74;
+    background: #03A87C;
     font-size: 18px;
     font-weight: 500;
     text-align: center;
@@ -22,7 +22,7 @@ const StyledButton = styled(Button)`
 const ButtonPrimaryBig = () => (
     <div className="button-primary">
         <StyledButton primary variant='success'>
-            Get Started
+            Get started
         </StyledButton>
         
     </div>

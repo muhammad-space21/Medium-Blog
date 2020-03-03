@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Nav, Navbar, Container } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 
 
@@ -12,13 +12,27 @@ const StyledNavbar = styled(Navbar)`
     height: 80px;
     position: fixed;
     background-color: white;
+    opacity: 95%;
 `;
 
 const StyledNav = styled(Nav)`
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
+    margin-right: 11px;
     color: black;
-    margin-right: 115px;
+`;
+const StyledLink = styled(Nav.Link)`
+    color: black;
+`;
+const ButtonWrapper = styled.div`
+    margin-right: 78px;
+    margin-top: -3px;
+`;
+const BrandWrapper = styled(Navbar.Brand)`
+    margin-left: 78px;
+    margin-top: -20px;
+    font-size: 40px;
+    font-weight: 600;
 `;
 
 
@@ -27,15 +41,15 @@ const StyledNav = styled(Nav)`
     const NavbarMain = () => (
         <>
             <StyledNavbar  className='navbar'>
-                <Container>
-                <Navbar.Brand  href="#home">Medium</Navbar.Brand>
+                <BrandWrapper><Navbar.Brand  href="#home">Medium</Navbar.Brand></BrandWrapper>
                 <StyledNav className="ml-auto nav-items">
-                <Nav.Link href="#home">Subscribe</Nav.Link>
-                <Nav.Link href="#features">Write</Nav.Link>
-                <Nav.Link href="#pricing">Sign in</Nav.Link>
+                <StyledLink><Nav.Link href="#home">Subscribe</Nav.Link></StyledLink>
+                <StyledLink><Nav.Link href="#features">Write</Nav.Link></StyledLink>
+                <StyledLink><Nav.Link href="#pricing">Sign in</Nav.Link></StyledLink>
                 </StyledNav>
-                <ButtonPrimary />
-                </Container>
+                <ButtonWrapper>
+                    <ButtonPrimary />
+                </ButtonWrapper>
             </StyledNavbar>
         </>
     );
