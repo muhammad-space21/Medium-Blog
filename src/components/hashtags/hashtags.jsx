@@ -26,6 +26,7 @@ const Hashtag = styled.div`
 
 
     &:hover {
+        background-color: #E9E9E9;
         cursor: pointer;
     }
 
@@ -48,12 +49,12 @@ const Sqr = styled.div`
     border-radius: 50px;
     margin-left: 5px;
     margin-right: 6px;
-    /* box-shadow: 2px, 2px, 2px black; */
+    box-shadow: 0 5px 30px grey;
+
 
     img {
         width: 18px;
         height: 18px;
-        margin-bottom: 5px;
     }
 `;
 

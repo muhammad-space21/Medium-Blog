@@ -8,9 +8,10 @@ import Header from '../../components/header/header';
 
 
 const StyledHomePage = styled.div`
-    font-family: 'Noto Sans KR';
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+`;
 
-`
 const Homepage = () => (
     <StyledHomePage>
             <NavbarMain />
