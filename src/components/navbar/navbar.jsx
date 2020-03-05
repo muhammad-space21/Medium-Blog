@@ -1,39 +1,11 @@
 import React from 'react';
 
 import { Nav, Navbar } from 'react-bootstrap';
-import styled from 'styled-components';
 
+import ButtonPrimary from '../button-primary/button-primary';
 
-import ButtonPrimary from '../button-primary/button';
+import { StyledNavbar, StyledNav, StyledLink, ButtonWrapper, BrandWrapper } from './navbar.styles';
 
-// Style of Navbar 
-const StyledNavbar = styled(Navbar)`
-    width: 100%;
-    height: 80px;
-    position: fixed;
-    background-color: white;
-    opacity: 95%;
-`;
-
-const StyledNav = styled(Nav)`
-    font-weight: 500;
-    font-size: 15px;
-    margin-right: 11px;
-    color: black;
-`;
-const StyledLink = styled(Nav.Link)`
-    color: black;
-`;
-const ButtonWrapper = styled.div`
-    margin-right: 78px;
-    margin-top: -3px;
-`;
-const BrandWrapper = styled(Navbar.Brand)`
-    margin-left: 78px;
-    margin-top: -20px;
-    font-size: 40px;
-    font-weight: 600;
-`;
 
 
 
