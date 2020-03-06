@@ -10,6 +10,24 @@ export const HeadingMain2 = styled.h1`
     font-weight: 500;
     line-height: 70px;
     color: #292929;
+    @media screen and ( max-width: 1030px ) {
+        padding-top: 100px;
+    }
+    @media screen and ( max-width: 850px ) {
+        font-size: 70px;
+        padding-top: 100px; 
+    }
+    @media screen and ( max-width: 750px ) {
+        font-size: 32px;
+        line-height: 36px;
+    }
+`;
+
+export const SectionTwoStyled = styled.div`
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; 
+    align-items: center;
 `;
 
 export const H2 = styled.div`

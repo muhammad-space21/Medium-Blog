@@ -5,6 +5,10 @@ export const H2Bold = styled.h2`
     font-weight: 600;
     text-align: center;
     margin-bottom: 40px;
+    @media screen and ( max-width: 710px ) {
+        font-size: 14px;
+        line-height: 20px; 
+    }
 `;
 
 export const H2Second = styled.div`

@@ -5,10 +5,15 @@ export const SectionOneStyled = styled.div`
 `;
 
 export const H2Bold = styled.h2`
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 600;
     text-align: center;
     margin-bottom: 40px;
+    line-height: 20px; 
+    @media screen and ( max-width: 710px ) {
+        font-size: 14px;
+        line-height: 20px; 
+    }
 `;
 
 export const H2Bold2 = styled.h2`

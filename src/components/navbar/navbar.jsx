@@ -6,6 +6,8 @@ import ButtonPrimary from '../button-primary/button-primary';
 
 import { StyledNavbar, StyledNav, StyledLink, ButtonWrapper, BrandWrapper } from './navbar.styles';
 
+import BrandLogo from  '../../assets/images/asset6.JPG';
+
 
 
 
@@ -13,15 +15,15 @@ import { StyledNavbar, StyledNav, StyledLink, ButtonWrapper, BrandWrapper } from
     const NavbarMain = () => (
         <>
             <StyledNavbar  className='navbar'>
-                <BrandWrapper><Navbar.Brand  href="#home">Medium</Navbar.Brand></BrandWrapper>
+                <BrandWrapper><Navbar.Brand  href="#home"> <img src={BrandLogo} alt="brandlogo"/> <span>Medium</span>   </Navbar.Brand></BrandWrapper>
                 <StyledNav className="ml-auto nav-items">
                 <StyledLink><Nav.Link href="#home">Subscribe</Nav.Link></StyledLink>
                 <StyledLink><Nav.Link href="#features">Write</Nav.Link></StyledLink>
                 <StyledLink><Nav.Link href="#pricing">Sign in</Nav.Link></StyledLink>
-                </StyledNav>
                 <ButtonWrapper>
                     <ButtonPrimary />
                 </ButtonWrapper>
+                </StyledNav>
             </StyledNavbar>
         </>
     );

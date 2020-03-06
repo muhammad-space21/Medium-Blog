@@ -2,6 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+
 import NavbarMain from '../../components/navbar/navbar';
 import Header from '../../components/header/header';
 import SectionOne from '../../components/section-one/section-one-homepage';
@@ -18,15 +19,15 @@ const StyledHomePage = styled.div`
 `;
 
 const Homepage = () => (
-    <StyledHomePage>
-        <NavbarMain />
-        <Header />
-        <SectionOne />
-        <SectionTwo />
-        <SectionThree />
-        <SectionFour/>
-        <Footer />
-    </StyledHomePage>
+        <StyledHomePage>
+            <NavbarMain />
+            <Header />
+            <SectionOne />
+            <SectionTwo />
+            <SectionThree />
+            <SectionFour/>
+            <Footer />
+        </StyledHomePage>
 );
 
 export default Homepage;

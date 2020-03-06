@@ -9,10 +9,10 @@ import { HeaderStyled, HeadingMain } from './header.styles';
 
 const Header = () => (
     <HeaderStyled>
-        <Container>
+        {/* <Container> */}
             <HeadingMain> Get smarter about what matters to you. </HeadingMain> 
             <Hashtags />
-        </Container>
+        {/* </Container> */}
     </HeaderStyled>
 );
 

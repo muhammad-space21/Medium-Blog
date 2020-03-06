@@ -16,20 +16,46 @@ export const StyledNav = styled(Nav)`
     font-size: 15px;
     margin-right: 11px;
     color: black;
+
 `;
 
 export const StyledLink = styled(Nav.Link)`
     color: black;
+    @media screen and ( max-width: 750px ) {
+        display: none;
+    }
 `;
 
 export const ButtonWrapper = styled.div`
-    margin-right: 78px;
-    margin-top: -3px;
+    margin-top: 10px;
+    margin-right: 70px;
+    @media screen and ( max-width: 750px ) {
+        margin-right: 0px;
+    }
 `;
 
 export const BrandWrapper = styled(Navbar.Brand)`
     margin-left: 78px;
-    margin-top: -20px;
-    font-size: 40px;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    @media screen and ( max-width: 750px ) {
+        margin-left: 0px;
+    }
+    
+    span {
+        font-size: 25px;
+        font-weight: 600;
+        @media screen and ( max-width: 750px ) {
+            display: none;
+        }
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        display: none;
+        @media screen and ( max-width: 750px ) {
+            display: block;
+        }
+    }
 `;

@@ -10,9 +10,9 @@ const SectionFour = () => (
     <>
     <SectionFourStyled>
         <HeadingMain>
-            Expand your reading.
+            Expand your reading.<br/>
             Expand your mind.
-        </HeadingMain>
+            </HeadingMain>
         < ButtonPrimary primaryBig />
     </SectionFourStyled>
     </>
