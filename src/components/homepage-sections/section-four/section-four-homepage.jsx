@@ -2,7 +2,7 @@ import React from 'react';
 
 import { HeadingMain, SectionFourStyled } from './section-four-homepage.styles';
 
-import ButtonPrimary from '../button-primary/button-primary';
+import ButtonPrimary from '../../button-primary/button-primary';
 
 
 

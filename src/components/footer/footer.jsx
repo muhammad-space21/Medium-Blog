@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import BrandImage from '../../assets/images/asset7.JPG';
 import IphoneButton from '../../assets/images/iPhone.png';

@@ -1,10 +1,18 @@
 import React from 'react';
 
-import { SectionOneStyled, H2Bold, H1, H2, HeadingWrapper, Sqr, H2Bold2 }  from './section-one-homepage.styles';
+import { 
+    SectionOneStyled, 
+    H2Bold, 
+    H1, 
+    H2, 
+    HeadingWrapper, 
+    Sqr, 
+    H2Bold2 
+}  from './section-one-homepage.styles';
 
-import ButtonPrimary from '../button-primary/button-primary';
+import ButtonPrimary from '../../button-primary/button-primary';
 
-import TickIcon from '../../assets/icons/check-mark-32.png';
+import TickIcon from '../../../assets/icons/check-mark-32.png';
 
 
 

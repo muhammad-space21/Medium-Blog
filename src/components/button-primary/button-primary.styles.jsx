@@ -1,11 +1,15 @@
 import styled, {css} from 'styled-components';
 
 const getButtonStyles = props => {
-    if (props.primaryBig) {
-        return BtnPrimaryBig;
+    if (props.updateBtn) {
+        return  UpdateBtn;
+    } else if (props.primaryBig) {
+        return BtnPrimaryBig
+    } else {
+        return StyledButton
     }
-    return StyledButton;
 };
+
 
 export const StyledButton = styled.button`
     width: 150px;
@@ -40,4 +44,25 @@ export const BtnPrimaryBig = css`
         background-color: #029E74;
         cursor: pointer;
     }
+`;
+
+export const UpdateBtn = css`
+    width: 100px;
+    height: 36px;
+    background-color: white;
+    border: 1px solid;
+    border-color: grey;
+    font-size: 11px;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    &:hover {
+        border-color: black;
+        cursor: pointer;
+        color: black;
+        background-color: white;
+    }
+
+
 `;
