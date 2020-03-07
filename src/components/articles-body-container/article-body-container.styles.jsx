@@ -13,7 +13,7 @@ export const ArticleBodyStyled = styled.div`
     @media screen and ( max-width: 1015px ) {
         width: 65%;
     }
-    @media screen and ( max-width: 835px ) {
+    @media screen and ( max-width: 900px ) {
         width: 100%;
     }
 `;

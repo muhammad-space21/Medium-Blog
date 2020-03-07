@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const PopularArticleContainer = styled.div`
     width: 40%;
-    height: 500px;
+    height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -10,7 +10,10 @@ export const PopularArticleContainer = styled.div`
     margin-top: 100px;
     float: right;
     border: 2px solid green;
-    @media screen and ( max-width: 835px ) {
+    @media screen and ( max-width: 1015px ) {
+        width: 35%;
+    }
+    @media screen and ( max-width: 900px ) {
         width: 100%;
         order: 2;
     }

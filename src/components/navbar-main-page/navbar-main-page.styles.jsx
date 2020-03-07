@@ -77,6 +77,9 @@ export const UserProfile = styled.div`
     margin-right: 90px;
     margin-top: 10px;
     background-color: #EC407A;
+    @media screen and ( max-width: 1200px ) {
+    margin-right: 10px;
+    }
 
 `;
 
