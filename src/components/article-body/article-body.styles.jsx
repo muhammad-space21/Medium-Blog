@@ -4,21 +4,28 @@ import styled from 'styled-components';
 export const ArticlesContainer = styled.div`
     width: fit-content;
     height: fit-content;
-    margin: 0;
+    margin-bottom: 40px;
     padding: 0;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
 `;
 
 export const ImageContainer = styled.div`
-    width: 100%;
-    height: 180px;
-
+    width: 35%;
+    height: 150px;
+    padding-left: 30px;
     img {
         width: 100%;
         height: 100%;
+    }
+    @media screen and ( max-width: 800px ) {
+        width: 30%;
+        height: 100px;
+    }
+    @media screen and ( max-width: 745px ) {
+        padding-left: 15px;
     }
 `;
 
@@ -27,8 +34,27 @@ export const TextsHolder = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-left: 80px;
-    @media screen and ( max-width: 1119px ) {
-        margin-left: 0;
+    @media screen and ( max-width: 1100px ) {
+        margin-left: 0px;
+    }
+`;
+
+export const H1 = styled.div`
+    font-size: 13px;
+    font-weight: 300;
+    color: grey;
+`;
+
+export const TypeOfTopic = styled.span`
+    font-size: 13px;
+    font-weight: 300;
+    color: grey;
+    span {
+        font-size: 12px;
+        font-weight: 300;
+        color: grey;
+        font-style: italic;
+        margin-left: 3px;
     }
 `;
 
@@ -37,12 +63,11 @@ export const ArticleTitle = styled.h1`
     font-weight: 600;
     line-height: 28px;
     color: black;
-    padding-top: 12px;
     &:hover {
         cursor: pointer;
     }
-    @media screen and ( max-width: 750px ) {
-        font-size: 18px;
+    @media screen and ( max-width: 735px ) {
+        font-size: 14px;
     }
 `;
 
@@ -102,5 +127,41 @@ export const PublishDate = styled.span`
 export const TimeOfReading = styled.span`
     font-size: 12px;
     color: #757575;
+`;
+
+export const IconWrapper = styled.div`
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 100px;
+    img {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+`;
+
+export const ImgWrapper = styled.div`
+    img {
+        width: 20px;
+        height: 25px;
+        margin-bottom: 3px;
+        @media screen and ( max-width: 745px ) {
+            position: absolute;
+            margin-left: -30px;
+            margin-top: -20px;    
+        }
+    }
+`;
+
+export const ImgMenu = styled.div`
+    @media screen and ( max-width: 745px ) {
+        display: none;
+    }
 `;
 

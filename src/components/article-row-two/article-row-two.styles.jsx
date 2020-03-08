@@ -4,21 +4,28 @@ import styled from 'styled-components';
 export const ArticlesContainer = styled.div`
     width: fit-content;
     height: fit-content;
-    margin: 0;
+    margin-bottom: 20px;
     padding: 0;
     display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
+    flex-flow: row nowrap;
 `;
 
 export const ImageContainer = styled.div`
-    width: 100%;
-    height: 180px;
-
+    width: 40%;
+    height: 110px;
     img {
         width: 100%;
         height: 100%;
+    }
+    @media screen and ( max-width: 720px ) {
+        order: 3;
+    }
+    @media screen and ( max-width: 800px ) {
+        width: 30%;
+        height: 100px;
+    }
+    @media screen and ( max-width: 745px ) {
+            /* padding-left: 15px; */
     }
 `;
 
@@ -26,30 +33,23 @@ export const TextsHolder = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 80px;
-    @media screen and ( max-width: 1119px ) {
-        margin-left: 0;
-    }
+    margin-left: 25px;
 `;
 
 export const ArticleTitle = styled.h1`
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 600;
-    line-height: 28px;
+    line-height: 18px;
     color: black;
-    padding-top: 12px;
     &:hover {
         cursor: pointer;
-    }
-    @media screen and ( max-width: 750px ) {
-        font-size: 18px;
     }
 `;
 
 export const SecondaryTitle = styled.h1`
     font-size: 13px;
     font-weight: 300;
-    line-height: 20px;
+    line-height: 15px;
     color: grey;
 `;
 
@@ -103,4 +103,26 @@ export const TimeOfReading = styled.span`
     font-size: 12px;
     color: #757575;
 `;
+
+export const ImgWrapper = styled.div`
+    display: none;
+    @media screen and ( max-width: 700px ) {
+        display: block;
+        order: 2;
+    }
+
+    img {
+        width: 20px;
+        height: 25px;
+        /* margin-bottom: 3px; */
+        margin-top: 77px;
+        margin-right: 25px;
+        /* margin-left: -20px; */
+        &:hover {
+            cursor: pointer;
+        }
+    }
+`;
+
+
 

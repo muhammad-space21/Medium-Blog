@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 export const TopArticlesStyled = styled.div`
     width: 100%;
-    height: 400px;
-    margin-top: 50px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -16,6 +15,7 @@ export const TopArticlesStyled = styled.div`
 export const ArticleMainPreview = styled.div`
     width: 38%;
     height: 400px;
+    padding-right: 20px;
     border: 2px solid red;
     @media screen and ( max-width: 1015px ) {
         width: 55%;
@@ -29,6 +29,7 @@ export const ArticleMainPreview = styled.div`
     @media screen and ( max-width: 705px ) {
         width: 100%;
         order: 1;
+        padding: 0px;
     }
 `;
 

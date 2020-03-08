@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const PopularArticleContainer = styled.div`
     width: 40%;
-    height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -22,9 +21,11 @@ export const PopularArticleContainer = styled.div`
 export const  Title  = styled.h1`
     font-size: 24px;
     font-weight: 500;
+    margin-left: 50px;
 `;
 
 export const HR = styled.hr`
-    width: 100%;
+    margin-left: -1px;
+    width: 70%;
     border: 0.8px solid #CCCCCC;
 `;

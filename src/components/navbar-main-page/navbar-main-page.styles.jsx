@@ -54,6 +54,8 @@ export const StyledItem = styled(Nav.Item)`
 
 export  const Img = styled.div`
     img {
+        width: 45px;
+        height: 30px;
         @media screen and ( max-width: 750px) {
             display: none;
         }

@@ -5,6 +5,8 @@ const getButtonStyles = props => {
         return  UpdateBtn;
     } else if (props.primaryBig) {
         return BtnPrimaryBig
+    } else if (props.btnLink) {
+        return BtnLink;
     } else {
         return StyledButton
     }
@@ -28,7 +30,6 @@ export const StyledButton = styled.button`
         background-color: #029E74;
         cursor: pointer;
     }
-
     ${getButtonStyles}
 `;
 
@@ -63,6 +64,18 @@ export const UpdateBtn = css`
         color: black;
         background-color: white;
     }
+`;
 
-
+export const BtnLink = css`
+    width: fit-content;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: green;
+    border: none;
+    background-color: white;
+    &:hover {
+        color: blue;
+        border: none;
+        background-color: white;
+    }
 `;

@@ -8,6 +8,7 @@ import {
     } from './top-articles-container.styles';
 
     import Article from '../articles-component/articles';
+    import ArticleRowTwo from '../article-row-two/article-row-two';
 
 
 
@@ -16,12 +17,16 @@ const TopArticlesContainer = () => (
         <ArticleMainPreview>
             <Article/>
         </ArticleMainPreview>
-        <ArticleSecondPreview>
 
+        <ArticleSecondPreview>
+            <ArticleRowTwo />
+            <ArticleRowTwo />
+            <ArticleRowTwo />
         </ArticleSecondPreview>
+
         <ArticleThirdPreview>
-            <Article/>
         </ArticleThirdPreview>
+        
     </TopArticlesStyled>
 );
 
