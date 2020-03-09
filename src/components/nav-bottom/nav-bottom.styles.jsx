@@ -16,10 +16,12 @@ export const NavBottomStyled = styled.div`
 export const Row1 = styled.div`
     display: flex;
     flex-direction: row;
+    margin-left: 50px;
 `;
 export const Row2 = styled.div`
     display: flex;
     flex-direction: row;
+    margin-left: 50px;
 `;
 
 export const H1 = styled.h1`

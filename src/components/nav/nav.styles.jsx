@@ -9,11 +9,13 @@ export const NavStyled = styled(Nav)`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-bottom: 10px;
 `;
 
 export const NavLinkStyled = styled(Nav.Link)`
     color: grey;
     font-size: 13px;
+    line-height: 10px;
     text-transform: uppercase; 
     &:hover {
         color: black;

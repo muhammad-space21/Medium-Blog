@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+
 import {
     ArticlesContainer,
     ImageContainer,
@@ -11,10 +13,12 @@ import {
     AuthorLocation,
     PublishInfo,
     PublishDate,
-    TimeOfReading
+    TimeOfReading,
+    StarIcon
 } from './articles.styles';
 
 import Img from '../../assets/images/article.jpg';
+import starIcon from '../../assets/icons/star.png';
 
 
 const Article = () => (
@@ -38,12 +42,19 @@ const Article = () => (
                 </AuthorLocation>
             </AuthorInfo>
             <PublishInfo>
-                <PublishDate>
-                    Dec 22, 2019
-                </PublishDate>
+            <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Updated Jan 15</Tooltip>}>
+                <span className="d-inline-block">
+                    <PublishDate style={{ hoverEvents: 'none' }}>
+                        Dec 22, 2019
+                    </PublishDate>
+                </span>
+            </OverlayTrigger>
                 <TimeOfReading>
                     9 min read
                 </TimeOfReading>
+                <StarIcon>
+                    <img src={starIcon} alt="star-icon"/>
+                </StarIcon>
             </PublishInfo>
         </TextsHolder>
     </ArticlesContainer>

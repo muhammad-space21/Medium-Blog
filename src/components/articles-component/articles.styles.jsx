@@ -104,3 +104,11 @@ export const TimeOfReading = styled.span`
     color: #757575;
 `;
 
+export const StarIcon = styled.div`
+    margin-left: 5px;
+    img {
+        width: 13px;
+        height: 13px;
+    }
+`;
+

@@ -9,6 +9,7 @@ import {
 
     import Article from '../articles-component/articles';
     import ArticleRowTwo from '../article-row-two/article-row-two';
+    import ArticleThird from '../article-third-preview/article-third-preview';
 
 
 
@@ -25,6 +26,7 @@ const TopArticlesContainer = () => (
         </ArticleSecondPreview>
 
         <ArticleThirdPreview>
+            <ArticleThird/>
         </ArticleThirdPreview>
         
     </TopArticlesStyled>

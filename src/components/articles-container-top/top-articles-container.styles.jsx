@@ -9,14 +9,14 @@ export const TopArticlesStyled = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 `;
 
 export const ArticleMainPreview = styled.div`
     width: 38%;
     height: 400px;
     padding-right: 20px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     @media screen and ( max-width: 1015px ) {
         width: 55%;
     }
@@ -38,7 +38,7 @@ export const ArticleSecondPreview = styled.div`
     height: 400px;
     display: flex;
     flex-direction: column;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     @media screen and ( max-width: 1015px ) {
         width: 40%;
     }
@@ -60,7 +60,7 @@ export const ArticleThirdPreview = styled.div`
     height: 400px;
     display: flex;
     flex-direction: column;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 
     @media screen and ( max-width: 1015px ) {
         display: none;

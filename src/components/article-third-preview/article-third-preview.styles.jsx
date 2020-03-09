@@ -4,28 +4,21 @@ import styled from 'styled-components';
 export const ArticlesContainer = styled.div`
     width: fit-content;
     height: fit-content;
-    margin-bottom: 20px;
+    margin: 0;
     padding: 0;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const ImageContainer = styled.div`
-    width: 40%;
-    height: 110px;
+    width: 100%;
+    height: 180px;
+
     img {
         width: 100%;
         height: 100%;
-    }
-    @media screen and ( max-width: 720px ) {
-        order: 3;
-    }
-    @media screen and ( max-width: 800px ) {
-        width: 30%;
-        height: 100px;
-    }
-    @media screen and ( max-width: 745px ) {
-            /* padding-left: 15px; */
     }
 `;
 
@@ -33,23 +26,29 @@ export const TextsHolder = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 25px;
+    @media screen and ( max-width: 1119px ) {
+        margin-left: 0;
+    }
 `;
 
 export const ArticleTitle = styled.h1`
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
-    line-height: 18px;
+    line-height: 22px;
     color: black;
+    padding-top: 12px;
     &:hover {
         cursor: pointer;
+    }
+    @media screen and ( max-width: 750px ) {
+        font-size: 18px;
     }
 `;
 
 export const SecondaryTitle = styled.h1`
     font-size: 13px;
     font-weight: 300;
-    line-height: 15px;
+    line-height: 20px;
     color: grey;
 `;
 
@@ -104,25 +103,6 @@ export const TimeOfReading = styled.span`
     color: #757575;
 `;
 
-export const ImgWrapper = styled.div`
-    display: none;
-    @media screen and ( max-width: 700px ) {
-        display: block;
-        order: 2;
-    }
-
-    img {
-        width: 20px;
-        height: 25px;
-        /* margin-bottom: 3px; */
-        margin-top: 77px;
-        margin-right: 25px;
-        /* margin-left: -20px; */
-        &:hover {
-            cursor: pointer;
-        }
-    }
-`;
 
 export const StarIcon = styled.div`
     margin-left: 5px;
@@ -131,6 +111,4 @@ export const StarIcon = styled.div`
         height: 13px;
     }
 `;
-
-
 

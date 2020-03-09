@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+
 import {
     ArticlesContainer,
     ImageContainer,
@@ -42,9 +44,13 @@ const ArticleBody = () => (
                 </AuthorLocation>
             </AuthorInfo>
             <PublishInfo>
-                <PublishDate>
-                    Dec 22, 2019
-                </PublishDate>
+                <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Updated Jan 15</Tooltip>}>
+                    <span className="d-inline-block">
+                        <PublishDate style={{ hoverEvents: 'none' }}>
+                            Dec 22, 2019
+                        </PublishDate>
+                    </span>
+                </OverlayTrigger>
                 <TimeOfReading>
                     9 min read
                 </TimeOfReading>

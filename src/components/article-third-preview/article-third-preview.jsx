@@ -4,28 +4,36 @@ import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 import {
     ArticlesContainer,
-    Counter,
+    ImageContainer,
     TextsHolder,
     ArticleTitle,
+    SecondaryTitle,
     AuthorInfo,
     AuthorName,
     AuthorLocation,
     PublishInfo,
     PublishDate,
-    TimeOfReading
-} from './article-populars.styles';
+    TimeOfReading,
+    StarIcon
+} from './article-third-preview.styles';
+
+import Img from '../../assets/images/article.jpg';
+import starIcon from '../../assets/icons/star.png';
 
 
 
-const ArticlePopular = () => (
+const ArticleThird = () => (
     <ArticlesContainer>
-        <Counter>
-            <span>01</span>
-        </Counter>
+        <ImageContainer>
+            <img src={Img} alt="article"/>
+        </ImageContainer>
         <TextsHolder>
             <ArticleTitle>
                 12 Powerfull ways to change your life when you feel hopeless
             </ArticleTitle>
+            <SecondaryTitle>
+                An honest authentic guide to self improvement
+            </SecondaryTitle>
             <AuthorInfo>
                 <AuthorName>
                     Ayodejii Avossika  
@@ -45,9 +53,12 @@ const ArticlePopular = () => (
                 <TimeOfReading>
                     9 min read
                 </TimeOfReading>
+                <StarIcon>
+                    <img src={starIcon} alt="star-icon"/>
+                </StarIcon>
             </PublishInfo>
         </TextsHolder>
     </ArticlesContainer>
 );
 
-export default ArticlePopular;
+export default ArticleThird;

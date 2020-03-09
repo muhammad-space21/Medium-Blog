@@ -7,7 +7,7 @@ export const ArticleBodyStyled = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     position: relative;
     @media screen and ( max-width: 1015px ) {
         width: 65%;
