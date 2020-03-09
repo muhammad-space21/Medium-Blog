@@ -70,11 +70,11 @@ export const BtnLink = css`
     width: fit-content;
     font-size: 14px;
     text-transform: uppercase;
-    color: green;
+    color: #03A87C;
     border: none;
     background-color: white;
     &:hover {
-        color: blue;
+        color: green;
         border: none;
         background-color: white;
     }

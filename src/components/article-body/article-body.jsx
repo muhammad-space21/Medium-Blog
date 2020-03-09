@@ -14,8 +14,7 @@ import {
     PublishDate,
     TimeOfReading,
     IconWrapper,
-    ImgWrapper,
-    ImgMenu
+    ImgWrapper
 } from './article-body.styles';
 
 import Img from '../../assets/images/article.jpg';
@@ -53,7 +52,7 @@ const ArticleBody = () => (
         </TextsHolder>
         <IconWrapper>
             <ImgWrapper><img src={IconSave} alt="icon-save"/></ImgWrapper> 
-            <ImgMenu><img src={IconMenu} alt="icon-menu"/></ImgMenu>
+            <img src={IconMenu} alt="icon-menu"/>
         </IconWrapper>
         <ImageContainer>
             <img src={Img} alt="article"/>

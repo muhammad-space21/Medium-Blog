@@ -15,7 +15,7 @@ const MainPage = (props) => (
         <NavMain />
         <TopArticlesContainer/>
         <ButtonContainer>
-            <ButtonPrimary btnLink />
+            <ButtonPrimary btnLink>See Editor's picks  > </ButtonPrimary>
         </ButtonContainer>
         <HR/>
         <Content>

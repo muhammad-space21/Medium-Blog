@@ -153,15 +153,10 @@ export const ImgWrapper = styled.div`
         margin-bottom: 3px;
         @media screen and ( max-width: 745px ) {
             position: absolute;
-            margin-left: -30px;
-            margin-top: -20px;    
+            margin-left: -20px;
+            margin-top: -25px;    
         }
     }
 `;
 
-export const ImgMenu = styled.div`
-    @media screen and ( max-width: 745px ) {
-        display: none;
-    }
-`;
 

@@ -2,46 +2,46 @@ import React from 'react';
 
 import { Nav } from 'react-bootstrap';
 
-import { NavStyled, NavLinkStyled } from './nav.styles';
+import { NavStyled, NavLinkStyled, Home } from './nav.styles';
 
 
 const NavMain = () => (
-    <NavStyled>
+    <NavStyled activeKey="/home">
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#"><Home>HOME</Home></NavLinkStyled>
             </Nav.Item>
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#">ONE ZERO</NavLinkStyled>
             </Nav.Item>
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#">ELEMENTAL</NavLinkStyled>
             </Nav.Item>
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#">GEN</NavLinkStyled>
             </Nav.Item>
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#">ZORA</NavLinkStyled>
             </Nav.Item>
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#">FORGE</NavLinkStyled>
             </Nav.Item>
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#">HUMAN PARTS</NavLinkStyled>
             </Nav.Item>
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#">MARKER</NavLinkStyled>
             </Nav.Item>
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#">LEVEL</NavLinkStyled>
             </Nav.Item>
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#">HEATED</NavLinkStyled>
             </Nav.Item>
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#">DESIGN</NavLinkStyled>
             </Nav.Item>
             <Nav.Item>
-            <NavLinkStyled href="#">LINK</NavLinkStyled>
+            <NavLinkStyled href="#">MORE</NavLinkStyled>
             </Nav.Item>
     </NavStyled>
 );

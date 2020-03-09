@@ -22,7 +22,7 @@ const SectionOne = () => (
             <H2Bold>
                 Select what you're into. We'll help you find great things to read.
             </H2Bold>
-            < ButtonPrimary primaryBig />
+            < ButtonPrimary primaryBig>Get started</ButtonPrimary>
             <H1>Already have an account? <span>Sign in.</span> </H1>
             <HeadingWrapper>
                 <H2><Sqr> <img src={TickIcon} alt="tick-icon"/> </Sqr>World-class publications.</H2>

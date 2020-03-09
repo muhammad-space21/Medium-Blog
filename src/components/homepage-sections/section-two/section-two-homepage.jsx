@@ -13,7 +13,7 @@ const SectionTwo = () => (
             <HeadingMain2>No ads. No problems.</HeadingMain2>
                 <H2>Your privacy stays yours. We don’t sell your data or target you with ads. Ever.</H2>
                     <Row1>
-                        <ButtonHolder>< ButtonPrimary primaryBig /></ButtonHolder>
+                        <ButtonHolder>< ButtonPrimary primaryBig>Get stated</ButtonPrimary></ButtonHolder>
                             <P>  <H2Bold3>We do things differently.</H2Bold3> Medium is not like any other platform on the internet. <span>Our sole purpose is to help you find compelling ideas, knowledge, and perspectives.</span> We don’t serve ads—we serve you, the curious reader who loves to learn new things. Medium is home to thousands of independent voices, and we combine humans and technology to find the best reading for you—and filter out the rest.</P>
                     </Row1>
                     <HR/>

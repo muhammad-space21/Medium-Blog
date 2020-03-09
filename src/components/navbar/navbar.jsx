@@ -23,7 +23,7 @@ import BrandLogo from  '../../assets/images/asset6.JPG';
                 <StyledLink><Nav.Link href="#features" >Write</Nav.Link> </StyledLink>
                 <StyledLink><Nav.Link href="#pricing" >Sign in</Nav.Link> </StyledLink>
                 <ButtonWrapper>
-                    <ButtonPrimary />
+                    <ButtonPrimary>Get started</ButtonPrimary>
                 </ButtonWrapper>
                 </StyledNav>
             </StyledNavbar>

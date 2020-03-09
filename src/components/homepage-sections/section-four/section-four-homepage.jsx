@@ -13,7 +13,7 @@ const SectionFour = () => (
             Expand your reading.<br/>
             Expand your mind.
             </HeadingMain>
-        < ButtonPrimary primaryBig />
+        < ButtonPrimary primaryBig>Get started</ButtonPrimary>
     </SectionFourStyled>
     </>
 );

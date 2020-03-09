@@ -31,7 +31,7 @@ import NotificationIcon from '../../assets/icons/alarm.svg';
                     <StyledItem> <Img><img  src={SaveIcon} alt="save-icon"/></Img></StyledItem>
                     <StyledItem><img src={NotificationIcon} alt="notification-icon"/></StyledItem>
                     <ButtonWrapper>
-                        <ButtonPrimary updateBtn> </ButtonPrimary>
+                        <ButtonPrimary updateBtn> Update </ButtonPrimary>
                     </ButtonWrapper>
                     <UserProfile></UserProfile>
                 </StyledNav>
