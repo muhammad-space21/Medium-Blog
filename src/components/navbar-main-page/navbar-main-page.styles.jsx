@@ -1,4 +1,4 @@
-import styled  from 'styled-components';
+import styled, {css} from 'styled-components';
 
 import { Navbar, Nav } from 'react-bootstrap';
 
@@ -7,7 +7,9 @@ export const StyledNavbar = styled(Navbar)`
     width: 100%;
     height: 80px;
     background-color: white;
-`;
+    ${props => props.navbarShadow && css` box-shadow: 5px 10px 5px red `} 
+    `;
+
 
 export const BrandWrapper = styled(Navbar.Brand)`
     margin-left: 78px;
@@ -38,6 +40,7 @@ export const StyledNav = styled(Nav)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    padding-left: 300px;
 `;
 
 export const StyledItem = styled(Nav.Item)`
@@ -73,8 +76,8 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const UserProfile = styled.div`
-    width: 35px;
-    height: 35px;
+    width: 33px;
+    height: 33px;
     border-radius: 50px;
     margin-right: 90px;
     margin-top: 10px;
@@ -82,7 +85,6 @@ export const UserProfile = styled.div`
     @media screen and ( max-width: 1200px ) {
     margin-right: 10px;
     }
-
 `;
 
 

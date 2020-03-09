@@ -7,6 +7,10 @@ const getButtonStyles = props => {
         return BtnPrimaryBig
     } else if (props.btnLink) {
         return BtnLink;
+    } else if (props.btnFollowGreen) {
+        return BtnFollowGreen;
+    } else if (props.btnFollowGrey) {
+        return BtnFollowGrey;
     } else {
         return StyledButton
     }
@@ -48,8 +52,8 @@ export const BtnPrimaryBig = css`
 `;
 
 export const UpdateBtn = css`
-    width: 100px;
-    height: 36px;
+    width: 80px;
+    height: 34px;
     background-color: white;
     border: 1px solid;
     border-color: grey;
@@ -76,6 +80,44 @@ export const BtnLink = css`
     &:hover {
         color: green;
         border: none;
+        background-color: white;
+    }
+`;
+
+export const BtnFollowGreen = css`
+    width: 60px;
+    height: 34px;
+    background-color: white;
+    border: 1px solid;
+    border-color: #03A87C;
+    font-size: 11px;
+    font-weight: 500;
+    color: #03A87C;
+    text-align: center;
+    border-radius: 5px;
+    &:hover {
+        border-color: green;
+        cursor: pointer;
+        color: green;
+        background-color: white;
+    }
+`;
+
+export const BtnFollowGrey = css`
+    width: 60px;
+    height: 34px;
+    background-color: white;
+    border: 1px solid;
+    border-color: grey;
+    font-size: 11px;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    &:hover {
+        border-color: black;
+        cursor: pointer;
+        color: black;
         background-color: white;
     }
 `;
