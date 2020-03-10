@@ -9,20 +9,30 @@ export const DesignPageStyled = styled.div`
 `;
 
 export const Content = styled.div`
-    width: 100%;
+    width: 90%;
     height: 800px;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     border: 2px solid red;
-    padding-left: 50px;
+    /* align-items: center; */
     margin-top: 50px;
-    padding-right: 50px;
+    /* padding-left: 50px;
+    padding-right: 50px; */
+    @media screen and ( max-width: 750px ) {
+        width: 100%;
+        padding: 0px;
+        /* display: flex;
+        align-items: center; */
+    } 
 `;
 
 export const BodyContainer = styled.div`
     width: 70%;
     height: 100%;
     border: 2px solid green;
+    @media screen and ( max-width: 750px ) {
+        width: 100%;
+    }
 
 `;
 

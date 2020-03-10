@@ -40,15 +40,14 @@ export const StyledNav = styled(Nav)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    padding-left: 300px;
 `;
 
 export const StyledItem = styled(Nav.Item)`
     img {
         width: 18px;
         height: 18px;
-        margin-right: 20px;
         margin-top: 10px;
+        margin-right: 20px;
         &:hover {
             cursor: pointer;
         }
@@ -79,7 +78,7 @@ export const UserProfile = styled.div`
     width: 33px;
     height: 33px;
     border-radius: 50px;
-    margin-right: 90px;
+    margin-right: 50px;
     margin-top: 10px;
     background-color: #EC407A;
     @media screen and ( max-width: 1200px ) {
