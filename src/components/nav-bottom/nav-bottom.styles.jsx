@@ -16,20 +16,20 @@ export const NavBottomStyled = styled.div`
 export const Row1 = styled.div`
     display: flex;
     flex-direction: row;
-    margin-left: 50px;
+    margin-left: 30px;
 `;
 export const Row2 = styled.div`
     display: flex;
     flex-direction: row;
-    margin-left: 50px;
+    margin-left: 30px;
 `;
 
 export const H1 = styled.h1`
-    font-size: 14px;
+    font-size: 13px;
     line-height: 22px;
     font-weight: 400;
     color: #757575;
-    margin-left: 20px;
+    margin-left: 15px;
     &:hover {
         text-decoration: underline;
         cursor: pointer;

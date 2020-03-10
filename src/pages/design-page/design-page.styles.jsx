@@ -4,25 +4,22 @@ import styled from 'styled-components';
 export const DesignPageStyled = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
 `;
 
 export const Content = styled.div`
     width: 90%;
-    height: 800px;
+    height: 100%;
     display: flex;
     flex-flow: row wrap;
     border: 2px solid red;
-    /* align-items: center; */
+    justify-content: center; 
+    align-items: center;
     margin-top: 50px;
-    /* padding-left: 50px;
-    padding-right: 50px; */
     @media screen and ( max-width: 750px ) {
         width: 100%;
-        padding: 0px;
-        /* display: flex;
-        align-items: center; */
     } 
 `;
 
@@ -30,14 +27,34 @@ export const BodyContainer = styled.div`
     width: 70%;
     height: 100%;
     border: 2px solid green;
+    @media screen and ( max-width: 1000px ) {
+        width: 65%;
+    }
+    @media screen and ( max-width: 900px ) {
+        width: 60%;
+    }
+    @media screen and ( max-width: 800px ) {
+        width: 55%;
+    }
     @media screen and ( max-width: 750px ) {
         width: 100%;
     }
-
 `;
 
 export const AsideContainer = styled.div`
     width: 30%;
     height: 100%;
     border: 2px solid blue;
+    @media screen and ( max-width: 1000px ) {
+        width: 35%;
+    }
+    @media screen and ( max-width: 900px ) {
+        width: 40%;
+    }
+    @media screen and ( max-width: 800px ) {
+        width: 45%;
+    }
+    @media screen and ( max-width: 550px ) {
+        display: none;
+    } 
 `;

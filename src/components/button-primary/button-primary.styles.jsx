@@ -85,12 +85,12 @@ export const BtnLink = css`
 `;
 
 export const BtnFollowGreen = css`
-    width: 60px;
-    height: 34px;
+    width: 70px;
+    height: 32px;
     background-color: white;
     border: 1px solid;
     border-color: #03A87C;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     color: #03A87C;
     text-align: center;
@@ -104,12 +104,12 @@ export const BtnFollowGreen = css`
 `;
 
 export const BtnFollowGrey = css`
-    width: 60px;
-    height: 34px;
+    width: 70px;
+    height: 32px;
     background-color: white;
     border: 1px solid;
     border-color: grey;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     color: black;
     text-align: center;

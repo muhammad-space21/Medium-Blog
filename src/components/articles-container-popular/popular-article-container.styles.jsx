@@ -8,7 +8,6 @@ export const PopularArticleContainer = styled.div`
     order: 2;
     margin-top: 100px;
     float: right;
-    /* border: 2px solid green; */
     @media screen and ( max-width: 1015px ) {
         width: 35%;
     }
