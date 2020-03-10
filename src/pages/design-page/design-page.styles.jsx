@@ -16,9 +16,8 @@ export const Content = styled.div`
     flex-flow: row wrap;
     border: 2px solid red;
     justify-content: center; 
-    align-items: center;
     margin-top: 50px;
-    @media screen and ( max-width: 750px ) {
+    @media screen and ( max-width: 800px ) {
         width: 100%;
     } 
 `;
@@ -33,12 +32,18 @@ export const BodyContainer = styled.div`
     @media screen and ( max-width: 900px ) {
         width: 60%;
     }
-    @media screen and ( max-width: 800px ) {
-        width: 55%;
+    @media screen and ( max-width: 850px ) {
+        width: 58%;
     }
-    @media screen and ( max-width: 750px ) {
+    @media screen and ( max-width: 800px ) {
         width: 100%;
     }
+`;
+
+export const HeaderContainer = styled.div`
+    width: 100%;
+    height: fit-content;
+    border: 2px solid purple;
 `;
 
 export const AsideContainer = styled.div`
@@ -51,10 +56,24 @@ export const AsideContainer = styled.div`
     @media screen and ( max-width: 900px ) {
         width: 40%;
     }
-    @media screen and ( max-width: 800px ) {
-        width: 45%;
+    @media screen and ( max-width: 850px ) {
+        width: 42%;
     }
-    @media screen and ( max-width: 550px ) {
+    @media screen and ( max-width: 800px ) {
         display: none;
     } 
+`;
+
+export const Heading = styled.h1`
+    font-size: 13px;
+    line-height: 14px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: -5px;
+    text-transform: uppercase;
+`;
+
+export const HR = styled.hr`
+    width: 100%;
+    border: 0.8px solid #CCCCCC;
 `;

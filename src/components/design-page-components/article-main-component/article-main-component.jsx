@@ -9,10 +9,19 @@ import {
     PublishContainer, 
     Avatar, 
     Text,
-    
-    } from './article-main-component.styles';
+    AuthorInfo,
+    AuthorName,
+    AuthorLocation,
+    PublishInfo,
+    PublishDate,
+    ReadTime,
+    StarIcon
+} from './article-main-component.styles';
 
     import Image from '../../../assets/images/article.jpg';
+    import starIcon from '../../../assets/icons/star.png';
+
+
 
 const ArticleMain = () => (
     <ArticleMainStyled>
@@ -46,12 +55,14 @@ const ArticleMain = () => (
                         <ReadTime>
                             10 min
                         </ReadTime>
+                        <StarIcon>
+                            <img src={starIcon} alt="star-icon"/>
+                        </StarIcon>
                     </PublishInfo>
                 </Text>
             </PublishContainer>
         </TextWrapper>
     </ArticleMainStyled>
-
 );
 
 export default ArticleMain;

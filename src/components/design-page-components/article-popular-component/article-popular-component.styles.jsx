@@ -14,7 +14,7 @@ export const TextWrapper = styled.div`
     width: 80%;
     height: fit-content;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     align-items: space-between;
     justify-content: flex-start;
     margin-right: 7px;

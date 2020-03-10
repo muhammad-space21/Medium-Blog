@@ -2,30 +2,35 @@ import styled from 'styled-components';
 
 
 export const ArticlesContainer = styled.div`
-    width: fit-content;
+    width: 93%;
     height: fit-content;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding: 0;
     display: flex;
     flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    @media screen and ( max-width: 980px ) {
+        width: 95%;
+
+    }
 `;
 
 export const ImageContainer = styled.div`
-    width: 40%;
-    height: 110px;
+    width: 30%;
+    height: 150px;
     img {
         width: 100%;
         height: 100%;
+        object-fit: fill;
     }
-    @media screen and ( max-width: 720px ) {
-        order: 3;
+    @media screen and ( max-width: 980px ) {
+        width: 35%;
+        height: 90px;
     }
     @media screen and ( max-width: 800px ) {
-        width: 30%;
-        height: 100px;
-    }
-    @media screen and ( max-width: 745px ) {
-            /* padding-left: 15px; */
+        width: 40%;
+        height: 90px;
     }
 `;
 
@@ -33,23 +38,42 @@ export const TextsHolder = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 25px;
+    @media screen and ( max-width: 1100px ) {
+        margin-left: 0px;
+    }
+    @media screen and ( max-width: 980px ) {
+        width: 65%;
+    }
+    @media screen and ( max-width: 800px ) {
+        width: 60%;
+    }
+`;
+
+export const H1 = styled.div`
+    font-size: 13px;
+    font-weight: 300;
+    color: grey;
 `;
 
 export const ArticleTitle = styled.h1`
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
-    line-height: 18px;
+    line-height: 24px;
     color: black;
     &:hover {
         cursor: pointer;
+    }
+    @media screen and ( max-width: 735px ) {
+        font-size: 18px;
+        line-height: 22px;
+
     }
 `;
 
 export const SecondaryTitle = styled.h1`
     font-size: 13px;
     font-weight: 300;
-    line-height: 15px;
+    line-height: 20px;
     color: grey;
 `;
 
@@ -104,31 +128,24 @@ export const TimeOfReading = styled.span`
     color: #757575;
 `;
 
-export const ImgWrapper = styled.div`
-    display: none;
-    @media screen and ( max-width: 700px ) {
-        display: block;
-        order: 2;
-    }
-
+export const IconWrapper = styled.div`
+    width: fit-content;
+    margin-top: 100px;
     img {
         width: 20px;
         height: 25px;
-        margin-top: 77px;
-        margin-right: 25px;
+        padding-left: -50px;
+        @media screen and ( max-width: 745px ) {
+            position: absolute;
+            margin-left: -20px;
+            margin-top: -25px;    
+        }
         &:hover {
             cursor: pointer;
         }
     }
 `;
 
-export const StarIcon = styled.div`
-    margin-left: 5px;
-    img {
-        width: 13px;
-        height: 13px;
-    }
-`;
 
 
 
