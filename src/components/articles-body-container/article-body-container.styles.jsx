@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 
 export const ArticleBodyStyled = styled.div`
-    width: 60%;
+    width: 62%;
     height: 100%;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* border: 2px solid purple; */
     position: relative;
     @media screen and ( max-width: 1015px ) {
         width: 65%;
     }
-    @media screen and ( max-width: 900px ) {
+    @media screen and ( max-width: 950px ) {
         width: 100%;
     }
 `;

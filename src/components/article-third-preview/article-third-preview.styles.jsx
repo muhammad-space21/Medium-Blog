@@ -8,7 +8,6 @@ export const ArticlesContainer = styled.div`
     padding: 0;
     display: flex;
     flex-flow: column wrap;
-    align-items: center;
     justify-content: center;
 `;
 

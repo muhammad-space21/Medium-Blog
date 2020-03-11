@@ -24,9 +24,6 @@ export const ImageContainer = styled.div`
         width: 30%;
         height: 100px;
     }
-    @media screen and ( max-width: 745px ) {
-            /* padding-left: 15px; */
-    }
 `;
 
 export const TextsHolder = styled.div`
@@ -34,6 +31,13 @@ export const TextsHolder = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-left: 25px;
+    margin-right: 25px;
+    @media screen and ( max-width: 720px ) {
+        margin-left: 0px;
+        margin-right: 0px;
+
+    }
+
 `;
 
 export const ArticleTitle = styled.h1`

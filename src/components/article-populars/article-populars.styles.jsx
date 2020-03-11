@@ -14,10 +14,17 @@ export const ArticlesContainer = styled.div`
 export const Counter = styled.div`
     display: flex;
     align-items: flex-start;
-    margin-left: 50px;
+    margin-left: 70px;
     span {
         font-size: 30px;
         color: #D9D9D9;
+        font-weight: 500;
+    }
+    @media screen and ( max-width: 800px ) {
+        margin-left: 50px;
+    }
+    @media screen and ( max-width: 950px ) {
+        margin-left: 0px;
     }
 `;
 
@@ -27,8 +34,8 @@ export const TextsHolder = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-left: 25px;
-    margin-right: 150px;
-    @media screen and ( max-width: 1100px ) {
+    margin-right: 60px;
+    @media screen and ( max-width: 1200px ) {
     margin-right: 0px;
     }
 `;

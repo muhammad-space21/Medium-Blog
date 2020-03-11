@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 export const PopularArticleContainer = styled.div`
-    width: 40%;
+    width: 38%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     order: 2;
     margin-top: 100px;
     float: right;
     @media screen and ( max-width: 1015px ) {
         width: 35%;
     }
-    @media screen and ( max-width: 900px ) {
+    @media screen and ( max-width: 950px ) {
         width: 100%;
         order: 2;
     }
@@ -20,11 +20,19 @@ export const PopularArticleContainer = styled.div`
 export const  Title  = styled.h1`
     font-size: 24px;
     font-weight: 500;
-    margin-left: 50px;
+    margin-left: 100px;
+    @media screen and ( max-width: 1000px ) {
+        margin-left: 20px;
+    }
+    @media screen and ( max-width: 950px ) {
+      margin-left: 20px;
+    }
+    @media screen and ( max-width: 800px ) {
+        margin-left: 0px;
+    }
 `;
 
 export const HR = styled.hr`
-    margin-left: -1px;
-    width: 70%;
+    width: 60%;
     border: 0.8px solid #CCCCCC;
 `;

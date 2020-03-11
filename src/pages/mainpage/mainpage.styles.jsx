@@ -5,8 +5,6 @@ import styled from 'styled-components';
 export const MainPageStyled = styled.div`
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    margin-left: 20px;
-    margin-right: 20px;
 `;
 
 export const Content = styled.div`
@@ -14,7 +12,13 @@ export const Content = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     align-items:flex-start;
-    justify-content: space-between;
+    @media screen and (min-width: 1220px ) {
+        margin-left: 70px;
+    }
+    @media screen and ( max-width: 1220px ) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 `; 
 
 export const HR = styled.hr`

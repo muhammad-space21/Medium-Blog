@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 
 export const NavBottomStyled = styled.div`
-    width: 100%;
+    width: fit-content;
     height: 100px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-left: 60px;
     @media screen and ( max-width: 835px ) {
         display: none;
     }
