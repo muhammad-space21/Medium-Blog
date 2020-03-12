@@ -7,9 +7,9 @@ export const NavBottomStyled = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
-    margin-left: 60px;
-    @media screen and ( max-width: 835px ) {
+    justify-content: center;
+    margin-left: 10px;
+    @media screen and ( max-width: 950px ) {
         display: none;
     }
 `;

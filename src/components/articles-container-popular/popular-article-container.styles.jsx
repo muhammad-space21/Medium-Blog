@@ -25,7 +25,7 @@ export const  Title  = styled.h1`
         margin-left: 20px;
     }
     @media screen and ( max-width: 950px ) {
-      margin-left: 20px;
+        margin-left: 20px;
     }
     @media screen and ( max-width: 800px ) {
         margin-left: 0px;

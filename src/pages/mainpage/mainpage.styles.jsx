@@ -39,9 +39,9 @@ export const ButtonContainer = styled.div`
     @media screen and ( max-width: 750px ) {
         order: 3;
         margin-top: 30px;
-        margin-left: 20px;
     }
     @media screen and ( max-width: 1000px ) {
     justify-content: flex-start;
+    margin-left: 20px;
     }
 `;

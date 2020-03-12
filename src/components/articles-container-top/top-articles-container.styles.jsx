@@ -22,7 +22,7 @@ export const TopArticlesStyled = styled.div`
 export const ArticleMainPreview = styled.div`
     width: 33%;
     height: 400px;
-    padding-right: 20px;
+    padding-right: 5px;
     @media screen and ( max-width: 1015px ) {
         width: 55%;
     }
@@ -44,6 +44,7 @@ export const ArticleSecondPreview = styled.div`
     height: 400px;
     display: flex;
     flex-direction: column;
+    padding-left: 10px;
     @media screen and ( max-width: 1015px ) {
         width: 40%;
     }
