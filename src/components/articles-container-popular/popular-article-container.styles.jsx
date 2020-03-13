@@ -12,6 +12,7 @@ export const PopularArticleContainer = styled.div`
         width: 35%;
     }
     @media screen and ( max-width: 950px ) {
+        margin-left: 20px;
         width: 100%;
         order: 2;
     }
@@ -22,10 +23,7 @@ export const  Title  = styled.h1`
     font-weight: 500;
     margin-left: 100px;
     @media screen and ( max-width: 1000px ) {
-        margin-left: 20px;
-    }
-    @media screen and ( max-width: 950px ) {
-        margin-left: 20px;
+        margin-left: 60px;
     }
     @media screen and ( max-width: 800px ) {
         margin-left: 0px;
@@ -35,4 +33,5 @@ export const  Title  = styled.h1`
 export const HR = styled.hr`
     width: 60%;
     border: 0.8px solid #CCCCCC;
+    margin-left: 70px;
 `;

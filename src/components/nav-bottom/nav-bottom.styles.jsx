@@ -7,8 +7,7 @@ export const NavBottomStyled = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    margin-left: 10px;
+    margin-left: 30px;
     @media screen and ( max-width: 950px ) {
         display: none;
     }

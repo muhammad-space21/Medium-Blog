@@ -34,7 +34,7 @@ export const TextsHolder = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-left: 25px;
-    margin-right: 60px;
+    margin-right: 120px;
     @media screen and ( max-width: 1200px ) {
     margin-right: 0px;
     }

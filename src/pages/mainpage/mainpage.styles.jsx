@@ -12,17 +12,17 @@ export const Content = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     align-items:flex-start;
-    @media screen and (min-width: 1220px ) {
+    /* @media screen and (min-width: 1220px ) {
         margin-left: 70px;
     }
     @media screen and ( max-width: 1220px ) {
         margin-left: 20px;
         margin-right: 20px;
-    }
+    } */
 `; 
 
 export const HR = styled.hr`
-    width: 90%;
+    width: 95%;
     border: 0.8px solid #CCCCCC;
     @media screen and ( max-width: 700px ) {
         display: none;    
@@ -36,6 +36,7 @@ export const ButtonContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
     padding-right: 100px;
+    margin-top: -20px;
     @media screen and ( max-width: 750px ) {
         order: 3;
         margin-top: 30px;

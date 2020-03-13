@@ -11,13 +11,13 @@ export const ArticlesContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-    width: 40%;
+    width: 160px;
     height: 110px;
     img {
         width: 100%;
         height: 100%;
     }
-    @media screen and ( max-width: 720px ) {
+    @media screen and ( max-width: 700px ) {
         order: 3;
     }
     @media screen and ( max-width: 800px ) {
@@ -33,9 +33,8 @@ export const TextsHolder = styled.div`
     margin-left: 25px;
     margin-right: 25px;
     @media screen and ( max-width: 720px ) {
-        margin-left: 0px;
-        margin-right: 0px;
-
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
 `;
@@ -55,6 +54,10 @@ export const SecondaryTitle = styled.h1`
     font-weight: 300;
     line-height: 15px;
     color: grey;
+    /* text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; */
+     /* width: 250px; */
 `;
 
 export const AuthorInfo = styled.div`
@@ -64,13 +67,17 @@ export const AuthorInfo = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 8px;
 `;
 
 export const AuthorName = styled.span`
     font-size: 13px;
     font-weight: 500;
     line-height: 20px;
+    @media screen and ( min-width: 1000px ) and ( max-width: 1079px ) {
+        margin-right: 2px;
+    }
+    
     margin-right: 5px;
     &:hover {
         text-decoration: underline;
