@@ -8,7 +8,6 @@ export const ArticlePopularStyled = styled.div`
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    border: 2px solid purple;
     margin-bottom: 15px;
 `;
 
@@ -19,7 +18,7 @@ export const TextWrapper = styled.div`
     flex-flow: column wrap;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-right: 7px;
+    margin-right: 10px;
 `;
 
 export const Heading = styled.h1`

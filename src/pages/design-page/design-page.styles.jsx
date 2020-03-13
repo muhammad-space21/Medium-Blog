@@ -14,7 +14,6 @@ export const Content = styled.div`
     height: 100%;
     display: flex;
     flex-flow: row wrap;
-    border: 2px solid red;
     justify-content: space-between; 
     margin-top: 69px;
     @media screen and ( max-width: 800px ) {
@@ -25,25 +24,25 @@ export const Content = styled.div`
 export const BodyContainer = styled.div`
     width: 65%;
     height: 100%;
-    border: 2px solid green;
-    @media screen and ( max-width: 1000px ) {
-        width: 65%;
-    }
-    @media screen and ( max-width: 900px ) {
-        width: 60%;
-    }
-    @media screen and ( max-width: 850px ) {
-        width: 58%;
+    @media screen and ( max-width: 991px ) {
+        width: 70%;
     }
     @media screen and ( max-width: 800px ) {
-        width: 100%;
+        width: 60%;
+        margin-left: 20px;
+        padding-right: 20px;
     }
+    @media screen and ( max-width: 750px ) {
+        width: 57%;
+    }
+    @media screen and ( max-width: 730px ) {
+        width: 100%;
+    } 
 `;
 
 export const HeaderContainer = styled.div`
     width: 100%;
     height: fit-content;
-    border: 2px solid purple;
 `;
 
 export const AsideContainer = styled.div`
@@ -51,19 +50,16 @@ export const AsideContainer = styled.div`
     height: 100%;
     display: flex;
     flex-flow: column nowrap;
-    border: 2px solid blue;
-    @media screen and ( max-width: 1000px ) {
-        width: 35%;
-    }
-    @media screen and ( max-width: 900px ) {
-        width: 40%;
-    }
-    @media screen and ( max-width: 850px ) {
-        width: 42%;
-    }
     @media screen and ( max-width: 800px ) {
+        width: 35%;
+        padding-right: 50px;
+    }
+    @media screen and ( max-width: 730px ) {
         display: none;
     } 
+    @media screen and ( max-width: 750px ) {
+        width: 40%;
+    }
 `;
 
 export const Heading = styled.h1`

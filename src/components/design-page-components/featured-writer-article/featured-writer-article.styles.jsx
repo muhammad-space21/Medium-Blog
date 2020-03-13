@@ -18,9 +18,10 @@ export const TextWrapper = styled.div`
     flex-flow: column wrap;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-right: 50px;
     margin-left: 10px;
-
+    margin-right: 20px;
+    /* text-overflow: ellipsis;
+    overflow: hidden; */
 `;
 
 export const Heading = styled.h1`
