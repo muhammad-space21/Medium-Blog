@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 
 export const ArticlesContainer = styled.div`
-    width: fit-content;
-    height: fit-content;
+    width: 100%;
+    height: 100%;
     margin-bottom: 40px;
     padding: 0;
     display: flex;
@@ -13,30 +13,34 @@ export const ArticlesContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-    width: 35%;
-    height: 150px;
-    padding-left: 30px;
+    width: 160px;
+    height: 130px;
+    margin-left: 15px;
     img {
         width: 100%;
         height: 100%;
-        object-fit: fill;
+        object-fit: cover;
     }
     @media screen and ( max-width: 800px ) {
-        width: 30%;
-        height: 100px;
+        width: 150px;
+        height: 120px;
     }
     @media screen and ( max-width: 745px ) {
         padding-left: 15px;
     }
+    @media screen and ( max-width: 500px ) {
+        width: 130px;
+        height: 70px;
+    }
 `;
 
 export const TextsHolder = styled.div`
+    height: fit-content;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    @media screen and ( max-width: 1100px ) {
-        margin-left: 0px;
-    }
+    margin-right: 20px;
 `;
 
 export const H1 = styled.div`
@@ -85,7 +89,7 @@ export const AuthorInfo = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 5px;
 `;
 
 export const AuthorName = styled.span`
@@ -134,12 +138,15 @@ export const IconWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    margin-left: -50px;
     margin-top: 100px;
+    @media screen and ( max-width: 500px ) {
+        margin-top: 120px;
+    }
     img {
-        width: 30px;
-        height: 30px;
-        margin-left: 5px;
+        width: 35px;
+        height: 35px;
+        margin-left: 3px;
         &:hover {
             cursor: pointer;
         }
@@ -150,11 +157,11 @@ export const ImgWrapper = styled.div`
     img {
         width: 20px;
         height: 25px;
-        margin-bottom: 3px;
+        opacity: 100%;
+        margin-top: 5px;
         @media screen and ( max-width: 745px ) {
             position: absolute;
             margin-left: -20px;
-            margin-top: -25px;    
         }
     }
 `;

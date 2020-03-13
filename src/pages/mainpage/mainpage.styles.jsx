@@ -8,17 +8,14 @@ export const MainPageStyled = styled.div`
 `;
 
 export const Content = styled.div`
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items:flex-start;
-    /* @media screen and (min-width: 1220px ) {
-        margin-left: 70px;
-    }
-    @media screen and ( max-width: 1220px ) {
-        margin-left: 20px;
-        margin-right: 20px;
-    } */
+    margin-right: 20px;
+    margin-left: 20px;
 `; 
 
 export const HR = styled.hr`

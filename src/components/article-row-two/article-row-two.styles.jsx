@@ -16,13 +16,18 @@ export const ImageContainer = styled.div`
     img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
     }
-    @media screen and ( max-width: 700px ) {
+    @media screen and ( max-width: 720px ) {
         order: 3;
     }
     @media screen and ( max-width: 800px ) {
-        width: 30%;
-        height: 100px;
+        width: 150px;
+        height: 120px;
+    }
+    @media screen and ( max-width: 500px ) {
+        width: 110px;
+        height: 70px;
     }
 `;
 
@@ -33,10 +38,9 @@ export const TextsHolder = styled.div`
     margin-left: 25px;
     margin-right: 25px;
     @media screen and ( max-width: 720px ) {
-        margin-left: 10px;
         margin-right: 10px;
+        margin-left: 0;
     }
-
 `;
 
 export const ArticleTitle = styled.h1`
@@ -54,10 +58,6 @@ export const SecondaryTitle = styled.h1`
     font-weight: 300;
     line-height: 15px;
     color: grey;
-    /* text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden; */
-     /* width: 250px; */
 `;
 
 export const AuthorInfo = styled.div`
@@ -65,8 +65,6 @@ export const AuthorInfo = styled.div`
     height: fit-content;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     margin-top: 8px;
 `;
 
@@ -74,11 +72,10 @@ export const AuthorName = styled.span`
     font-size: 13px;
     font-weight: 500;
     line-height: 20px;
-    @media screen and ( min-width: 1000px ) and ( max-width: 1079px ) {
-        margin-right: 2px;
-    }
-    
     margin-right: 5px;
+    @media screen and ( min-width: 1050px ) and ( max-width: 1065px ) {
+        margin-right: 0px;
+    }
     &:hover {
         text-decoration: underline;
         cursor: pointer;
@@ -117,7 +114,7 @@ export const TimeOfReading = styled.span`
 
 export const ImgWrapper = styled.div`
     display: none;
-    @media screen and ( max-width: 700px ) {
+    @media screen and ( max-width: 720px ) {
         display: block;
         order: 2;
     }

@@ -8,8 +8,8 @@ export const TopArticlesStyled = styled.div`
     flex-flow: row wrap;
     justify-content: space-evenly;
     @media screen and ( max-width: 950px ) {
-        margin-left: 20px;
         padding-right: 20px;
+        padding-left: 20px;
     } 
 `;
 
@@ -17,7 +17,7 @@ export const ArticleMainPreview = styled.div`
     width: 35%;
     height: fit-content;
     @media screen and ( max-width: 1015px ) {
-        width: 55%;
+        width: 50%;
     }
     @media screen and ( max-width: 910px ) {
         width: 47%;
@@ -25,7 +25,7 @@ export const ArticleMainPreview = styled.div`
     @media screen and ( max-width: 800px ) {
         width: 45%;
     }
-    @media screen and ( max-width: 705px ) {
+    @media screen and ( max-width: 720px ) {
         width: 100%;
         order: 1;
         padding: 0px;
@@ -38,15 +38,15 @@ export const ArticleSecondPreview = styled.div`
     display: flex;
     flex-direction: column;
     @media screen and ( max-width: 1015px ) {
-        width: 40%;
+        width: 45%;
     }
     @media screen and ( max-width: 910px ) {
-        width: 47%;
+        width: 46%;
     }
     @media screen and ( max-width: 800px ) {
         width: 50%;
     }
-    @media screen and ( max-width: 705px ) {
+    @media screen and ( max-width: 720px ) {
         width: 100%;
         order: 2;
         margin-top: 80px;
