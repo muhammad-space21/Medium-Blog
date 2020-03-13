@@ -17,6 +17,8 @@ import RelatedTopic from '../../components/design-page-components/related-topic-
 import PopularInDesign from '../../components/design-page-components/popular-in-design-component/popular-in-design-component';
 import ArticleMain from '../../components/design-page-components/article-main-component/article-main-component';
 import ArticleBodyDesign from '../../components/design-page-components/article-body-component/article-body-component';
+import FeaturedWriter from '../../components/design-page-components/featured-writer-component/featured-writer';
+
 
 const DesignPage = () => (
     <DesignPageStyled>
@@ -35,6 +37,7 @@ const DesignPage = () => (
                 <ArticleBodyDesign/>
                 <ArticleBodyDesign/>
                 <ArticleBodyDesign/>
+                <FeaturedWriter/>
             </BodyContainer>
             <AsideContainer>
                 <FollowUs/>

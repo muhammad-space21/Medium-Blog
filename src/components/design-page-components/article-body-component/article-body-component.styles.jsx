@@ -2,51 +2,45 @@ import styled from 'styled-components';
 
 
 export const ArticlesContainer = styled.div`
-    width: 93%;
-    height: fit-content;
-    margin-bottom: 40px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
     padding: 0;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    @media screen and ( max-width: 980px ) {
-        width: 95%;
-
-    }
 `;
 
 export const ImageContainer = styled.div`
-    width: 30%;
-    height: 150px;
+    width: 160px;
+    height: 130px;
+    margin-left: 15px;
     img {
         width: 100%;
         height: 100%;
-        object-fit: fill;
-    }
-    @media screen and ( max-width: 980px ) {
-        width: 35%;
-        height: 90px;
+        object-fit: cover;
     }
     @media screen and ( max-width: 800px ) {
-        width: 40%;
-        height: 90px;
+        width: 150px;
+        height: 120px;
+    }
+    @media screen and ( max-width: 745px ) {
+        padding-left: 15px;
+    }
+    @media screen and ( max-width: 500px ) {
+        width: 130px;
+        height: 70px;
     }
 `;
 
 export const TextsHolder = styled.div`
+    height: fit-content;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    @media screen and ( max-width: 1100px ) {
-        margin-left: 0px;
-    }
-    @media screen and ( max-width: 980px ) {
-        width: 65%;
-    }
-    @media screen and ( max-width: 800px ) {
-        width: 60%;
-    }
+    margin-right: 30px;
 `;
 
 export const H1 = styled.div`
@@ -55,18 +49,29 @@ export const H1 = styled.div`
     color: grey;
 `;
 
+export const TypeOfTopic = styled.span`
+    font-size: 13px;
+    font-weight: 300;
+    color: grey;
+    span {
+        font-size: 12px;
+        font-weight: 300;
+        color: grey;
+        font-style: italic;
+        margin-left: 3px;
+    }
+`;
+
 export const ArticleTitle = styled.h1`
     font-size: 20px;
     font-weight: 600;
-    line-height: 24px;
+    line-height: 28px;
     color: black;
     &:hover {
         cursor: pointer;
     }
     @media screen and ( max-width: 735px ) {
-        font-size: 18px;
-        line-height: 22px;
-
+        font-size: 14px;
     }
 `;
 
@@ -84,7 +89,7 @@ export const AuthorInfo = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 5px;
 `;
 
 export const AuthorName = styled.span`
@@ -130,22 +135,35 @@ export const TimeOfReading = styled.span`
 
 export const IconWrapper = styled.div`
     width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: -50px;
     margin-top: 100px;
+    @media screen and ( max-width: 500px ) {
+        margin-top: 120px;
+    }
     img {
-        width: 20px;
-        height: 25px;
-        padding-left: -50px;
-        @media screen and ( max-width: 745px ) {
-            position: absolute;
-            margin-left: -20px;
-            margin-top: -25px;    
-        }
+        width: 23px;
+        height: 30px;
+        margin-left: 3px;
         &:hover {
             cursor: pointer;
         }
     }
 `;
 
-
+export const ImgWrapper = styled.div`
+    img {
+        width: 20px;
+        height: 25px;
+        opacity: 100%;
+        margin-top: 5px;
+        @media screen and ( max-width: 745px ) {
+            position: absolute;
+            margin-left: -20px;
+        }
+    }
+`;
 
 

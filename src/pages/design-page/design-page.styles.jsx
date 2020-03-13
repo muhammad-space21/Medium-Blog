@@ -15,15 +15,15 @@ export const Content = styled.div`
     display: flex;
     flex-flow: row wrap;
     border: 2px solid red;
-    justify-content: center; 
-    margin-top: 50px;
+    justify-content: space-between; 
+    margin-top: 69px;
     @media screen and ( max-width: 800px ) {
         width: 100%;
     } 
 `;
 
 export const BodyContainer = styled.div`
-    width: 70%;
+    width: 65%;
     height: 100%;
     border: 2px solid green;
     @media screen and ( max-width: 1000px ) {
@@ -49,6 +49,8 @@ export const HeaderContainer = styled.div`
 export const AsideContainer = styled.div`
     width: 30%;
     height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
     border: 2px solid blue;
     @media screen and ( max-width: 1000px ) {
         width: 35%;

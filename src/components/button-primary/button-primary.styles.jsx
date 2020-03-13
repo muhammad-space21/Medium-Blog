@@ -106,7 +106,7 @@ export const BtnFollowGreen = css`
 export const BtnFollowGrey = css`
     width: 70px;
     height: 32px;
-    background-color: white;
+    background-color: #F2F2F2;
     border: 1px solid;
     border-color: grey;
     font-size: 12px;
@@ -118,6 +118,6 @@ export const BtnFollowGrey = css`
         border-color: black;
         cursor: pointer;
         color: black;
-        background-color: white;
+        background-color: #F2F2F2;
     }
 `;

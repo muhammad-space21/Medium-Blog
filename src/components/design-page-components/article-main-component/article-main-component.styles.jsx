@@ -7,7 +7,6 @@ export const ArticleMainStyled = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-right: 50px;
     padding-bottom: 10px;
     @media screen and ( max-width: 950px ) {
         padding-right: 30px;
@@ -26,6 +25,7 @@ export const ImageWrapper = styled.div`
     img {
         width: 100%;
         height: 370px;
+        object-fit: cover;
     }
 `;
 

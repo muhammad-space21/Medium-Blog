@@ -53,7 +53,11 @@ const ArticleBodyDesign = () => (
             </PublishInfo>
         </TextsHolder>
         <IconWrapper>
-            <img src={IconSave} alt="icon-save"/>
+            <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Save Article</Tooltip>}>
+                <span className="d-inline-block">
+                    <img src={IconSave} alt="icon-save" style={{ hoverEvents: 'none' }}/>
+                </span>
+            </OverlayTrigger>
         </IconWrapper>
         <ImageContainer>
             <img src={Img} alt="article"/>
