@@ -18,7 +18,7 @@ const StyledHomePage = styled.div`
     font-weight: 400;
 `;
 
-const Homepage = () => (
+const LandingPage = () => (
         <StyledHomePage>
             <NavbarMain />
             <Header />
@@ -30,4 +30,4 @@ const Homepage = () => (
         </StyledHomePage>
 );
 
-export default Homepage;
+export default LandingPage;

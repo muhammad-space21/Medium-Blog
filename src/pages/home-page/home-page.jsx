@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MainPageStyled, Content, HR, ButtonContainer } from './mainpage.styles';
+import { MainPageStyled, Content, HR, ButtonContainer } from './home-page.styles';
 
 import NavbarMainPage from '../../components/navbar-main-page/navbar-main-page';
 import NavMain from '../../components/nav/nav';
@@ -9,7 +9,7 @@ import ButtonPrimary from '../../components/button-primary/button-primary';
 import ArticleBodyContainer from '../../components/articles-body-container/article-body-container';
 import PopularArticle from '../../components/articles-container-popular/popular-articles-container';
 
-const MainPage = (props) => (
+const HomePage = (props) => (
     <MainPageStyled>
         <NavbarMainPage />
         <NavMain />
@@ -26,4 +26,4 @@ const MainPage = (props) => (
 );
 
 
-export default MainPage;
+export default HomePage;
