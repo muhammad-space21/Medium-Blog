@@ -10,6 +10,7 @@ export const FollowUsStyled = styled.div`
     padding-left: 25px;
 `;
 
+
 export const Title = styled.span`
     font-size: 23px;
     font-weight: 600;

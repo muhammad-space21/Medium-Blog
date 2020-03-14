@@ -18,13 +18,15 @@ import PopularInDesign from '../../components/design-page-components/popular-in-
 import ArticleMain from '../../components/design-page-components/article-main-component/article-main-component';
 import ArticleBodyDesign from '../../components/design-page-components/article-body-component/article-body-component';
 import FeaturedWriter from '../../components/design-page-components/featured-writer-component/featured-writer';
+import FollowUsHorizontal from '../../components/design-page-components/follow-us-horizontal/follow-us-horizontal';
 
 
 const DesignPage = () => (
     <DesignPageStyled>
         <NavbarMainPage navbarShadow />
         <Content>
-            <BodyContainer>
+        <FollowUsHorizontal />
+            <BodyContainer>  
                 <HeaderContainer>
                     <ArticleMain/>
                 </HeaderContainer>
@@ -40,7 +42,7 @@ const DesignPage = () => (
                 <FeaturedWriter/>
             </BodyContainer>
             <AsideContainer>
-                <FollowUs/>
+                <FollowUs />
                 <RelatedTopic/>
                 <PopularInDesign/>
             </AsideContainer>

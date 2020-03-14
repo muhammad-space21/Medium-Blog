@@ -54,12 +54,13 @@ export const AsideContainer = styled.div`
         width: 35%;
         padding-right: 50px;
     }
-    @media screen and ( max-width: 730px ) {
-        display: none;
-    } 
     @media screen and ( max-width: 750px ) {
         width: 40%;
     }
+    @media screen and ( max-width: 730px ) {
+        display: none;
+    } 
+    
 `;
 
 export const Heading = styled.h1`

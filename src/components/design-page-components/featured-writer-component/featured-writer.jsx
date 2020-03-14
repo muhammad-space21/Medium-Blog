@@ -4,7 +4,7 @@ import ButtonPrimary  from '../../button-primary/button-primary';
 
 import { FeaturedWriterStyled, Heading, Row, Col1, Col2, ImageWrapper, Wrapper, Title, P, TextHolder } from './featured-writer.styles';
 
-import ImageEye from '../../../assets/images/eye.JPG';
+import ImageEye from '../../../assets/images/eye-circle.png';
 
 import FeaturedWriterArticle from '../featured-writer-article/featured-writer-article';
 

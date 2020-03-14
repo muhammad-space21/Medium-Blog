@@ -139,13 +139,14 @@ export const IconWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin-left: -50px;
+    padding-right: 10px;
     margin-top: 100px;
     @media screen and ( max-width: 500px ) {
         margin-top: 120px;
     }
     img {
-        width: 23px;
-        height: 30px;
+        width: 20px;
+        height: 25px;
         margin-left: 3px;
         &:hover {
             cursor: pointer;
