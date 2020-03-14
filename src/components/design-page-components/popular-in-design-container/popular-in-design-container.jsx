@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PopularInDesignStyled, Title, HR }  from  './popular-in-design-component.styles';
+import { PopularInDesignStyled, Title, HR }  from  './popular-in-design-container.styles';
 
 import ArticlePopular from '../article-popular-component/article-popular-component';
 

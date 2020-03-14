@@ -14,10 +14,10 @@ import NavbarMainPage from '../../components/navbar-main-page/navbar-main-page';
 
 import FollowUs from '../../components/design-page-components/follow-us-component/follow-us-component';
 import RelatedTopic from '../../components/design-page-components/related-topic-component/related-topic-component';
-import PopularInDesign from '../../components/design-page-components/popular-in-design-component/popular-in-design-component';
+import PopularInDesign from '../../components/design-page-components/popular-in-design-container/popular-in-design-container';
 import ArticleMain from '../../components/design-page-components/article-main-component/article-main-component';
 import ArticleBodyDesign from '../../components/design-page-components/article-body-component/article-body-component';
-import FeaturedWriter from '../../components/design-page-components/featured-writer-component/featured-writer';
+import FeaturedWriter from '../../components/design-page-components/featured-writer-container/featured-writer';
 import FollowUsHorizontal from '../../components/design-page-components/follow-us-horizontal/follow-us-horizontal';
 
 
@@ -40,6 +40,11 @@ const DesignPage = () => (
                 <ArticleBodyDesign/>
                 <ArticleBodyDesign/>
                 <FeaturedWriter/>
+                <ArticleBodyDesign/>
+                <ArticleBodyDesign/>
+                <ArticleBodyDesign/>
+                <ArticleBodyDesign/>
+                <ArticleBodyDesign/>
             </BodyContainer>
             <AsideContainer>
                 <FollowUs />

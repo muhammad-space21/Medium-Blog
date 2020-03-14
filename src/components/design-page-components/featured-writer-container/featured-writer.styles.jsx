@@ -91,7 +91,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     &:hover {
         cursor: pointer;
@@ -102,6 +102,11 @@ export const Title = styled.h1`
         margin-left: 100px;
         float: left;
     } 
+    @media screen and ( max-width: 460px ) {
+        font-size: 15px;
+        margin-left: 70px;
+        margin-bottom: 10px;
+    }
 `;
 
 export const P = styled.p`
@@ -116,6 +121,10 @@ export const TextHolder = styled.div`
     @media screen and ( max-width: 730px ) {
         width: 100%;
         text-align: center;
-    } 
+    }
+    @media screen and ( min-width: 730px ) and ( max-width: 850px ) {
+        padding-top: 10px;
+        margin-left: 10px;
+    }
 `;
 

@@ -27,6 +27,9 @@ export const BodyContainer = styled.div`
     @media screen and ( max-width: 991px ) {
         width: 70%;
     }
+    @media screen  and ( max-width: 930px ) {
+        width: 65%;
+    }
     @media screen and ( max-width: 800px ) {
         width: 60%;
         margin-left: 20px;

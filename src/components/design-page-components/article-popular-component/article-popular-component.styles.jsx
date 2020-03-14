@@ -22,7 +22,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const Heading = styled.h1`
-    font-size: 13px;
+    font-size: 14px;
     line-height: 19px;
     font-weight: 600;
 `;
@@ -33,11 +33,11 @@ export const TimeOfReading = styled.span`
 `;
 
 export const ImageWrapper = styled.div`
-    width: 20%;
-    height: fit-content;
+    width: 55px;
+    height: 55px;
     img {
         width: 100%;
-        height: 65px;
+        height: 100%;
         object-fit: cover;
     }
 `;

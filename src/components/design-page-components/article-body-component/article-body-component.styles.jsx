@@ -63,7 +63,7 @@ export const TypeOfTopic = styled.span`
 `;
 
 export const ArticleTitle = styled.h1`
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 28px;
     color: black;
