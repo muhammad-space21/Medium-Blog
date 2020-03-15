@@ -21,8 +21,8 @@ export const Row = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space;
-    align-items: center;
+    justify-content: space-around;
+    align-items: space-around;
 `;
 
 export const HR = styled.hr`

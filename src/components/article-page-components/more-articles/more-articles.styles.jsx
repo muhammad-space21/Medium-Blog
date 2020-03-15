@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 
 export const MoreArticlesStyled = styled.div`
-    width: 30vw;
+    width: 27vw;
     height: fit-content;
 `;
 
 export const Heading  = styled.span`
     font-size: 20px;
     line-height: 25px;
+    margin-top: 20px;
 `;
 
 export const  Title = styled.h1`
