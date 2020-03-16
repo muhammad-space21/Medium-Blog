@@ -23,6 +23,18 @@ export const Row = styled.div`
     flex-direction: row;
     justify-content: space-around;
     align-items: space-around;
+    @media screen and ( max-width: 900px ) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media screen and ( max-width: 550px ) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
 `;
 
 export const HR = styled.hr`

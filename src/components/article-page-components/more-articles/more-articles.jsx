@@ -1,7 +1,20 @@
 import React from 'react';
 
 
-import { MoreArticlesStyled, Heading, Title, ImageWrapper, Col } from './more-articles.styles';
+import { 
+    MoreArticlesStyled, 
+    Heading, 
+    Title, 
+    ImageWrapper, 
+    Col, 
+    AccountContainer,
+    Row1,
+    Row2
+} from './more-articles.styles';
+
+
+import WriterInfo from '../writer-info/writer-info';
+import ClapsContainer from '../claps-container/claps-container';
 
 import Image from '../../../assets/images/cartoon-2.jpg';
 
@@ -10,12 +23,21 @@ const MoreArticles = () => (
     <MoreArticlesStyled>
         <Title>More from 3min read</Title>
         <Col>
-            <ImageWrapper>
-                <img src={Image} alt="article"/>
-            </ImageWrapper>
-            <Heading>How to write a Headline</Heading>
+            <Row1>
+                <ImageWrapper>
+                    <img src={Image} alt="article"/>
+                </ImageWrapper>
+            </Row1>
+            <Row2>
+                <Heading>How to write a Headline</Heading>
+                <AccountContainer>
+                    <WriterInfo/>
+                    <ClapsContainer/>
+                </AccountContainer>
+            </Row2>
         </Col>
     </MoreArticlesStyled>
 );
+
 
 export default MoreArticles;

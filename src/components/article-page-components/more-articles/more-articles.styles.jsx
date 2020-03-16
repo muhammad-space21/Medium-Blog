@@ -4,12 +4,20 @@ import styled from 'styled-components';
 export const MoreArticlesStyled = styled.div`
     width: 27vw;
     height: fit-content;
+    margin-bottom: 30px;
+    @media screen and ( max-width: 900px ) {
+        width: 90vw;
+    }
+    @media screen and ( max-width: 550px ) {
+        width: 88vw;
+    }
 `;
 
-export const Heading  = styled.span`
+export const Heading  = styled.div`
     font-size: 20px;
     line-height: 25px;
-    margin-top: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
 `;
 
 export const  Title = styled.h1`
@@ -34,4 +42,30 @@ export const ImageWrapper = styled.div`
 export const Col = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    @media screen and ( min-width: 551px ) and ( max-width: 900px ) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+`;
+
+export const AccountContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    margin-top: 10px;
+`;
+
+export const Row1 = styled.div`
+    @media screen and ( min-width: 551px ) and ( max-width: 900px ) {
+        order: 2;
+    }
+`;
+
+export const Row2 = styled.div`
+    @media screen and  ( min-width: 551px ) and ( max-width: 900px ) {
+        order: 1;
+    }
 `;

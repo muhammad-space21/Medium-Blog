@@ -10,9 +10,9 @@ export const IconHolderStyled = styled.div`
 `;
 
 export const Tweeter = styled.div`
-    width: 23px;
-    height: 23px;
-    margin-bottom: 3px;
+    width: 21px;
+    height: 21px;
+    margin-bottom: 4px;
     margin-right: 15px;
     img {
         width: 100%;
@@ -24,9 +24,9 @@ export const Tweeter = styled.div`
 `;
 
 export const LinkedIn = styled.div`
-    width: 20px;
-    height: 20.5px;
-    margin-bottom: 4.5px;
+    width: 18px;
+    height: 18.5px;
+    margin-bottom: 6.5px;
     margin-right: 10px;
     img {
         width: 100%;
@@ -38,8 +38,8 @@ export const LinkedIn = styled.div`
 `;
 
 export const Facebook = styled.div`
-    width: 33px;
-    height: 33px;
+    width: 30px;
+    height: 30px;
     margin-right: 2px;
     img {
         width: 100%;
@@ -51,7 +51,7 @@ export const Facebook = styled.div`
 `;
 
 export const Save = styled.div`
-    width: 30px;
+    width: 26px;
     margin-right: 8px;
     padding-bottom: 7px;
     padding-top: 7px;
@@ -66,8 +66,8 @@ export const Save = styled.div`
 `;
 
 export const Menu = styled.div`
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     img {
         width: 100%;
         height: 100%;
