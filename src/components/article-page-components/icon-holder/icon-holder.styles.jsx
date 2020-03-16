@@ -7,13 +7,13 @@ export const IconHolderStyled = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-left: 30px;
 `;
 
 export const Tweeter = styled.div`
     width: 21px;
     height: 21px;
     margin-bottom: 4px;
-    margin-right: 15px;
     img {
         width: 100%;
         height: 100%;
@@ -27,7 +27,7 @@ export const LinkedIn = styled.div`
     width: 18px;
     height: 18.5px;
     margin-bottom: 6.5px;
-    margin-right: 10px;
+    margin-left: 15px;
     img {
         width: 100%;
         height: 100%;
@@ -40,7 +40,7 @@ export const LinkedIn = styled.div`
 export const Facebook = styled.div`
     width: 30px;
     height: 30px;
-    margin-right: 2px;
+    margin-left: 10px;
     img {
         width: 100%;
         height: 100%;
@@ -52,7 +52,7 @@ export const Facebook = styled.div`
 
 export const Save = styled.div`
     width: 26px;
-    margin-right: 8px;
+    margin-left: 5px;
     padding-bottom: 7px;
     padding-top: 7px;
 
@@ -68,6 +68,7 @@ export const Save = styled.div`
 export const Menu = styled.div`
     width: 22px;
     height: 22px;
+    margin-left: 10px;
     img {
         width: 100%;
         height: 100%;

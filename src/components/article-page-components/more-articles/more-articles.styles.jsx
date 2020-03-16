@@ -54,7 +54,6 @@ export const Col = styled.div`
 export const AccountContainer = styled.div`
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
     margin-top: 10px;
 `;
 

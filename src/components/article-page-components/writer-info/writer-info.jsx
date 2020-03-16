@@ -31,7 +31,7 @@ const WriterInfo = ()  => (
             </AuthorInfo>
             <PublishInfo>
                 <PublishDate>Jun 25, 2019</PublishDate>
-                <ReadTime>5 min</ReadTime>
+                <ReadTime>5 min read</ReadTime>
                 <IconWrapper><img src={IconStar} alt="icon-star"/></IconWrapper>
             </PublishInfo>
         </TextWrapper>
