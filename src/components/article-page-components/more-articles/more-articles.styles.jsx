@@ -37,6 +37,31 @@ export const ImageWrapper = styled.div`
         height: 100%;
         object-fit: cover;
     }
+
+    @media screen and ( min-width: 550px ) and ( max-width: 900px ) {
+        img {
+            width: 380px;
+            height: 280px;
+        }
+    }
+    @media screen and ( min-width: 550px ) and ( max-width: 800px ) {
+        img {
+            width: 300px;
+            height: 230px;
+        }
+    }
+    @media screen and ( min-width: 550px ) and ( max-width: 768px ) {
+        img {
+            width: 250px;
+            height: 180px;
+        }
+    }   
+    @media screen and ( min-width: 550px ) and ( max-width: 600px ) {
+        img {
+            width: 200px;
+            height: 120px;
+        }
+    }
 `;
 
 export const Col = styled.div`

@@ -13,7 +13,9 @@ const ArticlePage = () => (
     <ArticlePageStyled>
             <NavbarMainPage />
             <Content>
-                <AsideLeft> <ClapsAside/> </AsideLeft>
+                <AsideLeft> 
+                    <ClapsAside/> 
+                </AsideLeft>
                 <ArticleMain/>
                 <AsideRight/>
             </Content>

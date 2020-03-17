@@ -7,12 +7,11 @@ export const WriterInfoStyled = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-
-  flex-shrink: 1;
-  flex-grow: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    flex-shrink: 1;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 export const Avatar = styled.div`
@@ -120,5 +119,3 @@ export const IconWrapper = styled.div`
         margin-bottom: 5px;
     }
 `;
-
-

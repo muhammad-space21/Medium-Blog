@@ -9,6 +9,12 @@ export const ClapsContainerStyled = styled.div`
     align-items: center;
     justify-content: space-between;
     flex-shrink: 0;
+    @media screen and ( min-width: 550px ) and ( max-width: 900px ) {
+        margin-left: -50px;
+    }
+    @media screen  and ( min-width: 550px ) and ( max-width: 768px ) {
+        margin-left: -70px;
+    }
 `;
 
 export const IconWrapper = styled.div`
