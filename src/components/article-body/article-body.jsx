@@ -19,9 +19,9 @@ import {
     ImgWrapper
 } from './article-body.styles';
 
-import Img from '../../assets/images/article.jpg';
-import IconMenu from '../../assets/icons/menu.dots.png';
-import IconSave from '../../assets/icons/save-icon.png';
+import Img from '../../assets/images/cartoon7.jpg';
+import IconMenu from '../../assets/icons/menu.dots.svg';
+import IconSave from '../../assets/icons/save-icon.svg';
 
 
 

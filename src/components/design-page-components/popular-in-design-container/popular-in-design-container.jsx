@@ -14,8 +14,6 @@ const PopularInDesign = () => (
         <ArticlePopular/>
         <ArticlePopular/>
     </PopularInDesignStyled>
-
-
 );
 
 export default PopularInDesign;

@@ -8,7 +8,7 @@ import {
     ImageWrapper 
 } from './article-popular-component.styles';
 
-import Image from '../../../assets/images/article.jpg';
+import Image from '../../../assets/images/cartoon4.jpg';
 
 const ArticlePopular = () => (
     <ArticlePopularStyled>

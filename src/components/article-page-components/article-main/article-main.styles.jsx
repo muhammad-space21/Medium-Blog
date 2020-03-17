@@ -28,6 +28,15 @@ export const ComponentHolder = styled.div`
     }
 `;
 
+export const ComponentHolder2 = styled.div`
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+
 export const Heading = styled.span`
     font-size: 30px;
     font-weight: 600;
@@ -148,5 +157,10 @@ export const TextBold = styled.span`
 export const ItalicBold = styled.span`
     font-style: italic;
     font-weight: 600;
+`;
+
+export const HR = styled.hr`
+    width: 100%;
+    border-bottom: 0.5px solid #EEEEEE;
 `;
 

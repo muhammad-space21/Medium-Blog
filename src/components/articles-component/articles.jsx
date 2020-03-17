@@ -17,7 +17,7 @@ import {
     StarIcon
 } from './articles.styles';
 
-import Img from '../../assets/images/article.jpg';
+import Img from '../../assets/images/cartoon7.jpg';
 import starIcon from '../../assets/icons/star.png';
 
 

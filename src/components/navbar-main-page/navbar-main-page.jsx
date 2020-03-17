@@ -16,7 +16,7 @@ import {
 
 import BrandLogo from  '../../assets/images/asset6.JPG';
 import SearchIcon from '../../assets/icons/search.svg';
-import SaveIcon from '../../assets/icons/save.two.jpg';
+import SaveIcon from '../../assets/icons/save.two.svg';
 import NotificationIcon from '../../assets/icons/alarm.svg';
 
 

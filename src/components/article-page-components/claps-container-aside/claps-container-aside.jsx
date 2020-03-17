@@ -11,7 +11,7 @@ import {
 
 
 import ClapsIcon from '../../../assets/icons/claps-icon-2.svg';
-import IconSave from '../../../assets/icons/save-new-2.png';
+import IconSave from '../../../assets/icons/save-new-2.svg';
 
 
 const ClapsAside = () => (

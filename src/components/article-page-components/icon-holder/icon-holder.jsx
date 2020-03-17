@@ -7,8 +7,8 @@ import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import IconTweeter from '../../../assets/icons/tweeter-icon.svg';
 import IconLinkedIn from '../../../assets/icons/linkedin-icon-2.png';
 import IconFacebook from '../../../assets/icons/facebook-icon.png';
-import IconSave from '../../../assets/icons/save-new-2.png';
-import IconMenu from '../../../assets/icons/menu-icon-empty.jpg';
+import IconSave from '../../../assets/icons/save-new-2.svg';
+import IconMenu from '../../../assets/icons/menu-icon-empty.svg';
 
 
 const IconHolder = () => (

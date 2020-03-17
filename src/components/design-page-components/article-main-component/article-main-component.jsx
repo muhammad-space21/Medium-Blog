@@ -18,7 +18,7 @@ import {
     StarIcon
 } from './article-main-component.styles';
 
-    import Image from '../../../assets/images/article.jpg';
+    import Image from '../../../assets/images/cartoon5.jpg';
     import starIcon from '../../../assets/icons/star.png';
 
 

@@ -6,6 +6,7 @@ import {
     ImageWrapper,
     ImageReference, 
     ComponentHolder,
+    ComponentHolder2,
     TextWrapper,
     P,
     TitleMain,
@@ -14,12 +15,14 @@ import {
     Quote,
     UnderlinedText,
     TextBold,
-    ItalicBold
+    ItalicBold,
+    HR
 } from './article-main.styles';
 
 import WriterInfo from '../writer-info/writer-info';
 import IconHolder from '../icon-holder/icon-holder';
-
+import SquareHashtags from '../square-hashtags/square-hashtags';
+import ClapsBig from '../claps-big/claps-big';
 import ImageMain from '../../../assets/images/cartoon1.jfif';
 
 const ArticleMain = () => (
@@ -85,6 +88,12 @@ const ArticleMain = () => (
                 An soluta maiorum consetetur his, tale liber vim et.
             </P>
         </TextWrapper>
+        <SquareHashtags/>
+        <ComponentHolder2>
+            <ClapsBig/>
+            <IconHolder/>  
+        </ComponentHolder2>
+        <HR/>
     </ArticleMainStyled>
 );
 

@@ -8,7 +8,7 @@ import {
     ImageWrapper 
 } from './featured-writer-article.styles';
 
-import Image from '../../../assets/images/article.jpg';
+import Image from '../../../assets/images/cartoon6.jpg';
 
 const FeaturedWriterArticle = () => (
     <StyledContainer>

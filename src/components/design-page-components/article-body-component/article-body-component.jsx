@@ -17,8 +17,8 @@ import {
     IconWrapper
 } from './article-body-component.styles';
 
-import Img from '../../../assets/images/article.jpg';
-import IconSave from '../../../assets/icons/save-icon.png';
+import Img from '../../../assets/images/cartoon3.jpg';
+import IconSave from '../../../assets/icons/save-icon.svg';
 
 
 
