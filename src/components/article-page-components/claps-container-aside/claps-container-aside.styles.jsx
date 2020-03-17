@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 
 
-export const ClapsContainerStyled = styled.div`
-    width: 100px;
-    height: 50px;
+export const ClapsAsideStyled = styled.div`
+    width: 80px;
+    height: fit-content;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: center;
-    justify-content: space-between;
-    flex-shrink: 0;
+    position: fixed;
+    overflow: none;
+    margin-top: 200px;
+    margin-left: 60px;
+    @media screen and ( max-width: 1200px ) {
+        display: none;
+    }
 `;
 
 export const IconWrapper = styled.div`
@@ -23,13 +28,11 @@ export const IconWrapper = styled.div`
     }
 `;
 
-export const Line = styled.div`
-    height: 26px;
-    border-right: 0.8px solid #E1E1E1;
-`;
 
 export const IconWrapperSave = styled.div`
     width: 26px;
+    margin-left: 8px;
+    margin-top: 5px;
     img {
         width: 100%;
         height: 100%;
@@ -40,7 +43,11 @@ export const IconWrapperSave = styled.div`
 `;
 
 export const Number = styled.div`
-    font-size: 16px;
+    font-size: 14px;
     color: grey;
     margin-right: 4px;
+    &:hover {
+        color: black;
+        cursor: pointer;
+    }
 `;

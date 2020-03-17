@@ -5,6 +5,15 @@ export const ArticleMainStyled = styled.div`
     width: 55vw;
     display: flex;
     flex-direction: column;
+    @media screen and ( max-width: 1180px ) {
+        width: 70vw;
+    }
+    @media screen and ( max-width: 991px ) {
+        width: 80vw;
+    }
+    @media screen and ( max-width: 768px ) {
+        width: 90vw;
+    }
 `;
 
 export const ComponentHolder = styled.div`
@@ -12,9 +21,8 @@ export const ComponentHolder = styled.div`
     margin-top: 20px;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    @media screen and ( max-width: 900px ) {
+    @media screen and ( max-width: 768px ) {
         display: flex;
         flex-direction: column;
     }
@@ -24,6 +32,10 @@ export const Heading = styled.span`
     font-size: 30px;
     font-weight: 600;
     margin-top: 50px;
+    @media screen and ( max-width: 710px ) {
+        font-size: 20px;
+        line-height: 30px;
+    }
 `;
 
 export const ImageWrapper = styled.div`
@@ -68,12 +80,20 @@ export const P = styled.div`
     color: #292929;
     margin-top: 10px;
     margin-bottom: 20px;
+    @media screen and ( max-width: 710px ) {
+        font-size: 16px;
+        line-height: 30px;
+    }
 `;
 
 export const TitleMain = styled.span`
     font-size: 25px;
     line-height: 35px;
     font-weight: 600;
+    @media screen and ( max-width: 710px ) {
+        font-size: 18px;
+        line-height: 30px;
+    }
 `;
 
 export const TitleSecondary = styled.span`
@@ -81,6 +101,10 @@ export const TitleSecondary = styled.span`
     line-height: 32px;
     font-weight: 600;
     margin-top: 20px;
+    @media screen and ( max-width: 710px ) {
+        font-size: 17px;
+        line-height: 30px;
+    }
 `;
 
 export const Highlighted = styled.span`
@@ -103,6 +127,10 @@ export const Quote = styled.span`
     border-left: 3px solid black;
     margin-left: 5px;
     padding-left: 20px;
+    @media screen and ( max-width: 710px ) {
+        font-size: 16px;
+        line-height: 30px;
+    }
 `;
 
 export const UnderlinedText = styled.span`
