@@ -32,6 +32,7 @@ export const ImageWrapper = styled.div`
     background-position: center;
     background-size: cover;
     margin-top: 50px;
+    margin-bottom: 50px;
     img {
         width: 100%;
         height: 100%;
@@ -40,6 +41,15 @@ export const ImageWrapper = styled.div`
             cursor: zoom-in;
         }
     }
+`;
+
+export const ImageReference = styled.div`
+    width: 100%;
+    height: fit-content;
+    font-size: 13px;
+    color: grey;
+    text-align: center;
+    margin-top: 10px;
 `;
 
 export const TextWrapper = styled.div`
@@ -67,8 +77,48 @@ export const TitleMain = styled.span`
 `;
 
 export const TitleSecondary = styled.span`
-    font-size: 21px;
+    font-size: 20px;
     line-height: 32px;
     font-weight: 600;
     margin-top: 20px;
 `;
+
+export const Highlighted = styled.span`
+    width: fit-content;
+    background-color: #CEFCE9;
+    &:hover {
+        background-color: #24EDA9;
+        cursor: pointer;
+    }
+`;
+
+export const Quote = styled.span`
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 300;
+    color: #292929;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-style: italic;
+    border-left: 3px solid black;
+    margin-left: 5px;
+    padding-left: 20px;
+`;
+
+export const UnderlinedText = styled.span`
+    width: fit-content;
+    border-bottom: 1px dotted black;
+    &:hover {
+        cursor: pointer;
+    }
+`;
+
+export const TextBold = styled.span`
+    font-weight: 600;
+`;
+
+export const ItalicBold = styled.span`
+    font-style: italic;
+    font-weight: 600;
+`;
+
