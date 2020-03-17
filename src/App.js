@@ -6,7 +6,7 @@ import LandingPage from './pages/landing-page/landing-page';
 import HomePage from './pages/home-page/home-page';
 import DesignPage from './pages//design-page/design-page';
 import ArticlePage from './pages/article-page/article-page';
-
+import SignUpPage from './pages/sign-up-page/sign-up-page';
 
 
 class App extends React.Component {
@@ -16,7 +16,8 @@ class App extends React.Component {
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/home' component={HomePage} />
         <Route exact path='/design' component={DesignPage} />
-        <Route exact path='/article-page' component={ArticlePage} />
+        <Route exact path='/article' component={ArticlePage} />
+        <Route exact path='/sign-up' component={SignUpPage} />
       </Switch>
     )
   }
