@@ -18,16 +18,19 @@ const StyledHomePage = styled.div`
     font-weight: 400;
 `;
 
-const LandingPage = () => (
-        <StyledHomePage>
-            <NavbarMain />
-            <Header />
-            <SectionOne />
-            <SectionTwo />
-            <SectionThree />
-            <SectionFour/>
-            <Footer />
-        </StyledHomePage>
-);
+const LandingPage = () => {
+    throw Error;
+    return (
+    <StyledHomePage>
+        <NavbarMain />
+        <Header />
+        <SectionOne />
+        <SectionTwo />
+        <SectionThree />
+        <SectionFour/>
+        <Footer />
+    </StyledHomePage>
+    )
+};
 
 export default LandingPage;
