@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ClapsBigStyled, RoundedContainer, Counter, Number, Message } from './clpas-big.styles';
 
-import ClapsIcon from '../../../assets/icons/claps-icon-2.svg';
+import ClapsIcon from '../../../assets/icons/claps-icon-2-blue.svg';
 
 
 const ClapsBig = () => (

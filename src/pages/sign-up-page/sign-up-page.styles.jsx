@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const StyledSignUpPage = styled.div`
     width: 100%;
-    height: 49vw;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -14,6 +14,7 @@ export const StyledSignUpPage = styled.div`
 
 export const FormStyled = styled.form`
     width: 100%;
+    margin-top: 50px;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -28,13 +29,16 @@ export const ImageWrapper = styled.div`
     align-items: center;
     justify-content: flex-start;
     img {
-        width: 50%;
-        height: 50%;
+        width: 30%;
+        height: 30%;
         &:hover {
-            width: 55%;
-            height: 55%;
-            transition: 0.8s;
+            width: 32%;
+            height: 32%;
+            transition: 0.9s;
         }
+    }
+    @media screen and ( max-width: 768px ) {
+        display: none;
     }
 `;
 
@@ -68,7 +72,6 @@ export const TextWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -80px;
     margin-bottom: 50px;
 `;
 

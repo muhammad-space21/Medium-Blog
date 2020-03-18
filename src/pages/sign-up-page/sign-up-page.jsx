@@ -19,7 +19,7 @@ import ImageMan from '../../assets/images/man_with_ipad.svg';
 import ImageObject from '../../assets/images/Leaves_object.svg';
 
 
-class  SignUpPage extends React.Component {
+class SignUpPage extends React.Component {
     constructor () {
         super();
 
