@@ -2,23 +2,22 @@ import React from 'react';
 
 import { PopularArticleContainer, HR, Title } from './popular-article-container.styles';
 
-import ArticlePopular from '../article-populars/article-populars';
+import ArticlePopular from '../article-populars';
 import NavBottom from '../nav-bottom/nav-bottom';
 
 
 const PopularArticle = () => (
-<PopularArticleContainer>
+  <PopularArticleContainer>
     <Title>Popular on Medium</Title>
-    <HR/>
-        <ArticlePopular />
-        <ArticlePopular />
-        <ArticlePopular />
-        <ArticlePopular />
-    <HR/>
+    <HR />
+    <ArticlePopular />
+    <ArticlePopular />
+    <ArticlePopular />
+    <ArticlePopular />
+    <HR />
     <NavBottom />
-</PopularArticleContainer>
+  </PopularArticleContainer>
 
 );
 
 export default PopularArticle;
-
