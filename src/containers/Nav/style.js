@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export const NavStyled = styled(Nav)`
     width: 100%;
@@ -10,7 +11,12 @@ export const NavStyled = styled(Nav)`
     margin-top: 10px;
 `;
 
-export const NavLinkStyled = styled(Nav.Link)`
+export const NavItem = styled(Nav.Item)`
+    margin-left: 5px;
+    margin-right: 5px;
+`;
+
+export const NavLinkStyled = styled(Link)`
     color: grey;
     font-size: 13px;
     line-height: 10px;
@@ -22,5 +28,6 @@ export const NavLinkStyled = styled(Nav.Link)`
     `}
     &:hover {
         color: black;
+        text-decoration: none;
     }
 `;

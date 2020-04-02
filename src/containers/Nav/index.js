@@ -1,45 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Nav } from 'react-bootstrap';
+import { withRouter } from 'react-router-dom';
 
 import { getNav } from '../../redux/modules/navbar/navAction';
-import { NavStyled, NavLinkStyled } from './style';
-import categories from '../../mock-data/categories';
+import { NavStyled, NavLinkStyled, NavItem } from './style';
+import links from '../../mock-data/categories';
 
-class NavMain extends React.Component {
-  constructor() {
-    super();
 
-    this.state = {
-      data: categories
-    };
-  }
+const NavMain = (props) => {
+  useEffect(() => {
+    console.log(props);
+  }, [getNav]);
 
-  componentDidMount() {
-    this.props = getNav();
-  }
-
-  render() {
-    return (
-      <NavStyled activeKey="/home">
-        {
-          this.state.data
-            .map((link) => (
-              <Nav.Item key={link.id} link={link}>
-                <NavLinkStyled
-                  key={link.id}
-                  onClick={this.handleClick}
-                  link={link}
-                >
-                  {link.name}
-                </NavLinkStyled>
-              </Nav.Item>
-            ))
-        }
-      </NavStyled>
-    );
-  }
-}
+  return (
+    <NavStyled activeKey="/home">
+      {
+        links
+          .map((link) => (
+            <NavItem key={link.id} link={link}>
+              <NavLinkStyled
+                key={link.id}
+                link={link}
+                to={link.name}
+              >
+                {link.name}
+              </NavLinkStyled>
+            </NavItem>
+          ))
+      }
+    </NavStyled>
+  );
+};
 
 const mapStateToProps = (state) => ({
   token: state.authReducer.token,
@@ -52,4 +43,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 
-export default connect(null, mapDispatchToProps)(NavMain);
+export default connect(null, mapDispatchToProps)(withRouter(NavMain));
