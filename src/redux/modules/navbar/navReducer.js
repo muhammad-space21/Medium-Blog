@@ -16,7 +16,7 @@ const map = {
     loading: false,
     list: payload.data
   }),
-  [`${actionTypes.GET_TOKEN}${actionTypes.REJECTED}`]: (state) => ({
+  [`${actionTypes.GET_NAVBAR}${actionTypes.REJECTED}`]: (state) => ({
     ...state,
     loading: false,
     error: true

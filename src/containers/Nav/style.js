@@ -15,7 +15,7 @@ export const NavLinkStyled = styled(Nav.Link)`
     font-size: 13px;
     line-height: 10px;
     font-weight: 300;
-    text-transform: uppercase; 
+    text-transform: uppercase;
 
     ${({ active }) => active && `
         color:black;

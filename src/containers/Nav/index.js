@@ -1,60 +1,45 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Nav } from 'react-bootstrap';
 
 import { getNav } from '../../redux/modules/navbar/navAction';
 import { NavStyled, NavLinkStyled } from './style';
+import categories from '../../mock-data/categories';
 
+class NavMain extends React.Component {
+  constructor() {
+    super();
 
-const NavMain = ({
-  getNav
-}) => {
-  useEffect(() => {
-    getNav();
-  }, []);
-  console.log('props');
+    this.state = {
+      data: categories
+    };
+  }
 
-  return (
-    <NavStyled activeKey="/home">
-      <Nav.Item>
-        <NavLinkStyled href="#">HOME</NavLinkStyled>
-      </Nav.Item>
-      <Nav.Item>
-        <NavLinkStyled href="#">ONE ZERO</NavLinkStyled>
-      </Nav.Item>
-      <Nav.Item>
-        <NavLinkStyled href="#">ELEMENTAL</NavLinkStyled>
-      </Nav.Item>
-      <Nav.Item>
-        <NavLinkStyled href="#">GEN</NavLinkStyled>
-      </Nav.Item>
-      <Nav.Item>
-        <NavLinkStyled href="#">ZORA</NavLinkStyled>
-      </Nav.Item>
-      <Nav.Item>
-        <NavLinkStyled href="#">FORGE</NavLinkStyled>
-      </Nav.Item>
-      <Nav.Item>
-        <NavLinkStyled href="#">HUMAN PARTS</NavLinkStyled>
-      </Nav.Item>
-      <Nav.Item>
-        <NavLinkStyled href="#">MARKER</NavLinkStyled>
-      </Nav.Item>
-      <Nav.Item>
-        <NavLinkStyled href="#">LEVEL</NavLinkStyled>
-      </Nav.Item>
-      <Nav.Item>
-        <NavLinkStyled href="#">HEATED</NavLinkStyled>
-      </Nav.Item>
-      <Nav.Item>
-        <NavLinkStyled href="#">DESIGN</NavLinkStyled>
-      </Nav.Item>
-      <Nav.Item>
-        <NavLinkStyled href="#">MORE</NavLinkStyled>
-      </Nav.Item>
-    </NavStyled>
-  );
-};
+  componentDidMount() {
+    this.props = getNav();
+  }
+
+  render() {
+    return (
+      <NavStyled activeKey="/home">
+        {
+          this.state.data
+            .map((link) => (
+              <Nav.Item key={link.id} link={link}>
+                <NavLinkStyled
+                  key={link.id}
+                  onClick={this.handleClick}
+                  link={link}
+                >
+                  {link.name}
+                </NavLinkStyled>
+              </Nav.Item>
+            ))
+        }
+      </NavStyled>
+    );
+  }
+}
 
 const mapStateToProps = (state) => ({
   token: state.authReducer.token,
