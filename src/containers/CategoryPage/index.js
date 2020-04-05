@@ -10,20 +10,20 @@ import {
   HR
 } from './style';
 
-import NavbarMainPage from '../../components/NavbarMainPage';
+// import NavbarMainPage from '../../components/NavbarMainPage';
 
-import FollowUs from '../../components/design-page-components/follow-us-component/follow-us-component';
-import RelatedTopic from '../../components/design-page-components/related-topic-component/related-topic-component';
-import PopularInDesign from '../../components/design-page-components/popular-in-design-container/popular-in-design-container';
-import ArticleMain from '../../components/design-page-components/article-main-component/article-main-component';
-import ArticleBodyDesign from '../../components/design-page-components/article-body-component/article-body-component';
-import FeaturedWriter from '../../components/design-page-components/featured-writer-container/featured-writer';
-import FollowUsHorizontal from '../../components/design-page-components/follow-us-horizontal/follow-us-horizontal';
+import FollowUs from '../../components/design-page-components-medium/follow-us-component/follow-us-component';
+
+import PopularInDesign from '../../components/design-page-components-medium/popular-in-design-container/popular-in-design-container';
+import ArticleMain from '../../components/design-page-components-medium/article-main-component/article-main-component';
+import ArticleBodyDesign from '../../components/design-page-components-medium/article-body-component/article-body-component';
+import FeaturedWriter from '../../components/design-page-components-medium/featured-writer-container/featured-writer';
+import FollowUsHorizontal from '../../components/design-page-components-medium/follow-us-horizontal/follow-us-horizontal';
 
 
 const DesignPage = () => (
   <DesignPageStyled>
-    <NavbarMainPage navbarShadow />
+    {/* <NavbarMainPage navbarShadow /> */}
     <Content>
       <FollowUsHorizontal />
       <BodyContainer>
@@ -48,7 +48,6 @@ const DesignPage = () => (
       </BodyContainer>
       <AsideContainer>
         <FollowUs />
-        <RelatedTopic />
         <PopularInDesign />
       </AsideContainer>
     </Content>

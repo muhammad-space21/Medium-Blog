@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { init } from '../../redux/modules/auth/authActions';
 
-import { Spinner } from '../../components/Spinner';
+import { Spinner } from '../../components/SpinnerMedium';
 
 const Auth = ({
   children,

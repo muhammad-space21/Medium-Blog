@@ -1,24 +1,56 @@
 import React from 'react';
 
-import { NavBottomStyled, Row1, Row2, H1 } from './nav-bottom.styles';
+import {
+  StyledContainer, BrandContainer, TextWrapper, H, HR
+} from './nav-bottom.styles.jsx';
+
 
 const NavBottom = () => (
-    <NavBottomStyled>
-        <Row1>
-            <H1>Help</H1>
-            <H1>Status</H1>
-            <H1>Writers</H1>
-            <H1>Blog</H1>
-            <H1>Careers</H1>
-        </Row1>
-        <Row2>
-            <H1>Privacy</H1>
-            <H1>Terms</H1>
-            <H1>About</H1>
-        </Row2>
-    </NavBottomStyled>
+  <StyledContainer>
+    <BrandContainer>
+      <span>
+        Harvard
+        {' '}
+        <br />
 
+        Business
+
+        <br />
+        {' '}
+        Review
+        {' '}
+      </span>
+    </BrandContainer>
+    <TextWrapper>
+      <H>About Us</H>
+      {' '}
+      <HR />
+      <H>Careers</H>
+      {' '}
+      <HR />
+      <H>Privacy Policy</H>
+      {' '}
+      <HR />
+      <H>Copyright Information</H>
+      {' '}
+      <HR />
+      <H>Trademark Policy</H>
+      {' '}
+      <HR />
+      <br />
+      <H>Harvard Business Publishing:  Higher Education</H>
+      {' '}
+      <HR />
+      <H>Corporate Learning</H>
+      {' '}
+      <HR />
+      <H>Harvard Business Review</H>
+      {' '}
+      <HR />
+      <H>Harvard Business School</H>
+      <H>Copyright © 2020 Harvard Business School Publishing. All rights reserved. Harvard Business Publishing is an affiliate of Harvard Business School.</H>
+    </TextWrapper>
+  </StyledContainer>
 );
-
 
 export default NavBottom;

@@ -1,12 +1,15 @@
 import { createSelector } from 'reselect';
+import { labelToRoute } from '../../utils';
 
-export const navbarList = (state) => state.navbar.list;
+export const navbarList = (state) => state.navReducer.list;
 
 const createFormattedNavbar = (item) => ({
-  route: `categories/${item.name}`
+  id: item.id,
+  route: `/categories/${labelToRoute(item.name)}`,
+  label: item.name.toUpperCase()
 });
 
-export const threadIndicatorSelector = createSelector(
+export const navbarSelector = createSelector(
   navbarList,
   (list) => list.map(createFormattedNavbar)
 );

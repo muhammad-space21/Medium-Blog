@@ -8,10 +8,10 @@ import {
 } from './style';
 
 
-import TopArticlesContainer from '../../components/articles-container-top/top-articles-container';
-import ButtonPrimary from '../../components/button-primary/button-primary';
-import ArticleBodyContainer from '../../components/articles-body-container';
-import PopularArticle from '../../components/articles-container-popular/popular-articles-container';
+import TopArticlesContainer from '../../components/articles-container-top-medium/top-articles-container';
+import ButtonPrimary from '../../components/button-primary-medium/button-primary';
+import ArticleBodyContainer from '../../components/articles-body-container-medium';
+import PopularArticle from '../../components/articles-container-popular-medium/popular-articles-container';
 
 const HomePage = () => (
   <MainPageStyled>

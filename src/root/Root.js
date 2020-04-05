@@ -5,11 +5,14 @@ import Auth from '../containers/Auth';
 import ErrorBoundary from '../components/error-boundary/error-boundary';
 
 import HomePage from '../containers/HomePage';
-// import CategoryPage from './containers/CategoryPage';
+import CategoryPage from '../containers/CategoryPage';
 // import ArticlePage from './containers/ArticlePage';
 
 import NavbarMainPage from '../components/NavbarMainPage';
+import Navbar2 from '../components/nav'
 import NavMain from '../containers/Nav';
+
+import '../assets/fonts/font.css';
 
 const Root = () => (
   <>
@@ -17,11 +20,12 @@ const Root = () => (
       <Router>
         <Switch>
           <ErrorBoundary>
-            <NavbarMainPage />
+            {/* <NavbarMainPage /> */}
+            <Navbar2/>
             <NavMain />
             <Route exact path="/" component={HomePage} />
-            {/* <Route exact path="/category/:id" component={CategoryPage} />
-      <Route exact path="/article/:id" component={ArticlePage} /> */}
+            {/* <Route exact path="/category/:id" component={CategoryPage} /> */}
+            {/* <Route exact path="/article/:id" component={ArticlePage} /> */}
           </ErrorBoundary>
         </Switch>
       </Router>

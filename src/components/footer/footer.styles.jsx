@@ -1,173 +1,207 @@
 import styled from 'styled-components';
 
 
-export const FooterMain = styled.div`
+export const StyledContainer = styled.div`
     width: 100%;
     height: 100%;
-    background-color: #000000;
-    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 100px;
+`;
+
+export const Row1 = styled.div`
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+    @media screen and ( max-width: 768px ) {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        
+    }
+`;
+
+export const ColTop1 = styled.div`
+    width: 30%;
+    height: fit-content;
+`;
+
+export const ColTop2 = styled.div`
+    width: 70%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    @media screen and ( max-width: 768px ) {
+        width: 100%;
+        justify-content: center;
+        margin-top: 30px;
+    }
+`;
+
+export const Row2 = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    @media screen and ( max-width: 991px ) {
+        display: flex;
+        flex-direction: column;
+    }
+    @media screen and ( max-width: 768px ) {
+        margin-bottom: 30px;
+    }
+`;
+
+export const ColBottom1 = styled.div`
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    @media screen and ( max-width: 991px ) {
+        width: 100vw;
+    }
+    @media screen and ( max-width: 768px ) {
+        display: flex;
+        flex-direction: column;
+    }
+`;
+export const ColBottom2 = styled.div`
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    @media screen and ( max-width: 991px ) {
+        width: 100vw;
+    }
+    @media screen and ( max-width: 768px ) {
+        display: flex;
+        flex-direction: column;
+    }
+`;
+
+export const BrandContainer = styled.div`
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+        span {
+            font-size: 28px;
+            font-weight: 1000;
+            line-height: 25px;
+        }
+        img {
+            width: 40px;
+            height: 40px;
+        }
+`;
+
+export const HR = styled.div`
+    width: 100%;
+    border-bottom: 1px solid #D5D7D8;
+`;
+
+export const HrVertical =  styled.div`
+    width: 100%;
+    border-left: 1px solid #D5D7D8;
+`;
+
+export const Section = styled.div`
+    width: 16vw;
+    height: 100%;
+    border-left: 1px solid #D5D7D8;
+    padding-left: 10px;
+    @media screen and ( max-width: 991px ) {
+        width: 30vw;
+        margin-bottom:  30px;
+    }
+    @media screen and ( max-width: 768px ) {
+        width: 90vw;
+        border-left: none;
+        border-top: 1px solid #D5D7D8;
+        margin-bottom: 0px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+`;
+
+export const Body = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+`;
+
+export const Title = styled.div`
+    font-size: 15px;
+    font-weight: 1000;
+    line-height: 20px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    img {
-        width: 35px;
-        height: 35px;
-        margin-top: 50px;
-        margin-left: -16px;
+    @media screen and ( max-width: 768px ) {
+        font-size: 14px;
         margin-bottom: 10px;
-        @media screen and ( max-width: 890px ) {
-        margin-left: 20px;
+        margin-top: 10px;
     }
+    img {
+        display: none;
+        width: 15px;
+        height: 15px;
+        @media screen and ( max-width: 768px ) {
+            display: block;
+        }
     }
 `;
 
 export const H1 = styled.h1`
-    font-size: 14px;
-    color: #FFFFFF;
-    margin-right: 33px;
-    margin-left: -14px;
-    margin-top: 15px;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &:hover {
         cursor: pointer;
+        opacity: 0.5;
     }
-    @media screen and ( max-width: 890px ) {
-        margin-left: 20px;
-        margin-right: 0px;
-        margin-top: 10px;
-        font-size: 14px;
+    @media screen and ( max-width: 768px ) {
+        display: none;
     }
 `;
 
-export const H2 = styled.h2`
-    font-size: 15px;
-    color: #999999;
-    margin-right: 40px;
-    margin-top: 15px;
-    @media screen and ( max-width: 890px ) {
-        margin-left: 20px;
-        margin-right: 0px;
-        margin-top: 10px;
-        font-size: 14px;
-    }
-`;
-
-export const H2Light = styled.h2`
-    font-size: 15px;
-    color: #999999;
-    margin-right: 40px;
-    margin-top: 20px;
-    @media screen and ( max-width: 890px ) {
-        margin-right: 40px;
-        font-size: 14px;
-    }
-    @media screen and ( max-width: 600px ) {
-        margin-left: 20px;
-    }
-`;
-
-
-export const H6 = styled.h6`
+export const H2 = styled.div`
     font-size: 13px;
-    color: #999999;
-    margin-left: -14px;
-    margin-top: 15px;
-    @media screen and ( max-width: 890px ) {
-        position: absolute;
-        margin-top: 10.8rem;
-        margin-left: 20px;
+    line-height: 22px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.5;
     }
-    @media screen and ( max-width: 600px ) {
-        margin-top: 7rem;
+    img {
+        width: 12px;
+        height: 12px;
+        margin-right: 5px;
+        margin-bottom: 2px;
     }
-`; 
-
-
-export const Row1 = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:  flex-start;
-    width: 100%;
-`;
-
-export const Row2 = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    width: 100%;
 `;
 
 export const Wrapper = styled.div`
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-flow: column wrap;
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin-right: -50px;
-    margin-top: -13rem;
-    margin-bottom: 50px;
-    @media screen and ( max-width: 890px ) {
-        order: 2;
-        margin-top: 0px;
-        margin-right: 0px;
-        float: left;
-    }
-    @media screen and ( max-width: 880px ) {
-        order: 2;
-        margin-top: 0px;
-        margin-right: 0px;
-        float: left;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    }
-    @media screen and ( max-width: 600px ) {
-        order: 2;
-        margin-top: 0px;
-        margin-right: 0px;
-        float: left;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        margin-bottom: 150px;
-    }
+    flex-direction: column;
 `;
-
-export const Image1 = styled.div`
-    margin-top: -50px;
-    margin-right: 30px;
-    @media screen and ( max-width: 600px ) {
-        position: absolute;
-        margin-top: 35px;
-        margin-left: -10px;
-}
-    img {
-        width: 160px;
-        height: 60px;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-`;
-
-export const Image2 = styled.div`
-    margin-top: -110px;
-    margin-right: 30px;
-    @media screen and ( max-width: 600px ) {
-        position: absolute;
-        margin-top: 35px;
-        margin-left: 150px;
-}
-
-    img {
-        width: 155px;
-        height: 150px;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-`;
-

@@ -1,73 +1,89 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 import { Navbar, Nav } from 'react-bootstrap';
 
 
 export const StyledNavbar = styled(Navbar)`
     width: 100%;
-    height: 80px;
+    height: 82px;
     position: fixed;
+    border-top:  1.5px solid #D5D7D8;
     background-color: white;
-    opacity: 95%;
+    border-bottom: 1px solid #D5D7D8;
 `;
 
+export const BrandContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 30px;
+    @media screen and ( max-width: 800px ) {
+        margin-left: 10px;
+    }
+    img {
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+`;
+
+export const BrandName = styled.div`
+    width: 80px;
+    height: fit-content;
+    font-size: 16px;
+    line-height: 15px;
+    font-weight: 1000;
+    overflow: none;
+    border-left:  1.5px solid #D5D7D8;
+    padding-left: 20px;
+    @media screen and ( max-width: 800px ) {
+        font-size: 12px;
+    }
+`;
 
 export const StyledNav = styled(Nav)`
-    font-weight: 500;
-    font-size: 15px;
-    margin-right: 11px;
-    color: black;
-`;
-
-export const StyledLink = styled(Nav.Link)`
-    color: black;
-    img {
-        display: none;
-    }
-    @media screen and ( max-width: 750px ) {
-        display: none;
-    }
-`;
-
-export const ButtonWrapper = styled.div`
-    margin-top: 10px;
-    margin-right: 70px;
-    @media screen and ( max-width: 750px ) {
-        margin-right: 0px;
-    }
-`;
-
-export const BrandWrapper = styled(Navbar.Brand)`
-    margin-left: 78px;
+    width: 100%;
+    height: fit-content;
     display: flex;
-    align-items: center;
-    @media screen and ( max-width: 750px ) {
-        margin-left: 0px;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 16px;
+    padding-right: 30px;
+    @media screen and ( max-width: 800px ) {
+        padding-right: 0px;
     }
-    
-    span {
-        font-size: 25px;
-        font-weight: 600;
-        @media screen and ( max-width: 750px ) {
+`;
+
+export const StyledLink = styled.div`
+    img {
+        width: 25px;
+        height: 25px;
+        margin-left: 20px;
+        @media screen and ( max-width: 800px ) {
             display: none;
         }
-    }
-
-    img {
-        width: 40px;
-        height: 40px;
-        display: none;
-        @media screen and ( max-width: 750px ) {
-            display: block;
+        &:hover {
+            opacity: 0.5;
         }
     }
 `;
 
-// Navbar of Main page 
-
-export const MainPageNavbar = css`
-    width: 100%;
-    height: 80px;
-    background-color: white;
+export const HR = styled.div`
+    border-left:  1.5px solid #D5D7D8;
+    margin-left: 30px;
+    @media screen and ( max-width: 800px ) {
+            display: none;
+    }
 `;
 
+export const Active = styled.div`
+    color: #C92805;
+    @media screen and ( max-width: 800px ) {
+        display: none;
+    }
+`;
