@@ -13,7 +13,6 @@ export const StyledContainer = styled.div`
 
 export const Row1 = styled.div`
     width: 100%;
-    height: 150px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -51,7 +50,7 @@ export const Row2 = styled.div`
     display: flex;
     flex-direction: row;
     margin-top: 60px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     @media screen and ( max-width: 991px ) {
         display: flex;
         flex-direction: column;
@@ -62,7 +61,7 @@ export const Row2 = styled.div`
 `;
 
 export const ColBottom1 = styled.div`
-    width: 50vw;
+
     display: flex;
     flex-direction: row;
     @media screen and ( max-width: 991px ) {
@@ -74,7 +73,6 @@ export const ColBottom1 = styled.div`
     }
 `;
 export const ColBottom2 = styled.div`
-    width: 50vw;
     display: flex;
     flex-direction: row;
     @media screen and ( max-width: 991px ) {
@@ -98,7 +96,7 @@ export const BrandContainer = styled.div`
             line-height: 25px;
         }
         img {
-            width: 40px;
+            
             height: 40px;
         }
 `;
@@ -108,7 +106,7 @@ export const HR = styled.div`
     border-bottom: 1px solid #D5D7D8;
 `;
 
-export const HrVertical =  styled.div`
+export const HrVertical = styled.div`
     width: 100%;
     border-left: 1px solid #D5D7D8;
 `;

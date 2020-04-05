@@ -10,7 +10,11 @@ export const StyledNavbar = styled(Navbar)`
     border-top:  1.5px solid #D5D7D8;
     background-color: white;
     border-bottom: 1px solid #D5D7D8;
+    top:0;
+    z-index:5
+
 `;
+
 
 export const BrandContainer = styled.div`
     width: 100%;
@@ -23,7 +27,6 @@ export const BrandContainer = styled.div`
         margin-left: 10px;
     }
     img {
-        width: 30px;
         height: 30px;
         margin-right: 20px;
         &:hover {

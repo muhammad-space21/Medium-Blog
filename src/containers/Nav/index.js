@@ -6,7 +6,7 @@ import { getNav } from '../../redux/modules/navbar/navAction';
 import { navbarSelector } from '../../redux/selectors/navbarSelector';
 
 
-import { NavStyled, NavLinkStyled, NavItem } from './style';
+import { StyledNav, LinkContainer, LinkStyled } from './style';
 
 const NavMain = ({
   list,
@@ -20,19 +20,20 @@ const NavMain = ({
   }, []);
 
   return (
-    <NavStyled activeKey="/home">
-      {list.map((link) => (
-        <NavItem key={link.id}>
-          <NavLinkStyled
+    <StyledNav>
+      <LinkContainer>
+        {list.map((link) => (
+
+          <LinkStyled
             key={link.id}
             to={link.route}
-            active={(link.route === history.location.pathname) ? 'true' : 'false'}
           >
             {link.label}
-          </NavLinkStyled>
-        </NavItem>
-      ))}
-    </NavStyled>
+          </LinkStyled>
+
+        ))}
+      </LinkContainer>
+    </StyledNav>
   );
 };
 

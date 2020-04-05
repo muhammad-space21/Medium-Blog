@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Navbar, Nav } from 'react-bootstrap';
 
@@ -10,7 +11,7 @@ import {
   StyledLink,
   HR,
   Active
-} from './navbar.styles';
+} from './style';
 
 import BrandLogo from '../../assets/images/logo.png';
 import IconSearch from '../../assets/icons/search.svg';
@@ -20,9 +21,9 @@ const NavbarMain = () => (
   <>
     <StyledNavbar>
       <BrandContainer>
-        <Navbar.Brand href="#home">
+        <Link to="/">
           <img src={BrandLogo} alt="icon-brand" />
-        </Navbar.Brand>
+        </Link>
 
       </BrandContainer>
       <StyledNav className="mr-auto">

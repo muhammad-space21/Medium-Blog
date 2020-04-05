@@ -5,7 +5,7 @@ export const navbarList = (state) => state.navReducer.list;
 
 const createFormattedNavbar = (item) => ({
   id: item.id,
-  route: `/categories/${labelToRoute(item.name)}`,
+  route: `/category/${labelToRoute(item.name)}`,
   label: item.name.toUpperCase()
 });
 

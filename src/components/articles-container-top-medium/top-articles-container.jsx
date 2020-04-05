@@ -7,9 +7,9 @@ import {
   ArticleThirdPreview
 } from './top-articles-container.styles';
 
-import Article from '../articles-component/articles';
-import ArticleRowTwo from '../article-row-two';
-import ArticleThird from '../article-third-preview';
+import Article from '../articles-component-medium/articles';
+import ArticleRowTwo from '../article-row-two-medium';
+import ArticleThird from '../article-third-preview-medium';
 
 
 const TopArticlesContainer = () => (

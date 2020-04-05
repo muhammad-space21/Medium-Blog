@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 
 
@@ -12,10 +12,12 @@ export const StyledNav = styled(Nav)`
     justify-content: center;
     align-items: center;
     margin-top: 90px;
+    margin-bottom:30px;
     @media screen and ( max-width: 1050px ) {
         display: none;
         margin-top: 0px;
     }
+    
 `;
 
 export const StyledLinks = styled.div`
@@ -26,13 +28,16 @@ export const StyledLinks = styled.div`
     align-items: center;
 `;
 
-export const Links = styled.span`
+export const Links = styled(Link)`
     font-size: 15px;
     color: black;
     margin-left: 10px;
     margin-right: 10px;
     &:hover {
         cursor: pointer;
+        color: black;
         opacity: 0.5;
+        text-transform:none;
+        text-decoration:none;
     }
 `;

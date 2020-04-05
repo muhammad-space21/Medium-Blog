@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ArticleBodyStyled } from './style';
 
-import ArticleBody from '../article-body';
+import ArticleBody from '../article-body-medium';
 
 
 const ArticleBodyContainer = () => (

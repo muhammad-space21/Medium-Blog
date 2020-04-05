@@ -3,23 +3,34 @@ import styled from 'styled-components';
 export const StyledContainer = styled.div`
     width: 100%;
     height: 63px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     background-color: #D5D7D8;
     margin-bottom: 30px;
     margin-top: 30px;
+`;
+
+
+export const Wrapper = styled.div`
+    width:100%;
+    max-width:768px;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin:auto;
     @media screen and ( max-width: 768px ) {
         display: flex;
         flex-direction: column;
     }
 `;
 
-export const TitleActive = styled.div`
-    width: 20%;
+
+export const Title = styled.div`
+    width: 40%;
     height: 100%;
-    background-color: #EEEFEF;
+    ${({ active }) => active && `
     border-bottom: 4px solid black;
+    background-color: #EEEFEF;
+    `} 
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -57,49 +68,3 @@ export const TitleActive = styled.div`
         padding-left: 10px;
     }
 `;
-
-
-export const TitleSecond = styled.div`
-    width: 20%;
-    height: 100%;
-    text-align: center;
-    h1 {
-        font-size: 14px;
-        font-weight: 500;
-        text-transform: uppercase;
-        margin-top: 25px;
-    }
-    &:hover {
-        cursor: pointer;
-    }
-    @media screen and ( max-width: 992px ) {
-        width: 30%;
-    }
-    @media screen and ( max-width: 768px ) {
-        display: none;
-        border-bottom: 1px solid grey;
-    }
-`;
-
-export const TitleThird = styled.div`
-    width: 20%;
-    height: 100%;
-    text-align: center;
-    h1 {
-        font-size: 14px;
-        font-weight: 500;
-        text-transform: uppercase;
-        margin-top: 25px;
-    }
-    &:hover {
-        cursor: pointer;
-    }
-    @media screen and ( max-width: 992px ) {
-        width: 30%;
-    }
-    @media screen and ( max-width: 768px ) {
-        display: none;
-        border-bottom: 1px solid grey;
-    }
-`;
-

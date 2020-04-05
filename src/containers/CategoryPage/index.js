@@ -1,57 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-import {
-  DesignPageStyled,
-  Content,
-  BodyContainer,
-  AsideContainer,
-  HeaderContainer,
-  Heading,
-  HR
-} from './style';
+import { getCategory } from '../../redux/modules/category/categoryAction';
 
-// import NavbarMainPage from '../../components/NavbarMainPage';
+import TopicPageHeader from '../../components/topic-page-header/topic-page-header';
+import NavOfArticles from '../../components/nav-of-articles';
+import HomepageBody from '../../components/homepage-body/homepage-body';
+import PopularTopicsSection from '../../components/popular-topics-section/popular-topics-section';
 
-import FollowUs from '../../components/design-page-components-medium/follow-us-component/follow-us-component';
+const TopicPage = ({
+  getCategory
+}) => (
+  <>
+    <TopicPageHeader />
+    <NavOfArticles />
+    <HomepageBody />
+    <PopularTopicsSection />
+  </>
 
-import PopularInDesign from '../../components/design-page-components-medium/popular-in-design-container/popular-in-design-container';
-import ArticleMain from '../../components/design-page-components-medium/article-main-component/article-main-component';
-import ArticleBodyDesign from '../../components/design-page-components-medium/article-body-component/article-body-component';
-import FeaturedWriter from '../../components/design-page-components-medium/featured-writer-container/featured-writer';
-import FollowUsHorizontal from '../../components/design-page-components-medium/follow-us-horizontal/follow-us-horizontal';
-
-
-const DesignPage = () => (
-  <DesignPageStyled>
-    {/* <NavbarMainPage navbarShadow /> */}
-    <Content>
-      <FollowUsHorizontal />
-      <BodyContainer>
-        <HeaderContainer>
-          <ArticleMain />
-        </HeaderContainer>
-        <Heading>
-          latest
-        </Heading>
-        <HR />
-        <ArticleBodyDesign />
-        <ArticleBodyDesign />
-        <ArticleBodyDesign />
-        <ArticleBodyDesign />
-        <ArticleBodyDesign />
-        <FeaturedWriter />
-        <ArticleBodyDesign />
-        <ArticleBodyDesign />
-        <ArticleBodyDesign />
-        <ArticleBodyDesign />
-        <ArticleBodyDesign />
-      </BodyContainer>
-      <AsideContainer>
-        <FollowUs />
-        <PopularInDesign />
-      </AsideContainer>
-    </Content>
-  </DesignPageStyled>
 );
 
-export default DesignPage;
+
+const mapStateToProps = (state) => ({
+  list: state.categoryReducer
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getCategory: () => dispatch(getCategory())
+});
+
+export default withRouter(connect(mapDispatchToProps, mapDispatchToProps)(TopicPage));

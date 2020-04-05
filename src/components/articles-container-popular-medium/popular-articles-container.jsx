@@ -2,7 +2,7 @@ import React from 'react';
 
 import { PopularArticleContainer, HR, Title } from './popular-article-container.styles';
 
-import ArticlePopular from '../article-populars';
+import ArticlePopular from '../article-populars-medium';
 import NavBottom from '../nav-bottom/nav-bottom';
 
 
@@ -15,7 +15,6 @@ const PopularArticle = () => (
     <ArticlePopular />
     <ArticlePopular />
     <HR />
-    <NavBottom />
   </PopularArticleContainer>
 
 );
