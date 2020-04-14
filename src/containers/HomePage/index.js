@@ -1,5 +1,7 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getHome } from '../../redux/modules/home/homeActions';
 import {
   MainPageStyled,
   Content,
@@ -13,19 +15,43 @@ import ButtonPrimary from '../../components/button-primary-medium/button-primary
 import ArticleBodyContainer from '../../components/articles-body-container-medium';
 import PopularArticle from '../../components/articles-container-popular-medium/popular-articles-container';
 
-const HomePage = () => (
-  <MainPageStyled>
-    <TopArticlesContainer />
-    <ButtonContainer>
-      <ButtonPrimary btnLink>See Editor's picks   </ButtonPrimary>
-    </ButtonContainer>
-    <HR />
-    <Content>
-      <ArticleBodyContainer />
-      <PopularArticle />
-    </Content>
-  </MainPageStyled>
-);
+const HomePage = ({
+  home, getHome
+}) => {
+  useEffect(() => {
+    getHome();
+  }, []);
+  return (
+    <MainPageStyled>
+      <TopArticlesContainer />
+      <ButtonContainer>
+        <ButtonPrimary btnLink>See Editor's picks   </ButtonPrimary>
+      </ButtonContainer>
+      <HR />
+      <Content>
+        <ArticleBodyContainer />
+        <PopularArticle />
+      </Content>
+    </MainPageStyled>
+  );
+};
 
+HomePage.defaultProps = {
+  home: PropTypes.objectOf(PropTypes.any),
+  getHome: PropTypes.func
+};
 
-export default HomePage;
+HomePage.propTypes = {
+  home: {},
+  getHome: () => {}
+};
+const mapStateToProps = (state) => ({
+  home: state.homeReducer.home
+
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getHome: () => dispatch(getHome())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

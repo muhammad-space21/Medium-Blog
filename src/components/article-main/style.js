@@ -10,13 +10,13 @@ export const StyledContainer = styled.div`
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: ${props => (props.paddingLeft100 ? '100px' : '0px')};
-    border-bottom: ${props => (props.hrHide ? 'none' : '1px solid #D5D7D8')};
+    padding-left: ${(props) => (props.paddingLeft100 ? '100px' : '0px')};
+    border-bottom: ${(props) => (props.hrHide ? 'none' : '1px solid #D5D7D8')};
     @media screen and ( max-width: 800px ) {
         padding-left: 10px;
     }
     h1 {
-        font-size: ${props => (props.big ? '23px' : '21px')};
+        font-size: ${(props) => (props.big ? '23px' : '21px')};
         font-weight: 1000;
         line-height: 25px;
         margin-bottom: 10px;
@@ -41,6 +41,10 @@ export const StyledContainer = styled.div`
             opacity: 0.5;
         }
     }
+
+    h2 >a{
+        color: #0787B1;
+    }
     h3 {
         font-size: 14px;
         text-transform: uppercase;
@@ -54,13 +58,13 @@ export const StyledContainer = styled.div`
         font-size: 14px;
         margin-left: 4px;
         font-weight: 600;
-        color: ${props => (props.authorNameBlack ? 'black' : '#888888')};
+        color: ${(props) => (props.authorNameBlack ? 'black' : '#888888')};
         @media screen and ( max-width: 768px ) {
         font-size: 12px;
         }
     }
     h5 {
-        display: ${props => (props.secondaryTextHide ? 'none' : 'block')};
+        display: ${(props) => (props.secondaryTextHide ? 'none' : 'block')};
         font-size: 14px;
         font-weight: 600;
         @media screen and ( max-width: 768px ) {
@@ -68,7 +72,7 @@ export const StyledContainer = styled.div`
         }
     }
     content {
-        display: ${props => (props.imageHide ? 'none' : 'block' )};
+        display: ${(props) => (props.imageHide ? 'none' : 'block')};
         img {
             width: 250px;
             height: 140px;
@@ -90,6 +94,34 @@ export const StyledContainer = styled.div`
             }
         }
     }
+
+
+    a{
+       color: #212529;
+       text-decoration:none;
+    }
+
+    img {
+        display: ${(props) => (props.imageHide ? 'none' : 'block')};
+        width: ${(props) => (props.imageHide ? '0px' : '250px')};
+        height: 140px;
+        @media screen and ( max-width: 991px ) {
+            width: 200px;
+            height: 110px;
+        }
+        @media screen and ( max-width: 768px ) {
+            width: 180px;
+            height: 100px;
+        }
+        @media screen and ( max-width: 500px ) {
+            width: 170px;
+            height: 90px;
+        }
+        @media screen and ( max-width: 321px ) {
+            width: 100px;
+            height: 60px;
+        }
+    }
 `;
 
 export const Col1 = styled.div`
@@ -98,6 +130,7 @@ export const Col1 = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    width:600px;
 `;
 
 export const TextWrapper = styled.div`
@@ -111,9 +144,14 @@ export const TextWrapper = styled.div`
 export const ButtonsWrapper = styled.div`
     width: 70px;
     height: fit-content;
-    display: ${props => (props.buttonsHide ? 'none' : 'flex')};
+    display: ${(props) => (props.buttonsHide ? 'none' : 'flex')};
     flex-direction: row;
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 15px;
+`;
+
+export const DescribeStyled = styled.div`
+    display: block;
+    font-size: 14px;
 `;

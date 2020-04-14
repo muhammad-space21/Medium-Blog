@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { init } from '../../redux/modules/auth/authActions';
 
-import { Spinner } from '../../components/SpinnerMedium';
+import Spinner from '../../components/spinner';
 
 const Auth = ({
   children,
@@ -25,18 +25,6 @@ const Auth = ({
   );
 };
 
-
-const mapStateToProps = (state) => ({
-  token: state.authReducer.token,
-  loading: state.authReducer.loading,
-  error: state.authReducer.error
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  init: () => dispatch(init())
-});
-
-
 Auth.defaultProps = {
   children: '',
   init: () => {},
@@ -55,5 +43,15 @@ Auth.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.bool
 };
+
+const mapStateToProps = (state) => ({
+  token: state.authReducer.token,
+  loading: state.authReducer.loading,
+  error: state.authReducer.error
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  init: () => dispatch(init())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Auth);

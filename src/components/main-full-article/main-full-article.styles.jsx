@@ -42,7 +42,7 @@ export const AuthorNamesContainer = styled.div`
 `;
 
 export const IconWrapper = styled.div`
-    width: 70%;
+    width: 30%;
     height: fit-content;
     display: flex;
     flex-direction: row;
@@ -65,6 +65,14 @@ export const ImageWrapper = styled.div`
 export const Paragraph = styled.div`
     width: 100%;
     height: fit-content;
+
+    p {
+        letter-spacing: -.0104166667em;
+        font-size: 1.1875rem;
+        line-height: 1.9375rem;
+        color: #282828;
+        margin-bottom:32px;
+    }
 `;
 
 export const P = styled.div`
@@ -75,5 +83,25 @@ export const P = styled.div`
     margin-bottom: 30px;
 `;
 
+export const ArticleType = styled.span`
+    font-size: 14px;
+    text-transform: ${(props) => (props.lowercase ? 'none' : 'uppercase')};
+    color: #0787B1;
+    font-weight: 400;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    & >a:hover {
+        cursor: pointer;
+        opacity: 0.5;
+    }
 
+    &>a{
+        color:inherit;
+        margin-right:10px;
+    }
 
+    &>a:hover{
+        text-decoration:none;
+    }
+`;

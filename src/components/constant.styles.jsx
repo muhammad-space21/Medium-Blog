@@ -17,6 +17,16 @@ export const HeadingSmall = styled.span`
         cursor: pointer;
         opacity: 0.5;
     }
+
+    &>a{
+        color:inherit;
+    }
+
+    & >a:hover{
+        text-decoration:none;
+        cursor: pointer;
+        opacity: 0.5;
+    }
 `;
 
 export const SecondaryText = styled.span`
@@ -52,7 +62,7 @@ export const AuthorNameGrey = styled.span`
 
 export const ArticleType = styled.span`
     font-size: 14px;
-    text-transform: ${props => (props.lowercase ? 'none' : 'uppercase')};
+    text-transform: ${(props) => (props.lowercase ? 'none' : 'uppercase')};
     color: #0787B1;
     font-weight: 400;
     margin-bottom: 10px;
@@ -61,6 +71,14 @@ export const ArticleType = styled.span`
     &:hover {
         cursor: pointer;
         opacity: 0.5;
+    }
+
+    &>a{
+        color:inherit;
+    }
+
+    &>a:hover{
+        text-decoration:none;
     }
 `;
 

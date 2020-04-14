@@ -44,3 +44,18 @@ export const RowHide = styled.div`
         display: none;
     }
 `;
+
+export const HeadingBig = styled.span`
+    font-size: 44px;
+    line-height: 48px;
+    font-weight: 1000;
+    margin-bottom: 20px;
+    text-transform:capitalize;
+`;
+
+export const TextStyled = styled.div`
+    color: #6F6F6F;
+    font-weight: 400;
+    font-size:16px;
+    text-transform:normal;
+`;

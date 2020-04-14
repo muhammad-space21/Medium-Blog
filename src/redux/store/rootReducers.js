@@ -1,11 +1,17 @@
 import { combineReducers } from 'redux';
 import {
   authReducer,
-  navReducer
+  navReducer,
+  articlesReducer,
+  singleArticleReducer,
+  homeReducer
 } from '../modules';
 
 
 export default combineReducers({
   authReducer,
-  navReducer
+  navReducer,
+  articlesReducer,
+  singleArticleReducer,
+  homeReducer
 });

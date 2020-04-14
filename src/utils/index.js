@@ -5,3 +5,4 @@ export const getHeaders = (getState) => ({
 
 export const labelToRoute = (name) => name.toLowerCase().split(' ').join('-');
 
+export const createMarkup = (text) => ({ __html: text });
