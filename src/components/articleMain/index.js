@@ -13,7 +13,7 @@ import {
   DescribeStyled
 } from './style';
 
-import ButtonString from '../Buttons/ButtonString/index';
+import ButtonString from '../buttons/ButtonString/index'
 import ImageArticle from '../../assets/images/coronavirus-1.jpg';
 
 const ArticleMain = ({ article, ...props }) => (

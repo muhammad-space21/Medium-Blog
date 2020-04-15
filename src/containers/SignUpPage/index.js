@@ -10,7 +10,7 @@ import {
     TextWrapper,
     Title,
     Input 
-} from './sign-up-page.styles';
+} from './styles';
 
 import ButtonPrimary from '../../components/button-primary/button-primary';
 

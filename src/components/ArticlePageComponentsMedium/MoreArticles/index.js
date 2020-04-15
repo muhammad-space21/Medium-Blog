@@ -1,20 +1,20 @@
 import React from 'react';
 
 
-import { 
-    MoreArticlesStyled, 
-    Heading, 
-    Title, 
-    ImageWrapper, 
-    Col, 
+import {
+    MoreArticlesStyled,
+    Heading,
+    Title,
+    ImageWrapper,
+    Col,
     AccountContainer,
     Row1,
     Row2
 } from './styles';
 
 
-import WriterInfo from '../writer-info/writer-info';
-import ClapsContainer from '../claps-container/claps-container';
+import WriterInfo from '../WriterInfo/index';
+import ClapsContainer from '../ClapsContainer/index';
 
 import Image from '../../../assets/images/cartoon-2.jpg';
 

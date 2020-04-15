@@ -1,6 +1,6 @@
-import React from './node_modules/react';
+import React from 'react';
 
-import { OverlayTrigger, Tooltip } from './node_modules/react-bootstrap';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 import {
   ArticlesContainer,
