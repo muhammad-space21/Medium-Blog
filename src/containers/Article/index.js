@@ -10,7 +10,7 @@ import { recommendedArticlesSelector } from '../../redux/selectors/articlesSelec
 
 import { StyledContainer, Body } from './style';
 import MainFullArticle from '../../components/main-full-article/main-full-article';
-import ArticlePageAside from '../../components/article-page-aside.preview/article-page-aside.preview';
+import ArticlePageAside from '../../components/ArticlePageAside/index';
 import ArticleRelatedPreview from '../../components/article-related.preview/article-related.preview';
 
 
