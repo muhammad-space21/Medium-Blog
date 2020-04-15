@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import ImageBackground from '../../assets/images/asset-5.jpeg';
-
 import { Form } from 'react-bootstrap';
+
+import ImageBackground from '../../assets/images/asset-5.jpeg';
 
 
 export const StyledContainer = styled.div`

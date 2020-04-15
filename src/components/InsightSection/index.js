@@ -8,7 +8,7 @@ import {
     Row
 } from './styles';
 
-import ArticleMain from '';
+import ArticleMain from '../articleMain/index';
 
 const InsightSection = () => (
     <StyledContainer>

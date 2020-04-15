@@ -8,7 +8,6 @@ import {
 const TopicPageHeader = ({ page }) => (
   <StyledContainer>
     <HeadingBig>{page.label}</HeadingBig>
-
     <TextStyled>Id sunt occaecat elit in ipsum.Amet velit eiusmod culpa ex non cupidatat mollit voluptate consectetur.</TextStyled>
   </StyledContainer>
 );

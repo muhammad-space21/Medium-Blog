@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 
-import ButtonString from '';
+import ButtonString from '../Buttons/ButtonString/index';
 
 
 const PopularTopicsCards = () => (

@@ -7,8 +7,8 @@ import {
     ButtonWrapper
 } from './styles';
 
-import NewsletterCards from '';
-import ButtonArrow from '';
+import NewsletterCards from '../NewsletterCards/index';
+import ButtonArrow from '../Buttons/ButtonArrow/index';
 
 
 const NewsletterSection = () => (

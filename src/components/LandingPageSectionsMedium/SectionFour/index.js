@@ -1,8 +1,11 @@
 import React from 'react';
 
-import { HeadingMain, SectionFourStyled } from './styles';
+import {
+    HeadingMain,
+    SectionFourStyled
+} from './styles';
 
-import ButtonPrimary from '';
+import ButtonPrimary from '../../ButtonPrimaryMedium/index';
 
 
 const SectionFour = () => (

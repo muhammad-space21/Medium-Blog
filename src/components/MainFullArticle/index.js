@@ -20,7 +20,7 @@ import {
   PublishTime
 } from '../constant.styles';
 
-import ButtonString from '';
+import ButtonString from '../buttons/ButtonString/index';
 import ImageArticle from '../../assets/images/dollar.img';
 
 

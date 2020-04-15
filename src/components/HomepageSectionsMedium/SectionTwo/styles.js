@@ -119,4 +119,3 @@ export const P = styled.div`
         margin-right: -60px;
     }
 `;
-

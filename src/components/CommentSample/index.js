@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { 
-    StyledContainer, 
-    CommentHeader, 
-    AuthorName, 
+import {
+    StyledContainer,
+    CommentHeader,
+    AuthorName,
     PostTime,
     Textarea,
     FooterSection,

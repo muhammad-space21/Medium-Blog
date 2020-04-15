@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
     width: 100%;
@@ -51,4 +51,3 @@ export const ButtonWrapper = styled.div`
     height: fit-content;
     margin-bottom: 30px;
 `;
-

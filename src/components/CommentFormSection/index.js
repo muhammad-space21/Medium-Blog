@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Form } from 'react-bootstrap';
 
-import { 
-    StyledContainer, 
-    Row, 
+import {
+    StyledContainer,
+    Row,
     Heading,
     HR,
     Title,
@@ -14,7 +14,7 @@ import {
 } from './styles';
 
 
-import ButtonCustom from '../buttons/button-custom/button-custom';
+import ButtonCustom from '../Buttons/ButtonCustom';
 import CommentSample from '../CommentSample';
 import IconArrowDown from '../../assets/icons/down-arrow.svg';
 

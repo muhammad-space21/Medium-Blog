@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { 
-    StyledErrorPage, 
-    ErrorContainer, 
-    ImageWrapper, 
-    Text 
-} from './error-boundary.styles';
+import {
+    StyledErrorPage,
+    ErrorContainer,
+    ImageWrapper,
+    Text
+} from './styles';
 
 import ImageError from '../../assets/images/error.png';
 
@@ -44,6 +44,6 @@ class ErrorBoundary extends React.Component {
         }
         return this.props.children;
     }
-};
+}
 
 export default ErrorBoundary;

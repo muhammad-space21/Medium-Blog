@@ -80,7 +80,7 @@ export const H6 = styled.h6`
     @media screen and ( max-width: 600px ) {
         margin-top: 7rem;
     }
-`; 
+`;
 
 
 export const Row1 = styled.div`
@@ -170,4 +170,3 @@ export const Image2 = styled.div`
         }
     }
 `;
-

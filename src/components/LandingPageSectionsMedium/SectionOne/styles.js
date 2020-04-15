@@ -83,4 +83,3 @@ export const Sqr = styled.div`
         height: 12px;
     }
 `;
-

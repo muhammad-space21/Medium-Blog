@@ -10,10 +10,10 @@ import {
 } from './style';
 
 
-import TopArticlesContainer from '../../components/articles-container-top-medium/top-articles-container';
-import ButtonPrimary from '../../components/button-primary-medium/button-primary';
-import ArticleBodyContainer from '../../components/articles-body-container-medium';
-import PopularArticle from '../../components/articles-container-popular-medium/popular-articles-container';
+import TopArticlesContainer from '../../components/ArticlesContainerTopMedium/index';
+import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
+import ArticleBodyContainer from '../../components/ArticlesBodyContainerMedium';
+import PopularArticle from '../../components/ArticlesContainerPopularMedium/index';
 
 const HomePage = ({
   home, getHome

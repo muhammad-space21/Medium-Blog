@@ -5,7 +5,7 @@ import {
     SectionFourStyled
 } from './styles';
 
-import ButtonPrimary from '';
+import ButtonPrimary from '../../ButtonPrimaryMedium/index';
 
 
 const SectionFour = () => (

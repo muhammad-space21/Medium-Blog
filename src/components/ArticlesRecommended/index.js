@@ -1,19 +1,19 @@
 import React from 'react';
 
-import { 
-    StyledContainer, 
-    Row, 
-    Col1, 
-    Col2,  
-    Title 
+import {
+    StyledContainer,
+    Row,
+    Col1,
+    Col2,
+    Title
 } from './styles';
 
-import { 
-    HeadingSmall, 
-    Price 
-} from '../constant.styles.jsx';
+import {
+    HeadingSmall,
+    Price
+} from '../constant.styles';
 
-import ButtonCustom from '../buttons/button-custom/button-custom';
+import ButtonCustom from '../Buttons/ButtonCustom/index';
 
 import ImageArticle from '../../assets/images/asset1-min.jpg';
 

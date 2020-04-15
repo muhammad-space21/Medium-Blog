@@ -21,7 +21,7 @@ const WritersProfile = () => (
         </ImageWrapper>
         <TextWrapper>
             <P>
-                <AuthorNameBlue><span >Thomas Y. Choi </span></AuthorNameBlue>
+                <AuthorNameBlue><span>Thomas Y. Choi </span></AuthorNameBlue>
                 is executive director of <ArticleType lowercase >CAPS Research</ArticleType> and Fearon 
                 chaired professor of supply chain management at 
                 Arizona State University’s W. P. Carey School of 

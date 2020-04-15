@@ -6,7 +6,7 @@ import {
   Heading
 } from './styles';
 
-import PopularTopicsCards from '';
+import PopularTopicsCards from '../PopularTopicsCards/index';
 
 
 const PopularTopicsSection = () => (

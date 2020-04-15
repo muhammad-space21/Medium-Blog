@@ -10,7 +10,7 @@ import {
     ImageWrapper
 } from './styles';
 
-import ArticleMain from '';
+import ArticleMain from '../ArticleMain/index';
 import ArticleImage from '../../assets/images/asset-5.jpeg';
 
 const HomePageHeader = () => (

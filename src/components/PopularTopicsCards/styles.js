@@ -1,4 +1,4 @@
-import styled  from 'styled-components';
+import styled from 'styled-components';
 
 
 export const StyledContainer = styled.div`
@@ -75,7 +75,7 @@ export const P = styled.p`
 export const BtnWrapper = styled.div`
     width: fit-content;
     height: fit-content;
-    margin: ${props => (props.center ? '0 auto' : '')};
-    margin-left: ${props => (props.right ? 'auto' : '')};
-    margin-right: ${props => (props.right ? '0' : '')};
+    margin: ${(props) => (props.center ? '0 auto' : '')};
+    margin-left: ${(props) => (props.right ? 'auto' : '')};
+    margin-right: ${(props) => (props.right ? '0' : '')};
 `;

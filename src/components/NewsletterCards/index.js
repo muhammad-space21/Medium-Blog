@@ -12,7 +12,7 @@ import IconSettings from '../../assets/icons/settings.svg';
 import IconAlarm from '../../assets/icons/alarm-clock.svg';
 import IconFish from '../../assets/icons/fish (1).svg';
 
-import ButtonString from '';
+import ButtonString from '../Buttons/ButtonString/index';
 
 
 const NewsletterCards = () => (

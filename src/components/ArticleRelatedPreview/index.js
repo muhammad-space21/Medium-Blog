@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Spinner from '../spinner';
-import ArticleRelated from '../articles-related/articles-related';
+import ArticleRelated from '../ArticlesRelated/index';
 
 import { StyledContainer, Row } from './styles';
 import { TitlesOfSections } from '../constant.styles';

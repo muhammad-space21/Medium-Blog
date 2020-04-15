@@ -1,6 +1,10 @@
 import React from 'react';
 
-import { H2Bold, H2Second, HR } from './styles';
+import {
+    H2Bold,
+    H2Second,
+    HR
+} from './styles';
 
 
 const SectionThree = () => (

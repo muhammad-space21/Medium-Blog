@@ -8,7 +8,7 @@ import {
   TextWrapper
 } from './styles';
 
-import RecommendedArticle from '../articles-recommended/articles-recommended';
+import RecommendedArticle from '../ArticlesRecommended/index';
 import Spinner from '../spinner';
 
 import ImageSide from '../../assets/images/corona-4.jpg';

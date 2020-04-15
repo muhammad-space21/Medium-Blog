@@ -72,10 +72,3 @@ export const H2Second = styled.div`
         margin-left: 5px; 
     }
 `;
-
-
-
-
-
-
-

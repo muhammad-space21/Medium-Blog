@@ -1,7 +1,11 @@
 import React from 'react';
 
 import {
-  StyledContainer, BrandContainer, TextWrapper, H, HR
+  StyledContainer,
+  BrandContainer,
+  TextWrapper,
+  H,
+  HR
 } from './styles';
 
 

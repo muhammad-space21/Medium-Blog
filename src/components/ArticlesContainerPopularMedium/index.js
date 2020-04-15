@@ -1,9 +1,13 @@
 import React from 'react';
 
-import { PopularArticleContainer, HR, Title } from './styles';
+import {
+  PopularArticleContainer,
+  HR,
+  Title
+} from './styles';
 
 import ArticlePopular from '../ArticlePopularsMedium/index';
-import NavBottom from '../nav-bottom/nav-bottom';
+import NavBottom from '../NavBottom/index';
 
 
 const PopularArticle = () => (

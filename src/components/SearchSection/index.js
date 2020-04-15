@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
+
 import {
     StyledContainer,
     Heading,
@@ -13,7 +14,7 @@ import {
     Wrapper
 } from './styles';
 
-import ButtonCustom from '';
+import ButtonCustom from '../Buttons/ButtonCustom/index';
 
 
 const SearchSection = () => (

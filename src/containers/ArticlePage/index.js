@@ -5,10 +5,10 @@ import {
 } from './style';
 
 import NavbarMainPage from '../../components/NavbarMainPage';
-import ArticleMain from '../../components/article-page-components/article-main/article-main';
-import ArticleMoreContainer from '../../components/article-page-components/more-from-medium-container/article-more-container';
-import Footer from '../../components/article-page-components/footer/footer';
-import ClapsAside from '../../components/article-page-components/claps-container-aside/claps-container-aside.jsx';
+import ArticleMain from '../../components/ArticlePageComponents/ArticleMain/index';
+import ArticleMoreContainer from '../../components/ArticlePageComponents/MoreFromMediumContainer/index';
+import Footer from '../../components/ArticlePageComponents/Footer/index';
+import ClapsAside from '../../components/ArticlePageComponents/ClapsContainerAside/index';
 
 
 const ArticlePage = () => (

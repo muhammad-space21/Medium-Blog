@@ -1,6 +1,6 @@
-import React from 'react';
+import React from './node_modules/react';
 
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { OverlayTrigger, Tooltip } from './node_modules/react-bootstrap';
 
 import {
   ArticlesContainer,
@@ -28,7 +28,7 @@ const ArticleBody = () => (
   <ArticlesContainer>
     <TextsHolder>
       <TypeOfTopic>
-RELATIONSHIPS
+        RELATIONSHIPS
         <span>PopularTopic</span>
       </TypeOfTopic>
       <ArticleTitle>

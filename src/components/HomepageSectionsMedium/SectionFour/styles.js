@@ -29,6 +29,5 @@ export const HeadingMain = styled.h1`
     @media screen and ( max-width: 750px ) {
         font-size: 32px;
         line-height: 36px;
-
     }
 `;

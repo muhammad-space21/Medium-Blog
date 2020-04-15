@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container } from 'react-bootstrap';
 
-import ButtonPrimary from '';
+import ButtonPrimary from '../../ButtonPrimaryMedium/index';
 
 import {
     SectionTwoStyled,

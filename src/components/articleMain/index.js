@@ -6,10 +6,14 @@ import { Link } from 'react-router-dom';
 import { createMarkup } from '../../utils';
 
 import {
-  StyledContainer, TextWrapper, ButtonsWrapper, Col1, DescribeStyled
+  StyledContainer,
+  TextWrapper,
+  ButtonsWrapper,
+  Col1,
+  DescribeStyled
 } from './style';
 
-import ButtonString from '';
+import ButtonString from '../Buttons/ButtonString/index';
 import ImageArticle from '../../assets/images/coronavirus-1.jpg';
 
 const ArticleMain = ({ article, ...props }) => (

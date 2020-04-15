@@ -4,7 +4,11 @@ import { Container } from 'react-bootstrap';
 
 import HashtagIcon from '../../assets/icons/hashtag.copped.jfif';
 
-import { Hashtag, Wrapper, Sqr } from './styles';
+import {
+    Hashtag,
+    Wrapper,
+    Sqr
+} from './styles';
 
 
 const Hashtags = () => (

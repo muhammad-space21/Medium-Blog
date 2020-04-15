@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyledContainer, Row } from './styles
+import { StyledContainer, Row } from './styles';
 
 import IconPlus from '../../../assets/icons/plus.svg';
 import IconExchange from '../../../assets/icons/exchange.svg';
@@ -11,7 +11,6 @@ import IconSave from '../../../assets/icons/save.svg';
 import IconShare from '../../../assets/icons/share.svg';
 
 const ButtonString = (props) => {
-    
     return (
         <StyledContainer {...props}>
             {

@@ -16,7 +16,7 @@ export const Content = styled.div`
     flex-direction: row;
 `;
 
-export const  AsideLeft = styled.div`
+export const AsideLeft = styled.div`
     width: 25vw;
     height: 150vw;
     @media screen and ( max-width: 1190px ) {

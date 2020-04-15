@@ -10,7 +10,7 @@ import {
     H2Bold2
 }  from './styles';
 
-import ButtonPrimary from '';
+import ButtonPrimary from '../../ButtonPrimaryMedium/index';
 
 import TickIcon from '../../../assets/icons/check-mark-32.png';
 

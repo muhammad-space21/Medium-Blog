@@ -9,9 +9,9 @@ import { singleArticleSelector } from '../../redux/selectors/singleArticleSelect
 import { recommendedArticlesSelector } from '../../redux/selectors/articlesSelector';
 
 import { StyledContainer, Body } from './style';
-import MainFullArticle from '../../components/main-full-article/main-full-article';
+import MainFullArticle from '../../components/MainFullArticle/index';
 import ArticlePageAside from '../../components/ArticlePageAside/index';
-import ArticleRelatedPreview from '../../components/article-related.preview/article-related.preview';
+import ArticleRelatedPreview from '../../components/ArticleRelatedPreview/index';
 
 
 const ArticlePage = ({
