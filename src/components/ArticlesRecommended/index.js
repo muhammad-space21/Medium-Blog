@@ -13,7 +13,7 @@ import {
     Price
 } from '../constant.styles';
 
-import ButtonCustom from '../Buttons/ButtonCustom/index';
+import ButtonCustom from '../buttons/ButtonCustom';
 
 import ImageArticle from '../../assets/images/asset1-min.jpg';
 

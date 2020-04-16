@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StyledContainer } from './styles';
 
-import ArticleMain from '../ArticleMain/index';
+import ArticleMain from '../articleMain';
 
 const HomepageBody = ({ articles }) => (
   <StyledContainer>
