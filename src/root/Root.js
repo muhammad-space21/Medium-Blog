@@ -27,8 +27,7 @@ const Root = () => (
               <NavMain />
               <Route exact path="/" component={HomePage} />
               <Route exact path="/category/:id" component={CategoryPage} />
-              {/* <Route exact path="/articles/:slug" component={ArticlePage} /> */}
-              <Route exact path="/articles" component={ArticlePage} />
+              <Route exact path="/articles/:slug" component={ArticlePage} />
               <Footer />
             </ErrorBoundary>
           </Switch>
