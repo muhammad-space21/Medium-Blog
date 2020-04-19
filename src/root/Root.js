@@ -18,22 +18,19 @@ import '../assets/fonts/font.css';
 
 const Root = () => (
   <>
-    <Auth>
-      <Router>
-        <ScrollToTop>
-          <Switch>
-            <ErrorBoundary>
-              <NavbarHeader />
-              <NavMain />
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/category/:id" component={CategoryPage} />
-              <Route exact path="/articles/:slug" component={ArticlePage} />
-              <Footer />
-            </ErrorBoundary>
-          </Switch>
-        </ScrollToTop>
-      </Router>
-    </Auth>
+    <Router>
+      <ScrollToTop>
+        <NavbarHeader />
+        <NavMain />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/category/:id" component={CategoryPage} />
+          <Route exact path="/articles/:slug" component={ArticlePage} />
+          <Footer />
+        </Switch>
+      </ScrollToTop>
+    </Router>
+
   </>
 );
 
