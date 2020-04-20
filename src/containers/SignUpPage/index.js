@@ -1,112 +1,120 @@
 import React from 'react';
 
-import axios from 'axios'; 
-
-import { 
+import {
   StyledSignUpPage,
-  Heading, 
-  FormStyled, 
+  Heading,
+  FormStyled,
   TextWrapper,
   Title,
   Input,
-	CheckboxContainer,
-	Label,
-	PrivacyLink,
-	SignInLink
+  CheckboxContainer,
+  Label,
+  PrivacyLink,
+  SignInLink
 } from './styles';
 
 import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
 
-
 class SignUpPage extends React.Component {
-  constructor () {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      fullName: '',
-      phoneNumber: '',
-			password: '',
-			email: ''
-    }
+      user: {
+        fullName: '',
+        phoneNumber: '',
+        password: '',
+        email: ''
+      },
+      submitted: false
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-}
+  }
 
-handleChange = ( e ) => { 
-  this.setState({
-  	[e.target.name]: e.target.value 
-  });
-}
+  handleChange(event) {
+    const { name, value } = event.target;
+    const { user } = this.state;
+    this.setState({
+      user: {
+        ...user,
+        [name]: value
+      }
+    });
+  }
 
-handleSubmit = e => {
-  e.preventDefault();
-  console.log(this.state);
-  axios.post('https://jsonplaceholder.typecode.com/posts', this.state )
-    .then(response => {
-      console.log(response)
-    })
-    .catch(error => {
-      console.log(error)
-    })
-}
+  handleSubmit(e) {
+    e.preventDefault();
 
-  render () {
-    const { fullName, phoneNumber, password, email } = this.state;
-  	return (
+    this.setState({ submitted: true });
+    const { user } = this.state;
+    // if (user.firstName && user.lastName && user.username && user.password) {
+    //     this.props.register(user);
+    // }
+  }
+
+  render() {
+    const { user, submitted } = this.state;
+    return (
       <StyledSignUpPage>
         <FormStyled onSubmit={this.handleSubmit}>
           <TextWrapper>
             <Heading>Join to BiznesRivoj.</Heading>
             <Title>Sign up to get newly updates from BiznesRivoj.</Title>
-            <Title>Already have an account ? <SignInLink to='login'>Sign in</SignInLink></Title>
+            <Title>
+              Already have an account ?
+              <SignInLink to="login">
+                Sign in
+              </SignInLink>
+            </Title>
           </TextWrapper>
           <Input
-          	type="name"
-            name='fullName'
+            type="text"
+            name="fullName"
             placeholder="Fullname"
-          	value={fullName}
+            value={user.fullName}
             onChange={this.handleChange}
             required
           />
-					<Input
-          	type="email"
-            name='email'
+          <Input
+            type="email"
+            name="email"
             placeholder="Email"
-          	value={email}
+            value={user.email}
             onChange={this.handleChange}
             required
           />
-          <Input 
-            type='contact'
-            name='phoneNumber'
+          <Input
+            type="contact"
+            name="phoneNumber"
             placeholder="Phone number"
-            value={phoneNumber}
+            value={user.phoneNumber}
             onChange={this.handleChange}
             required
           />
           <Input
             type="password"
-            name='password'
+            name="password"
             placeholder="Password"
-            value={password}
+            value={user.password}
             onChange={this.handleChange}
             required
           />
           <CheckboxContainer>
             <input type="checkbox" />
             <Label htmlfor="checkbox">
-              Sign up to receive occasional emails from BiznesRivoj. 
+              Sign up to receive occasional emails from BiznesRivoj.
               You may unsubscribe at any time.
             </Label>
           </CheckboxContainer>
           <ButtonPrimary btnForm>Create Account</ButtonPrimary>
-					<PrivacyLink to='/privacy-policy'>Privacy Policy</PrivacyLink>
+          <PrivacyLink to="/privacy-policy">Privacy Policy</PrivacyLink>
         </FormStyled>
       </StyledSignUpPage>
     );
-  };
-};
+  }
+}
 
 
-export default  SignUpPage;
+export default SignUpPage;
