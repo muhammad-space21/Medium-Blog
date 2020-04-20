@@ -11,6 +11,7 @@ import ArticlePage from '../containers/Article';
 import NavbarHeader from '../components/navbar';
 import NavMain from '../containers/Nav';
 import Footer from '../components/footer';
+import SignUpPage from '../containers/SignUpPage/index';
 
 import ScrollToTop from '../hooks/use-scroll-to-top';
 
@@ -28,6 +29,7 @@ const Root = () => (
               <Route exact path="/" component={HomePage} />
               <Route exact path="/category/:id" component={CategoryPage} />
               <Route exact path="/articles/:slug" component={ArticlePage} />
+              <Route exact path="/form" component={SignUpPage} />
               <Footer />
             </ErrorBoundary>
           </Switch>

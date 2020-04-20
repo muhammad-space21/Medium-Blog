@@ -11,7 +11,6 @@ export const StyledNav = styled(Nav)`
     justify-content: center;
     align-items: center;
     margin-top: 90px;
-    margin-bottom:30px;
     @media screen and ( max-width: 1050px ) {
         display: none;
         margin-top: 0px;

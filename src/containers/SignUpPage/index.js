@@ -3,98 +3,109 @@ import React from 'react';
 import axios from 'axios'; 
 
 import { 
-    StyledSignUpPage,
-    Heading, 
-    FormStyled, 
-    ImageWrapper,
-    TextWrapper,
-    Title,
-    Input 
+  StyledSignUpPage,
+  Heading, 
+  FormStyled, 
+  TextWrapper,
+  Title,
+  Input,
+	CheckboxContainer,
+	Label,
+	PrivacyLink,
+	SignInLink
 } from './styles';
 
-import ButtonPrimary from '../../components/button-primary/button-primary';
-
-import ImageWoman from '../../assets/images/girl_laptop.svg';
-import ImageMan from '../../assets/images/man_with_ipad.svg';
-import ImageObject from '../../assets/images/Leaves_object.svg';
+import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
 
 
 class SignUpPage extends React.Component {
-    constructor () {
-        super();
+  constructor () {
+    super();
 
-        this.state = {
-            full_name: '',
-            phone_number: '',
-            password: ''
-        }
+    this.state = {
+      fullName: '',
+      phoneNumber: '',
+			password: '',
+			email: ''
+    }
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 }
 
-handleChange = e => {
-    this.setState({
-        [e.target.name]: e.target.value 
-        });
+handleChange = ( e ) => { 
+  this.setState({
+  	[e.target.name]: e.target.value 
+  });
 }
 
 handleSubmit = e => {
-    e.preventDefault();
-    console.log(this.state);
-    axios.post('https://jsonplaceholder.typecode.com/posts', this.state )
-        .then(response => {
-            console.log(response)
-        })
-        .catch(error => {
-            console.log(error)
-        })
+  e.preventDefault();
+  console.log(this.state);
+  axios.post('https://jsonplaceholder.typecode.com/posts', this.state )
+    .then(response => {
+      console.log(response)
+    })
+    .catch(error => {
+      console.log(error)
+    })
 }
 
-    render () {
-        const { full_name, phone_number, password } = this.state;
-        return (
-            <StyledSignUpPage>
-                    <FormStyled onSubmit={this.handleSubmit}>
-                        <TextWrapper>
-                            <Heading>Join to Medium.</Heading>
-                            <Title>Sign up to get newly updates from Medium.</Title>
-                            <Title>Already have an account ? <span>Sign in</span></Title>
-                        </TextWrapper>
-                        <Input
-                            type="text"
-                            name='full_name'
-                            placeholder="Fullname"
-                            value={full_name}
-                            onChange={this.handleChange}
-                            required
-                            />
-                        <Input 
-                            type='contact'
-                            name='phone_number'
-                            placeholder="Phone number"
-                            value={phone_number}
-                            onChange={this.handleChange}
-                            required
-                            />
-                        <Input
-                            type="password"
-                            name='password'
-                            placeholder="Password"
-                            value={password}
-                            onChange={this.handleChange}
-                            required
-                            />
-                            <ButtonPrimary >Submit</ButtonPrimary>
-                    </FormStyled>
-                <ImageWrapper>
-                    <img src={ImageWoman} alt='illustration' />
-                    <img src={ImageMan} alt='illustration' />
-                    <img src={ImageObject} alt='illustration' />
-                </ImageWrapper>
-            </StyledSignUpPage>
-        );
-    };
+  render () {
+    const { fullName, phoneNumber, password, email } = this.state;
+  	return (
+      <StyledSignUpPage>
+        <FormStyled onSubmit={this.handleSubmit}>
+          <TextWrapper>
+            <Heading>Join to BiznesRivoj.</Heading>
+            <Title>Sign up to get newly updates from BiznesRivoj.</Title>
+            <Title>Already have an account ? <SignInLink to='sign-in'>Sign in</SignInLink></Title>
+          </TextWrapper>
+          <Input
+          	type="name"
+            name='fullName'
+            placeholder="Fullname"
+          	value={fullName}
+            onChange={this.handleChange}
+            required
+          />
+					<Input
+          	type="email"
+            name='email'
+            placeholder="Email"
+          	value={email}
+            onChange={this.handleChange}
+            required
+          />
+          <Input 
+            type='contact'
+            name='phoneNumber'
+            placeholder="Phone number"
+            value={phoneNumber}
+            onChange={this.handleChange}
+            required
+          />
+          <Input
+            type="password"
+            name='password'
+            placeholder="Password"
+            value={password}
+            onChange={this.handleChange}
+            required
+          />
+          <CheckboxContainer>
+            <input type="checkbox" />
+            <Label htmlfor="checkbox">
+              Sign up to receive occasional emails from BiznesRivoj. 
+              You may unsubscribe at any time.
+            </Label>
+          </CheckboxContainer>
+          <ButtonPrimary btnForm>Creaate Account</ButtonPrimary>
+					<PrivacyLink to='/privacy-policy'>Privacy Policy</PrivacyLink>
+        </FormStyled>
+      </StyledSignUpPage>
+    );
+  };
 };
 
 
