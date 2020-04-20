@@ -11,8 +11,8 @@ import {
 } from './style';
 
 
-import TopArticlesContainer from '../../components/articles-container-top-medium/top-articles-container';
-import HomepageBody from '../../components/homepage-body/homepage-body';
+import TopArticlesContainer from '../../components/ArticlesContainerTopMedium';
+import HomepageBody from '../../components/HomepageBody';
 import Spinner from '../../components/spinner';
 import Loader from '../../components/Loader';
 
@@ -68,11 +68,11 @@ const mapStateToProps = (state) => ({
   loading: state.homeReducer.loading,
   home: state.homeReducer.home,
   homeList: homeSelector(state)
-
 });
 
 const mapDispatchToProps = (dispatch) => ({
   getHome: () => dispatch(getHome())
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

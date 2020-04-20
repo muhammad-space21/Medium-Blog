@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { withRouter, Route, useParams } from 'react-router-dom';
 
@@ -19,6 +21,19 @@ const NavMain = ({
     }
   }, []);
 
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const response = await axios(
+        'https://webhook.makhmudjon.me/with-cors'
+      );
+      return response;
+      // ...
+    }
+    fetchData();
+  }, []);
+
+
   return (
     <StyledNav>
       <LinkContainer>
@@ -35,6 +50,16 @@ const NavMain = ({
       </LinkContainer>
     </StyledNav>
   );
+};
+
+NavMain.propTypes = {
+  getNav: PropTypes.func,
+  list: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any))
+};
+
+NavMain.defaultProps = {
+  getNav: () => {},
+  list: []
 };
 
 const mapStateToProps = (state) => ({

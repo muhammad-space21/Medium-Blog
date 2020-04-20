@@ -10,10 +10,10 @@ import { articlesSelector } from '../../redux/selectors/articlesSelector';
 
 import { useCategories } from './hooks/use-categories';
 
-import TopicPageHeader from '../../components/topic-page-header';
-import NavOfArticles from '../../components/nav-of-articles';
-import HomepageBody from '../../components/homepage-body/homepage-body';
-import PopularTopicsSection from '../../components/popular-topics-section/popular-topics-section';
+import TopicPageHeader from '../../components/TopicPageHeader';
+import NavOfArticles from '../../components/NavOfArticles';
+import HomepageBody from '../../components/HomepageBody/index';
+import PopularTopicsSection from '../../components/PopularTopicsSection/index';
 import Spinner from '../../components/spinner';
 import Loader from '../../components/Loader';
 
