@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Auth from '../containers/Auth';
-import ErrorBoundary from '../components/ErrorBoundaryMedium';
 
 import HomePage from '../containers/HomePage';
 import CategoryPage from '../containers/CategoryPage';
@@ -20,24 +18,20 @@ import '../assets/fonts/font.css';
 
 const Root = () => (
   <>
-    <Auth>
-      <Router>
-        <ScrollToTop>
-          <Switch>
-            <ErrorBoundary>
-              <NavbarHeader />
-              <NavMain />
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/category/:id" component={CategoryPage} />
-              <Route exact path="/articles/:slug" component={ArticlePage} />
-              <Route exact path="/sign-up" component={SignUpPage} />
-              <Route exact path="/login" component={SignInPage} />
-              <Footer />
-            </ErrorBoundary>
-          </Switch>
-        </ScrollToTop>
-      </Router>
-    </Auth>
+    <Router>
+      <ScrollToTop>
+        <NavbarHeader />
+        <NavMain />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/category/:id" component={CategoryPage} />
+          <Route exact path="/articles/:slug" component={ArticlePage} />
+          <Route exact path="/sign-up" component={SignUpPage} />
+          <Route exact path="/login" component={SignInPage} />
+          <Footer />
+        </Switch>
+      </ScrollToTop>
+    </Router>
   </>
 );
 
