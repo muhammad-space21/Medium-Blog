@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ArticleBodyStyled = styled.div`
-    width: 62%;
+    width: 100%;
     height: 100%;
     margin-top: 35px;
     padding-left: 88px;

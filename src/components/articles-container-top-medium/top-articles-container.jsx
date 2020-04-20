@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   TopArticlesStyled,
@@ -31,5 +32,13 @@ const TopArticlesContainer = ({ main }) => (
     ))}
   </TopArticlesStyled>
 );
+
+TopArticlesContainer.defaultProps = {
+  main: []
+};
+
+TopArticlesContainer.propTypes = {
+  main: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any))
+};
 
 export default TopArticlesContainer;

@@ -6,15 +6,7 @@ import ArticleBody from '../article-body-medium';
 
 
 const ArticleBodyContainer = () => (
-  <ArticleBodyStyled>
-    <ArticleBody />
-    <ArticleBody />
-    <ArticleBody />
-    <ArticleBody />
-    <ArticleBody />
-    <ArticleBody />
-    <ArticleBody />
-  </ArticleBodyStyled>
+  <ArticleBodyStyled />
 );
 
 export default ArticleBodyContainer;

@@ -12,8 +12,7 @@ import {
 
 
 import TopArticlesContainer from '../../components/articles-container-top-medium/top-articles-container';
-import ArticleBodyContainer from '../../components/articles-body-container-medium';
-import PopularArticle from '../../components/articles-container-popular-medium/popular-articles-container';
+import HomepageBody from '../../components/homepage-body/homepage-body';
 import Spinner from '../../components/spinner';
 import Loader from '../../components/Loader';
 
@@ -21,11 +20,10 @@ const HomePage = ({
   home, getHome, homeList, loading
 }) => {
   useEffect(() => {
-    if (!home) {
+    if (home && !home.length) {
       getHome();
     }
   }, [home]);
-
   return (
     <MainPageStyled>
       {loading && (
@@ -40,8 +38,12 @@ const HomePage = ({
         <>
           <TopArticlesContainer main={homeList.slice(1, 2)} />
           <Content>
-            {/* <ArticleBodyContainer articles={homeList.slice(1)} /> */}
-            {/* <PopularArticle /> */}
+            {homeList.slice(2).map((category, idx) => (
+              <HomepageBody
+                key={category.id || idx}
+                articles={category.articles}
+              />
+            ))}
           </Content>
         </>
       )}
@@ -50,17 +52,17 @@ const HomePage = ({
 };
 
 HomePage.defaultProps = {
-  home: PropTypes.objectOf(PropTypes.any),
-  loading: PropTypes.bool,
-  getHome: PropTypes.func,
-  homeList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any))
-};
-
-HomePage.propTypes = {
-  home: {},
+  home: [],
   loading: false,
   getHome: () => {},
   homeList: []
+};
+
+HomePage.propTypes = {
+  home: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)),
+  loading: PropTypes.bool,
+  getHome: PropTypes.func,
+  homeList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any))
 };
 const mapStateToProps = (state) => ({
   loading: state.homeReducer.loading,

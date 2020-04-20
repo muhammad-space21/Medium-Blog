@@ -35,7 +35,7 @@ Auth.defaultProps = {
   children: '',
   init: () => {},
   tokenLocalToRedux: () => {},
-  token: {},
+  token: '',
   loading: false,
   error: false
 };
@@ -47,7 +47,7 @@ Auth.propTypes = {
   ]),
   init: PropTypes.func,
   tokenLocalToRedux: PropTypes.func,
-  token: PropTypes.objectOf(PropTypes.any),
+  token: PropTypes.string,
   loading: PropTypes.bool,
   error: PropTypes.bool
 };
