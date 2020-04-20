@@ -26,7 +26,7 @@ class SignInPage extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange = ( e ) => { 
+  handleChange = e => { 
     this.setState({
       [e.target.name]: e.target.value 
     });
