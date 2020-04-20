@@ -16,6 +16,7 @@ const Auth = ({
   tokenLocalToRedux
 }) => {
   const localToken = localStorage.getItem('token');
+
   if (!token && localToken) {
     tokenLocalToRedux(localToken);
   }
@@ -23,6 +24,7 @@ const Auth = ({
   if (!token && !loading && !error && !localToken) {
     init();
   }
+
   return (
     <>
       {loading && <Spinner />}
