@@ -11,6 +11,8 @@ const getButtonStyles = props => {
         return BtnFollowGreen;
     } else if (props.btnFollowGrey) {
         return BtnFollowGrey;
+    } else if (props.btnForm) {
+        return BtnForm;
     } else {
         return StyledButton
     }
@@ -35,6 +37,25 @@ export const StyledButton = styled.button`
         cursor: pointer;
     }
     ${getButtonStyles}
+`;
+
+export const BtnForm = css`
+    width: 350px;
+    height: 38px;
+    background: #03A87C;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    opacity: 100%;
+    outline: none;
+    color: white;
+    border-radius: 3px;
+
+    &:hover {
+        background-color: #029E74;
+        cursor: pointer;
+    }
 `;
 
 export const BtnPrimaryBig = css`

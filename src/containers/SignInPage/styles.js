@@ -16,20 +16,20 @@ export const StyledSignUpPage = styled.div`
 
 export const FormStyled = styled.form`
     width: 100%;
-    margin-top: 30px;
+    margin-top: 50px;
     height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 `;
 
 export const Input = styled.input`
     width: 350px;
     height: 40px;
     border: 1px solid #CCCCCC;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 4px;
+    margin-bottom: 20px;
 
     &::placeholder {
         font-size: 14px;
@@ -53,20 +53,6 @@ export const TextWrapper = styled.div`
     margin-bottom: 30px;
 `;
 
-export const Title = styled.span`
-    font-size: 15px;
-    font-weight: 400;
-    padding-left: 10px;
-    color: grey;
-    span {
-        color: #77D89E;
-        font-weight: 500;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-`;
-
 export const SignInLink = styled(Link)`
     color: #77D89E;
     font-weight: 500;
@@ -87,26 +73,10 @@ export const Heading = styled.span`
     }
 `;
 
-export const CheckboxContainer = styled.div`
-    width: 350px;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    margin-bottom: 10px;
-`;
-
-export const Label = styled.label`
-    font-size: 14px;
-    margin-left: 5px;
-    line-height: 18px;
-    margin-top: -5px;
-`;
-
-export const PrivacyLink = styled(Link)`
+export const ForgotPasswordLink = styled(Link)`
     font-size: 16px;
     font-weight: 400;
-    color: grey;
+    color: #77D89E;
     margin-top: 50px;
     &:hover {
         cursor: pointer;
