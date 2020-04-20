@@ -3,7 +3,8 @@ import actionTypes from '../../../constants/action-types';
 const defaultState = {
   loading: false,
   error: false,
-  home: {}
+  home: []
+
 };
 
 const map = {

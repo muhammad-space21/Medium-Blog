@@ -1,63 +1,68 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 import {
-    ArticlesContainer,
-    ImageContainer,
-    TextsHolder,
-    ArticleTitle,
-    SecondaryTitle,
-    AuthorInfo,
-    AuthorName,
-    AuthorLocation,
-    PublishInfo,
-    PublishDate,
-    TimeOfReading,
-    StarIcon
-} from './styles';
+  ArticlesContainer,
+  ImageContainer,
+  TextsHolder,
+  ArticleTitle,
+  SecondaryTitle,
+  AuthorInfo,
+  AuthorLocation,
+  PublishInfo,
+  PublishDate,
+  StarIcon
+} from './articles.styles';
 
-import Img from '../../assets/images/cartoon7.jpg';
+import Img from '../../assets/images/corona-2.jpg';
 import starIcon from '../../assets/icons/star.png';
 
 
-const Article = () => (
-    <ArticlesContainer>
-        <ImageContainer>
-            <img src={Img} alt="article"/>
-        </ImageContainer>
-        <TextsHolder>
-            <ArticleTitle>
-                12 Powerfull ways to change your life when you feel hopeless
-            </ArticleTitle>
-            <SecondaryTitle>
-                An honest authentic guide to self improvement
-            </SecondaryTitle>
-            <AuthorInfo>
-                <AuthorName>
-                    Ayodejii Avossika  
-                </AuthorName>
-                <AuthorLocation>
-                    in Mind Cafe
-                </AuthorLocation>
-            </AuthorInfo>
-            <PublishInfo>
-            <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Updated Jan 15</Tooltip>}>
-                <span className="d-inline-block">
-                    <PublishDate style={{ hoverEvents: 'none' }}>
-                        Dec 22, 2019
-                    </PublishDate>
-                </span>
-            </OverlayTrigger>
-                <TimeOfReading>
-                    9 min read
-                </TimeOfReading>
-                <StarIcon>
-                    <img src={starIcon} alt="star-icon"/>
-                </StarIcon>
-            </PublishInfo>
-        </TextsHolder>
-    </ArticlesContainer>
+const Article = ({ article }) => (
+  <ArticlesContainer key={article.id}>
+    <ImageContainer>
+      <img src={Img} alt={article.description_uz} />
+    </ImageContainer>
+    <TextsHolder>
+      <ArticleTitle to={article.route}>
+        {article.title_uz}
+      </ArticleTitle>
+      <SecondaryTitle>
+        {article.description_uz}
+      </SecondaryTitle>
+      <AuthorInfo>
+        {article.categories.map((i, idx) => (
+          <AuthorLocation
+            key={i.id || idx}
+            to={i.route}
+          >
+            {i.label}
+          </AuthorLocation>
+        ))}
+      </AuthorInfo>
+      <PublishInfo>
+        <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">{article.createdAt}</Tooltip>}>
+          <span className="d-inline-block">
+            <PublishDate style={{ hoverEvents: 'none' }}>
+              {article.createdAt}
+            </PublishDate>
+          </span>
+        </OverlayTrigger>
+        <StarIcon>
+          <img src={starIcon} alt="star-icon" />
+        </StarIcon>
+      </PublishInfo>
+    </TextsHolder>
+  </ArticlesContainer>
 );
+
+Article.propTypes = {
+  article: PropTypes.objectOf(PropTypes.any)
+};
+
+Article.defaultProps = {
+  article: {}
+};
 
 export default Article;

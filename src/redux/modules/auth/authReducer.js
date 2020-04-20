@@ -3,7 +3,7 @@ import actionTypes from '../../../constants/action-types';
 const defaultState = {
   loading: false,
   error: false,
-  token: null
+  token: ''
 };
 
 const map = {
@@ -20,6 +20,10 @@ const map = {
     ...state,
     loading: false,
     error: true
+  }),
+  [actionTypes.WRITE_TOKEN]: (state, { payload }) => ({
+    ...state,
+    token: payload
   })
 };
 

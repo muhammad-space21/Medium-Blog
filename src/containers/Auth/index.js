@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { init } from '../../redux/modules/auth/authActions';
+import { init, tokenLocalToRedux } from '../../redux/modules/auth/authActions';
+
 
 import Spinner from '../../components/spinner';
 
@@ -11,16 +12,23 @@ const Auth = ({
   token,
   error,
   loading,
-  init
+  init,
+  tokenLocalToRedux
 }) => {
-  if (!token && !loading && !error) {
+  const localToken = localStorage.getItem('token');
+
+  if (!token && localToken) {
+    tokenLocalToRedux(localToken);
+  }
+
+  if (!token && !loading && !error && !localToken) {
     init();
   }
+
   return (
     <>
       {loading && <Spinner />}
-      {/* {error && <span>Uh sorry something not right, please refresh)</span>} */}
-      {!loading && children}
+      {!loading && token && children}
     </>
   );
 };
@@ -28,7 +36,8 @@ const Auth = ({
 Auth.defaultProps = {
   children: '',
   init: () => {},
-  token: {},
+  tokenLocalToRedux: () => {},
+  token: '',
   loading: false,
   error: false
 };
@@ -39,7 +48,8 @@ Auth.propTypes = {
     PropTypes.node
   ]),
   init: PropTypes.func,
-  token: PropTypes.objectOf(PropTypes.any),
+  tokenLocalToRedux: PropTypes.func,
+  token: PropTypes.string,
   loading: PropTypes.bool,
   error: PropTypes.bool
 };
@@ -51,7 +61,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  init: () => dispatch(init())
+  init: () => dispatch(init()),
+  tokenLocalToRedux: (token) => dispatch(tokenLocalToRedux(token))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Auth);

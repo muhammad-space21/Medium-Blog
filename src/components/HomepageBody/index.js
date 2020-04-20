@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { StyledContainer } from './styles';
 
@@ -16,5 +17,13 @@ const HomepageBody = ({ articles }) => (
 
   </StyledContainer>
 );
+
+HomepageBody.defaultProps = {
+  articles: []
+};
+
+HomepageBody.propTypes = {
+  articles: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any))
+};
 
 export default HomepageBody;

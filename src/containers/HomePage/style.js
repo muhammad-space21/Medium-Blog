@@ -42,3 +42,10 @@ export const ButtonContainer = styled.div`
     margin-left: 20px;
     }
 `;
+
+
+export const LoaderWrapper = styled.div`
+    display:flex;
+    justify-content:center;
+    border-bottom: 1px solid #D5D7D8;
+`;

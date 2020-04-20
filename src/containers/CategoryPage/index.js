@@ -45,7 +45,7 @@ const TopicPage = ({
         query={query}
         handleChangeFilter={handleChangeFilter}
       />
-      {articles.length
+      {!loading && articles.length
         && (
           <HomepageBody
             articles={articles}

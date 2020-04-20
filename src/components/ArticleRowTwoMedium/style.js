@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { Link } from 'react-router-dom';
 
 export const ArticlesContainer = styled.div`
     width: fit-content;
@@ -8,6 +8,11 @@ export const ArticlesContainer = styled.div`
     padding: 0;
     display: flex;
     flex-flow: row nowrap;
+    
+    &:hover{
+        text-decoration:none;
+    }
+
 `;
 
 export const ImageContainer = styled.div`
@@ -17,6 +22,10 @@ export const ImageContainer = styled.div`
         width: 100%;
         height: 100%;
         object-fit: cover;
+        min-width:100px;
+        min-height:100px;
+        max-width:120px;
+        max-height:120px;
     }
     @media screen and ( max-width: 720px ) {
         order: 3;
@@ -43,17 +52,32 @@ export const TextsHolder = styled.div`
     }
 `;
 
-export const ArticleTitle = styled.h1`
+export const ArticleTitle = styled(Link)`
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
     color: black;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom:10px;
+
     &:hover {
         cursor: pointer;
+        text-decoration:none;
+        opacity:0.7;
+        color:black;
     }
 `;
 
-export const SecondaryTitle = styled.h1`
+export const SecondaryTitle = styled.h3`
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 13px;
     font-weight: 300;
     line-height: 15px;
@@ -82,13 +106,18 @@ export const AuthorName = styled.span`
     }
 `;
 
-export const AuthorLocation = styled.span`
+export const AuthorLocation = styled(Link)`
     font-size: 13px;
     font-weight: 500;
     line-height: 20px;
+    text-transform:uppercase;
+    color:#212529;
+
     &:hover {
         text-decoration: underline;
         cursor: pointer;
+        color:#212529;
+        opacity:0.8;
     }
 `;
 
@@ -137,6 +166,3 @@ export const StarIcon = styled.div`
         height: 13px;
     }
 `;
-
-
-

@@ -1,31 +1,78 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getHome } from '../../redux/modules/home/homeActions';
+import { homeSelector } from '../../redux/selectors/homeSelector';
 import {
   MainPageStyled,
   Content,
   HR,
-  ButtonContainer
+  LoaderWrapper
 } from './style';
 
 
-import TopArticlesContainer from '../../components/ArticlesContainerTopMedium/index';
-import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
-import ArticleBodyContainer from '../../components/ArticlesBodyContainerMedium';
-import PopularArticle from '../../components/ArticlesContainerPopularMedium/index';
+import TopArticlesContainer from '../../components/ArticlesContainerTopMedium';
+import HomepageBody from '../../components/HomepageBody';
+import Spinner from '../../components/spinner';
+import Loader from '../../components/Loader';
 
-const HomePage = () => (
-  <MainPageStyled>
-    <TopArticlesContainer />
-    <ButtonContainer>
-      <ButtonPrimary btnLink>See Editor's picks   </ButtonPrimary>
-    </ButtonContainer>
-    <HR />
-    <Content>
-      <ArticleBodyContainer />
-      <PopularArticle />
-    </Content>
-  </MainPageStyled>
-);
+const HomePage = ({
+  home, getHome, homeList, loading
+}) => {
+  useEffect(() => {
+    if (home && !home.length) {
+      getHome();
+    }
+  }, [home]);
+  return (
+    <MainPageStyled>
+      {loading && (
+        <>
+          <LoaderWrapper>
+            <Loader />
+          </LoaderWrapper>
+          <Spinner />
+        </>
+      )}
+      {!loading && homeList && homeList.length && (
+        <>
+          <TopArticlesContainer main={homeList.slice(1, 2)} />
+          <Content>
+            {homeList.slice(2).map((category, idx) => (
+              <HomepageBody
+                key={category.id || idx}
+                articles={category.articles}
+              />
+            ))}
+          </Content>
+        </>
+      )}
+    </MainPageStyled>
+  );
+};
+
+HomePage.defaultProps = {
+  home: [],
+  loading: false,
+  getHome: () => {},
+  homeList: []
+};
+
+HomePage.propTypes = {
+  home: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)),
+  loading: PropTypes.bool,
+  getHome: PropTypes.func,
+  homeList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any))
+};
+const mapStateToProps = (state) => ({
+  loading: state.homeReducer.loading,
+  home: state.homeReducer.home,
+  homeList: homeSelector(state)
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getHome: () => dispatch(getHome())
+});
 
 
-export default HomePage;
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

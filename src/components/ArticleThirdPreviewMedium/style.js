@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { Link } from 'react-router-dom';
 
 export const ArticlesContainer = styled.div`
     width: fit-content;
@@ -31,21 +31,27 @@ export const TextsHolder = styled.div`
     }
 `;
 
-export const ArticleTitle = styled.h1`
+export const ArticleTitle = styled(Link)`
     font-size: 17px;
     font-weight: 600;
     line-height: 22px;
     color: black;
     padding-top: 12px;
+    text-decoration:none;
+    margin-bottom:10px;
+
     &:hover {
         cursor: pointer;
+        text-decoration:none;
+        color:inherit;
+        opacity:0.7;
     }
     @media screen and ( max-width: 750px ) {
         font-size: 18px;
     }
 `;
 
-export const SecondaryTitle = styled.h1`
+export const SecondaryTitle = styled.h2`
     font-size: 13px;
     font-weight: 300;
     line-height: 20px;
@@ -60,6 +66,7 @@ export const AuthorInfo = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
+
 `;
 
 export const AuthorName = styled.span`
@@ -73,13 +80,18 @@ export const AuthorName = styled.span`
     }
 `;
 
-export const AuthorLocation = styled.span`
+export const AuthorLocation = styled(Link)`
     font-size: 13px;
     font-weight: 500;
     line-height: 20px;
+    color:#212529;
+    text-transform:uppercase;
+    
     &:hover {
         text-decoration: underline;
         cursor: pointer;
+        opacity:0.8;
+        color:inherit;
     }
 `;
 
@@ -106,9 +118,9 @@ export const TimeOfReading = styled.span`
 
 export const StarIcon = styled.div`
     margin-left: 5px;
+    display:flex;
     img {
         width: 13px;
         height: 13px;
     }
 `;
-

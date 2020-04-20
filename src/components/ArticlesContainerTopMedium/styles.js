@@ -7,7 +7,9 @@ export const TopArticlesStyled = styled.div`
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    margin-top: 30px;
+    border-bottom:1px solid #D5D7D8;
+    margin-bottom:20px;
+    
     @media screen and ( max-width: 950px ) {
         padding-right: 20px;
         padding-left: 20px;

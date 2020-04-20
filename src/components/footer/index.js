@@ -32,7 +32,6 @@ import IconArrow from '../../assets/icons/next.svg';
 
 const Footer = () => (
   <StyledContainer>
-    <HR />
     <Row1>
       <ColTop1>
         <BrandContainer>

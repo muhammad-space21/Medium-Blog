@@ -2,8 +2,6 @@ import axios from 'axios';
 
 import { getHeaders } from '../../../utils/index';
 import actionTypes from '../../../constants/action-types';
-import { API_URL } from '../../../config';
-
 
 export const getRecommendedArticles = ({
   categoryId, filter, sortDr, page, limit
@@ -12,11 +10,8 @@ export const getRecommendedArticles = ({
     type: actionTypes.GET_CATEGORY_RECOMMENDED,
     payload: axios({
       method: 'GET',
-      url: `${API_URL}/categories/${categoryId}/articles?${filter}=${sortDr}&page=${page}&limit=${limit}`,
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTU4NzEwNzQ4Nn0.T8yoq8G6UqYnJD-IbCiI91FOnGbN1q9vwKn2hKgE3f4'
-      }
+      url: `/categories/${categoryId}/articles?${filter}=${sortDr}&page=${page}&limit=${limit}`,
+      headers: getHeaders(getState)
     })
   });
 };
@@ -57,10 +52,7 @@ export const getArticles = ({
       payload: axios({
         method: 'GET',
         url: `/categories/${categoryId}/articles?${filter}=${sortDr}&page=${page}&limit=${limit}`,
-        headers: {
-          'Content-type': 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTU4NzAyNjEwNn0.y56keIzF11WQJj2krQHvEQXdslu5VgJvHEYs6LIpm8g'
-        }
+        headers: getHeaders(getState)
       })
     });
   }
