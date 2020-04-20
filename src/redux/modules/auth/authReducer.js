@@ -20,6 +20,10 @@ const map = {
     ...state,
     loading: false,
     error: true
+  }),
+  [actionTypes.WRITE_TOKEN]: (state, { payload }) => ({
+    ...state,
+    token: payload
   })
 };
 

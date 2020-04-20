@@ -25,9 +25,9 @@ const Root = () => (
             <ErrorBoundary>
               <NavbarHeader />
               <NavMain />
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/category/:id" component={CategoryPage} />
-              <Route exact path="/articles/:slug" component={ArticlePage} />
+              <Route exact key="r-1" path="/" component={HomePage} />
+              <Route exact key="r-2" path="/category/:id" component={CategoryPage} />
+              <Route exact key="r-3" path="/articles/:slug" component={ArticlePage} />
               <Footer />
             </ErrorBoundary>
           </Switch>

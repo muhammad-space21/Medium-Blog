@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { Link } from 'react-router-dom';
 
 export const ArticlesContainer = styled.div`
     width: fit-content;
@@ -34,21 +34,25 @@ export const TextsHolder = styled.div`
     }
 `;
 
-export const ArticleTitle = styled.h1`
+export const ArticleTitle = styled(Link)`
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
     color: black;
     padding-top: 12px;
+
     &:hover {
         cursor: pointer;
+        color:inherit;
+        text-decoration:none;
+        opacity:0.7;
     }
     @media screen and ( max-width: 750px ) {
         font-size: 18px;
     }
 `;
 
-export const SecondaryTitle = styled.h1`
+export const SecondaryTitle = styled.h3`
     font-size: 13px;
     font-weight: 300;
     line-height: 20px;
@@ -80,9 +84,14 @@ export const AuthorLocation = styled.span`
     font-size: 13px;
     font-weight: 500;
     line-height: 20px;
+    color:#212529;
+    text-transform:uppercase;
+
     &:hover {
         text-decoration: underline;
         cursor: pointer;
+        opacity:0.8;
+        color:inherit;
     }
 `;
 
@@ -108,9 +117,9 @@ export const TimeOfReading = styled.span`
 
 export const StarIcon = styled.div`
     margin-left: 5px;
+    display:flex;
     img {
         width: 13px;
         height: 13px;
     }
 `;
-

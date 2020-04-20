@@ -2,12 +2,25 @@ import axios from 'axios';
 
 import actionTypes from '../../../constants/action-types';
 
-export const init = () => (dispatch) => {
+export const tokenLocalToRedux = (token) => (dispatch) => {
   dispatch({
+    type: actionTypes.WRITE_TOKEN,
+    payload: token
+  });
+};
+
+export const init = () => (dispatch) => {
+  const response = dispatch({
     type: actionTypes.GET_TOKEN,
-    payload: axios.post('/auth/login', {
-      phone: '+998123456789',
-      password: 'admin'
+    payload: axios({
+      method: 'GET',
+      url: 'auth/login'
     })
+  });
+
+  response.then((res) => {
+    if (res && res.value && res.value.data && res.value.data.token) {
+      localStorage.setItem('token', res.value.data.token);
+    }
   });
 };

@@ -1,5 +1,6 @@
 export default {
   GET_TOKEN: 'get-token',
+  WRITE_TOKEN: 'write-token',
   GET_NAVBAR: 'get-navbar',
   GET_CATEGORY: 'get-category',
   GET_CATEGORY_RECOMMENDED: 'get-category-recommended',

@@ -2,51 +2,70 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getHome } from '../../redux/modules/home/homeActions';
+import { homeSelector } from '../../redux/selectors/homeSelector';
 import {
   MainPageStyled,
   Content,
   HR,
-  ButtonContainer
+  LoaderWrapper
 } from './style';
 
 
 import TopArticlesContainer from '../../components/articles-container-top-medium/top-articles-container';
-import ButtonPrimary from '../../components/button-primary-medium/button-primary';
 import ArticleBodyContainer from '../../components/articles-body-container-medium';
 import PopularArticle from '../../components/articles-container-popular-medium/popular-articles-container';
+import Spinner from '../../components/spinner';
+import Loader from '../../components/Loader';
 
 const HomePage = ({
-  home, getHome
+  home, getHome, homeList, loading
 }) => {
   useEffect(() => {
-    getHome();
-  }, []);
+    if (!home) {
+      getHome();
+    }
+  }, [home]);
+
   return (
     <MainPageStyled>
-      <TopArticlesContainer />
-      <ButtonContainer>
-        <ButtonPrimary btnLink>See Editor's picks   </ButtonPrimary>
-      </ButtonContainer>
-      <HR />
-      <Content>
-        <ArticleBodyContainer />
-        <PopularArticle />
-      </Content>
+      {loading && (
+        <>
+          <LoaderWrapper>
+            <Loader />
+          </LoaderWrapper>
+          <Spinner />
+        </>
+      )}
+      {!loading && homeList && homeList.length && (
+        <>
+          <TopArticlesContainer main={homeList.slice(1, 2)} />
+          <Content>
+            {/* <ArticleBodyContainer articles={homeList.slice(1)} /> */}
+            {/* <PopularArticle /> */}
+          </Content>
+        </>
+      )}
     </MainPageStyled>
   );
 };
 
 HomePage.defaultProps = {
   home: PropTypes.objectOf(PropTypes.any),
-  getHome: PropTypes.func
+  loading: PropTypes.bool,
+  getHome: PropTypes.func,
+  homeList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any))
 };
 
 HomePage.propTypes = {
   home: {},
-  getHome: () => {}
+  loading: false,
+  getHome: () => {},
+  homeList: []
 };
 const mapStateToProps = (state) => ({
-  home: state.homeReducer.home
+  loading: state.homeReducer.loading,
+  home: state.homeReducer.home,
+  homeList: homeSelector(state)
 
 });
 

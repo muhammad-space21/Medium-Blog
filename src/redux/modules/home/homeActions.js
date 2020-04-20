@@ -1,5 +1,6 @@
 import axios from 'axios';
 import actionTypes from '../../../constants/action-types';
+import { getHeaders } from '../../../utils';
 
 export const getHome = () => (dispatch, getState) => {
   dispatch({
@@ -7,10 +8,7 @@ export const getHome = () => (dispatch, getState) => {
     payload: axios({
       method: 'GET',
       url: '/home',
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTU4Njg2MTkxOH0.iFvukzsPRzzPteD-2Yv6QcJaiYbUaPe1kLFn8WWozbU'
-      }
+      headers: getHeaders(getState)
     })
   });
 };

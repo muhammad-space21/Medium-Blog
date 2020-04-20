@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import {
@@ -17,42 +18,34 @@ import {
   StarIcon
 } from './style';
 
-import Img from '../../assets/images/cartoon7.jpg';
+import Img from '../../assets/images/corona-2.jpg';
 import IconSave from '../../assets/icons/save-icon.svg';
 import starIcon from '../../assets/icons/star.png';
 
 
-const ArticleRowTwo = () => (
+const ArticleRowTwo = ({ article }) => (
   <ArticlesContainer>
     <ImageContainer>
       <img src={Img} alt="article" />
     </ImageContainer>
     <TextsHolder>
-      <ArticleTitle>
-                12 Powerful ways to change your life when you feel hopeless
+      <ArticleTitle to={article.route}>
+        {article.title_uz}
       </ArticleTitle>
       <SecondaryTitle>
-                An honest authentic guide.
+        {article.description_uz}
       </SecondaryTitle>
       <AuthorInfo>
-        <AuthorName>
-                    Ayodejii Avossika
-        </AuthorName>
-        <AuthorLocation>
-                    in Mind Cafe
-        </AuthorLocation>
+        {article.categories.map((i, idx) => (<AuthorLocation key={i.id || idx} to={i.route}>{i.label}</AuthorLocation>))}
       </AuthorInfo>
       <PublishInfo>
-        <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Updated Jan 15</Tooltip>}>
+        <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">{article.createdAt}</Tooltip>}>
           <span className="d-inline-block">
             <PublishDate style={{ hoverEvents: 'none' }}>
-                            Dec 22, 2019
+              {article.createdAt}
             </PublishDate>
           </span>
         </OverlayTrigger>
-        <TimeOfReading>
-                    9 min read
-        </TimeOfReading>
         <StarIcon>
           <img src={starIcon} alt="star-icon" />
         </StarIcon>
@@ -61,5 +54,13 @@ const ArticleRowTwo = () => (
     <ImgWrapper><img src={IconSave} alt="icon-save" /></ImgWrapper>
   </ArticlesContainer>
 );
+
+ArticleRowTwo.propTypes = {
+  article: PropTypes.objectOf(PropTypes.any)
+};
+
+ArticleRowTwo.defaultProps = {
+  article: {}
+};
 
 export default ArticleRowTwo;

@@ -11,11 +11,7 @@ export const getRecommendedArticles = ({
     payload: axios({
       method: 'GET',
       url: `/categories/${categoryId}/articles?${filter}=${sortDr}&page=${page}&limit=${limit}`,
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTU4NTM5OTgwMn0.pgQPiGAyLtQmQv9xwsVyGXCAYd8IRngcUYHRXcl27ac'
-
-      }
+      headers: getHeaders(getState)
     })
   });
 };
@@ -56,11 +52,7 @@ export const getArticles = ({
       payload: axios({
         method: 'GET',
         url: `/categories/${categoryId}/articles?${filter}=${sortDr}&page=${page}&limit=${limit}`,
-        headers: {
-          'Content-type': 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTU4NTM5OTgwMn0.pgQPiGAyLtQmQv9xwsVyGXCAYd8IRngcUYHRXcl27ac'
-
-        }
+        headers: getHeaders(getState)
       })
     });
   }
