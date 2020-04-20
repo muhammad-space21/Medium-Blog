@@ -18,7 +18,7 @@ class SignInPage extends React.Component {
     super();
 
     this.state = {
-      email: '',
+      phone: '',
       password: ''
     }
 
@@ -45,7 +45,7 @@ class SignInPage extends React.Component {
   }
 
   render() {
-    const { email, password } = this.state; 
+    const { phone, password } = this.state; 
 
     return (
       <StyledSignUpPage>
@@ -54,10 +54,10 @@ class SignInPage extends React.Component {
             <Heading>Login to your BiznesRivoj account.</Heading>
           </TextWrapper>
           <Input
-            type="email"
-            name="email"
+            type="contact"
+            name="phone"
             placeholder="Email"
-            value={email}
+            value={phone}
             onChange={this.handleChange}
             required
           />
