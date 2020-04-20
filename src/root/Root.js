@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Auth from '../containers/Auth';
-import ErrorBoundary from '../components/error-boundary-medium/error-boundary';
+import ErrorBoundary from '../components/ErrorBoundaryMedium';
 
 import HomePage from '../containers/HomePage';
 import CategoryPage from '../containers/CategoryPage';

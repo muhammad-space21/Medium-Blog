@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ButtonCustom from '../buttons/button-custom/button-custom';
-import NavBottom from '../nav-bottom/nav-bottom';
+import ButtonCustom from '../buttons/ButtonCustom';
+import NavBottom from '../NavBottom';
 
 import {
   StyledContainer,

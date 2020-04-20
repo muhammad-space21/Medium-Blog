@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { SpinnerOverlay, SpinnerContainer } from './style';
+import {
+  SpinnerOverlay,
+  SpinnerContainer
+} from './style';
 
 
 const Spinner = () => (

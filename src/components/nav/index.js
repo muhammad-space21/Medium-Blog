@@ -1,6 +1,10 @@
 import React from 'react';
 
-import { StyledNav, StyledLinks, Links } from './style';
+import {
+  StyledNav,
+  StyledLinks,
+  Links
+} from './style';
 
 
 const NavMain = () => (

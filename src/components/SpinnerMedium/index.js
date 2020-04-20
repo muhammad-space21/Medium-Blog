@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { SpinnerWrapper, SpinnerItem } from './style';
+import {
+  SpinnerWrapper,
+  SpinnerItem
+} from './style';
 
 export const Spinner = () => (
   <SpinnerWrapper>
