@@ -59,7 +59,7 @@ handleSubmit = e => {
           <TextWrapper>
             <Heading>Join to BiznesRivoj.</Heading>
             <Title>Sign up to get newly updates from BiznesRivoj.</Title>
-            <Title>Already have an account ? <SignInLink to='sign-in'>Sign in</SignInLink></Title>
+            <Title>Already have an account ? <SignInLink to='login'>Sign in</SignInLink></Title>
           </TextWrapper>
           <Input
           	type="name"
@@ -100,7 +100,7 @@ handleSubmit = e => {
               You may unsubscribe at any time.
             </Label>
           </CheckboxContainer>
-          <ButtonPrimary btnForm>Creaate Account</ButtonPrimary>
+          <ButtonPrimary btnForm>Create Account</ButtonPrimary>
 					<PrivacyLink to='/privacy-policy'>Privacy Policy</PrivacyLink>
         </FormStyled>
       </StyledSignUpPage>
