@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import actionTypes from '../../../constants/action-types';
+import { API_URL } from '../../../config';
 
 export const tokenLocalToRedux = (token) => (dispatch) => {
   dispatch({
@@ -14,7 +15,7 @@ export const init = () => (dispatch) => {
     type: actionTypes.GET_TOKEN,
     payload: axios({
       method: 'GET',
-      url: 'auth/login'
+      url: `${API_URL}auth/login`
     })
   });
 

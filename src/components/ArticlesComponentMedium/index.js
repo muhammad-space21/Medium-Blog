@@ -13,7 +13,7 @@ import {
   PublishInfo,
   PublishDate,
   StarIcon
-} from './articles.styles';
+} from './styles';
 
 import Img from '../../assets/images/corona-2.jpg';
 import starIcon from '../../assets/icons/star.png';

@@ -3,6 +3,8 @@ import axios from 'axios';
 import { getHeaders } from '../../../utils/index';
 import actionTypes from '../../../constants/action-types';
 
+import { API_URL } from '../../../config';
+
 export const getRecommendedArticles = ({
   categoryId, filter, sortDr, page, limit
 }) => (dispatch, getState) => {
@@ -10,7 +12,7 @@ export const getRecommendedArticles = ({
     type: actionTypes.GET_CATEGORY_RECOMMENDED,
     payload: axios({
       method: 'GET',
-      url: `/categories/${categoryId}/articles?${filter}=${sortDr}&page=${page}&limit=${limit}`,
+      url: `${API_URL}/categories/${categoryId}/articles?${filter}=${sortDr}&page=${page}&limit=${limit}`,
       headers: getHeaders(getState)
     })
   });
