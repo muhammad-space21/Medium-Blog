@@ -9,7 +9,6 @@ import store from './redux/store/configureStore';
 ReactDOM.render(
   <Provider store={store}>
     <h1>HelloWebhook</h1>
-    <Root />
   </Provider>,
   document.getElementById('root')
 );
