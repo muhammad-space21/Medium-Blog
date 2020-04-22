@@ -15,7 +15,7 @@ export const init = () => (dispatch) => {
     type: actionTypes.GET_TOKEN,
     payload: axios({
       method: 'GET',
-      url: `${API_URL}auth/login`
+      url: `${API_URL}/auth/login`
     })
   });
 
