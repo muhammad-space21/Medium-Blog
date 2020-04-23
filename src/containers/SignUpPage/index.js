@@ -21,10 +21,10 @@ class SignUpPage extends React.Component {
 
     this.state = {
       user: {
-        fullName: '',
+        firstname: '',
+        lastname: '',
         phoneNumber: '',
-        password: '',
-        email: ''
+        password: ''
       },
       submitted: false
     };
@@ -71,17 +71,17 @@ class SignUpPage extends React.Component {
           </TextWrapper>
           <Input
             type="text"
-            name="fullName"
-            placeholder="Fullname"
-            value={user.fullName}
+            name="firstname"
+            placeholder="Firstname"
+            value={user.firstname}
             onChange={this.handleChange}
             required
           />
           <Input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={user.email}
+            type="text"
+            name="lastname"
+            placeholder="Lastname"
+            value={user.lastname}
             onChange={this.handleChange}
             required
           />

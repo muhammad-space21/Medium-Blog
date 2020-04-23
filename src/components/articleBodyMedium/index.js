@@ -32,29 +32,29 @@ const ArticleBody = () => (
         <span>PopularTopic</span>
       </TypeOfTopic>
       <ArticleTitle>
-                12 Powerfull ways to change your life when you feel hopeless
+        12 Powerfull ways to change your life when you feel hopeless
       </ArticleTitle>
       <SecondaryTitle>
-                An honest authentic guide to self improvement
+        An honest authentic guide to self improvement
       </SecondaryTitle>
       <AuthorInfo>
         <AuthorName>
-                    Ayodejii Avossika
+          Ayodejii Avossika
         </AuthorName>
         <AuthorLocation>
-                    in Mind Cafe
+          in Mind Cafe
         </AuthorLocation>
       </AuthorInfo>
       <PublishInfo>
         <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Updated Jan 15</Tooltip>}>
           <span className="d-inline-block">
             <PublishDate style={{ hoverEvents: 'none' }}>
-                            Dec 22, 2019
+              Dec 22, 2019
             </PublishDate>
           </span>
         </OverlayTrigger>
         <TimeOfReading>
-                    9 min read
+          9 min read
         </TimeOfReading>
       </PublishInfo>
     </TextsHolder>

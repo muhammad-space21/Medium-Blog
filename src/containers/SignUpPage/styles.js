@@ -70,6 +70,7 @@ export const Title = styled.span`
 export const SignInLink = styled(Link)`
     color: #77D89E;
     font-weight: 500;
+    margin-left: 5px;
     &:hover {
         cursor: pointer;
         text-decoration: none;

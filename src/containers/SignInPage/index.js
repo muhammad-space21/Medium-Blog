@@ -56,7 +56,7 @@ class SignInPage extends React.Component {
           <Input
             type="contact"
             name="phone"
-            placeholder="Email"
+            placeholder="Phone number"
             value={phone}
             onChange={this.handleChange}
             required
