@@ -2,12 +2,14 @@ import { getHeaders } from '../utils/index';
 import { API_URL } from '../config/index';
 
 function handleResponse(response) {
-  return response.text().then(text => {
+  return response.text().then((text) => {
     const data = text && JSON.parse(text);
     if (!response.ok) {
       if (response.status === 401) {
         // auto logout if 401 response returned from api
+        // eslint-disable-next-line no-use-before-define
         logout();
+        // eslint-disable-next-line no-restricted-globals
         location.reload(true);
       }
 

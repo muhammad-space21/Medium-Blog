@@ -44,6 +44,26 @@ export const Input = styled.input`
     }
 `;
 
+// export const ErrorStyle = css`
+// 	width: 350px;
+//     height: 40px;
+//     border: 1px solid red;
+//     margin-top: 12px;
+//     margin-bottom: 12px;
+
+//     &::placeholder {
+//         font-size: 14px;
+//         color: red;
+//         font-weight: 400;
+//         line-height: normal;
+//         text-indent: 10px;
+//     }
+//     &:hover {
+//         border-color: #CCCCCC;
+//         cursor: pointer;
+//     }
+// `;
+
 export const TextWrapper = styled.div`
     width: fit-content;
     height: fit-content;
@@ -114,4 +134,12 @@ export const PrivacyLink = styled(Link)`
         text-decoration: none;
         color: #77D89E;
     }
+`;
+
+export const ErrorMessage = styled.div`
+	width: 350px;
+	font-size: 14px;
+	line-height: 20px;
+	color: red;
+	text-align: left;
 `;

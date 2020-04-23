@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
 import {
@@ -10,7 +11,8 @@ import {
   CheckboxContainer,
   Label,
   PrivacyLink,
-  SignInLink
+  SignInLink,
+  ErrorMessage
 } from './styles';
 
 import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
@@ -24,7 +26,11 @@ class SignUpPage extends React.Component {
         firstname: '',
         lastname: '',
         phoneNumber: '',
-        password: ''
+        password: '',
+        errorFirstname: '',
+        errorLastname: '',
+        errorPhoneNumber: '',
+        errorPassword: ''
       },
       submitted: false
     };
@@ -44,13 +50,79 @@ class SignUpPage extends React.Component {
     });
   }
 
+  validate() {
+    const { user } = this.state;
+    let errorFirstname = '';
+    let errorLastname = '';
+    let errorPhoneNumber = '';
+    let errorPassword = '';
+
+    if (!user.firstname) {
+      errorFirstname = 'Name is missing!';
+    } else if (user.firstname.length < 3) {
+      errorFirstname = 'Name cannot be less than 3 letters!';
+    }
+
+    if (!user.lastname) {
+      errorLastname = 'Lastname is missing!';
+    } else if (user.lastname.length < 3) {
+      errorLastname = 'Lastname cannot be less than 3 letters!';
+    }
+
+    if (!user.phonenumber || user.phonenumber === '') {
+      errorPhoneNumber = 'Please enter your phonenumber';
+    } else if (user.phoneNumber.length < 13) {
+      errorPhoneNumber = 'Invalid phonenumber!';
+    } else if (!user.phoneNumber.includes('+')) {
+      errorPhoneNumber = 'Incorrect phonenumber, (+) is missing';
+    }
+
+    if (!user.password) {
+      errorPassword = 'Password is missing!';
+    } else if (user.password.length < 6) {
+      errorPassword = 'Password cannot be less than 6 characters!';
+    }
+
+    if (errorPhoneNumber || errorFirstname || errorLastname || errorPassword) {
+      this.setState({
+        user: {
+          ...user,
+          errorFirstname,
+          errorLastname,
+          errorPhoneNumber,
+          errorPassword
+        }
+      });
+      return false;
+    }
+
+    return true;
+  }
+
+
   handleSubmit(e) {
     e.preventDefault();
-
-    this.setState({ submitted: true });
     const { user } = this.state;
-    // if (user.firstName && user.lastName && user.username && user.password) {
-    //     this.props.register(user);
+    const isValid = this.validate();
+    if (isValid) {
+      console.log(user);
+      // clear form
+      this.setState({
+        user: {
+          firstname: '',
+          lastname: '',
+          phoneNumber: '',
+          password: '',
+          errorFirstname: '',
+          errorLastname: '',
+          errorPhoneNumber: '',
+          errorPassword: ''
+        },
+        submitted: true
+      });
+    }
+    // if (user.firstname && user.lastname && user.phoneNumber && user.password) {
+    //   this.props.register(user);
     // }
   }
 
@@ -75,32 +147,32 @@ class SignUpPage extends React.Component {
             placeholder="Firstname"
             value={user.firstname}
             onChange={this.handleChange}
-            required
           />
+          <ErrorMessage>{user.errorFirstname}</ErrorMessage>
           <Input
             type="text"
             name="lastname"
             placeholder="Lastname"
             value={user.lastname}
             onChange={this.handleChange}
-            required
           />
+          <ErrorMessage>{user.errorLastname}</ErrorMessage>
           <Input
-            type="contact"
+            type="tel"
             name="phoneNumber"
             placeholder="Phone number"
             value={user.phoneNumber}
             onChange={this.handleChange}
-            required
           />
+          <ErrorMessage>{user.errorPhoneNumber}</ErrorMessage>
           <Input
             type="password"
             name="password"
             placeholder="Password"
             value={user.password}
             onChange={this.handleChange}
-            required
           />
+          <ErrorMessage>{user.errorPassword}</ErrorMessage>
           <CheckboxContainer>
             <input type="checkbox" />
             <Label htmlfor="checkbox">
@@ -115,6 +187,5 @@ class SignUpPage extends React.Component {
     );
   }
 }
-
 
 export default SignUpPage;
