@@ -1,8 +1,8 @@
 import axios from 'axios';
 import actionTypes from '../../../constants/action-types';
 import { API_URL } from '../../../config';
-import { getHeaders } from '../../../utils/index';
-import { alertActions } from '../alerts/alert.Actions';
+import { getHeaders } from '../../../utils';
+import { alertActions } from '../alerts/alertActions';
 
 export const signUpRequest = () => (dispatch, getState, user) => {
   dispatch({
