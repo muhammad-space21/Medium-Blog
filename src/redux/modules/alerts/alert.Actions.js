@@ -1,6 +1,6 @@
 import actionTypes from '../../../constants/action-types';
 
-export const alertSuccess = (dispatch, message) => {
+const alertSuccess = (dispatch, message) => {
   dispatch({
     type: actionTypes.ALERT_SUCCESS,
     payload: message
@@ -8,15 +8,21 @@ export const alertSuccess = (dispatch, message) => {
 };
 
 
-export const alertError = (dispatch, message) => {
+const alertError = (dispatch, message) => {
   dispatch({
     type: actionTypes.ALERT_ERROR,
     payload: message
   });
 };
 
-export const alertClear = (dispatch) => {
+const alertClear = (dispatch) => {
   dispatch({
     type: actionTypes.ALERT_CLEAR
   });
+};
+
+export const alertActions = {
+  alertSuccess,
+  alertError,
+  alertClear
 };
