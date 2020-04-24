@@ -17,6 +17,9 @@ import {
 
 import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
 
+const numberRegex = RegExp(/(?:\+\([9]{2}[8]\)[0-9]{2}[0-9]{3}-[0-9]{2}-[0-9]{2})/);
+
+
 class SignUpPage extends React.Component {
   constructor(props) {
     super(props);
@@ -60,22 +63,23 @@ class SignUpPage extends React.Component {
     if (!user.firstname) {
       errorFirstname = 'Name is missing!';
     } else if (user.firstname.length < 3) {
-      errorFirstname = 'Name cannot be less than 3 letters!';
+      errorFirstname = 'Name cannot be less than 3 characters!';
     }
 
     if (!user.lastname) {
       errorLastname = 'Lastname is missing!';
     } else if (user.lastname.length < 3) {
-      errorLastname = 'Lastname cannot be less than 3 letters!';
+      errorLastname = 'Lastname cannot be less than 3 characters!';
     }
 
-    if (!user.phonenumber || user.phonenumber === '') {
-      errorPhoneNumber = 'Please enter your phonenumber';
-    } else if (user.phoneNumber.length < 13) {
+    if (user.phonenumber !== numberRegex) {
       errorPhoneNumber = 'Invalid phonenumber!';
-    } else if (!user.phoneNumber.includes('+')) {
-      errorPhoneNumber = 'Incorrect phonenumber, (+) is missing';
     }
+    // if (user.phoneNumber.length < 12) {
+    //   errorPhoneNumber = 'Invalid phonenumber!';
+    // } else (!user.phoneNumber.includes('+')) {
+    //   errorPhoneNumber = 'Incorrect phone number, (+) is missing';
+    // }
 
     if (!user.password) {
       errorPassword = 'Password is missing!';

@@ -1,5 +1,5 @@
-import { getHeaders } from '../utils/index';
-import { API_URL } from '../config/index';
+import { getHeaders } from '../utils';
+import { API_URL } from '../config';
 
 function handleResponse(response) {
   return response.text().then((text) => {
@@ -54,7 +54,7 @@ function getById(id) {
   return fetch(`${API_URL}/auth/details/${id}`, requestOptions).then(handleResponse);
 }
 
-function register(user) {
+function signUp(user) {
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -69,5 +69,5 @@ export const userService = {
   login,
   logout,
   getById,
-  register
+  signUp
 };
