@@ -1,6 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+
+
 import {
   StyledSignUpPage,
   Heading,
@@ -12,13 +16,16 @@ import {
   Label,
   PrivacyLink,
   SignInLink,
-  ErrorMessage
+  ErrorMessage,
+  Container
 } from './styles';
 
 import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
 
-const numberRegex = RegExp(/(?:\+\([9]{2}[8]\)[0-9]{2}[0-9]{3}-[0-9]{2}-[0-9]{2})/);
-
+const style = {
+  width: '100%',
+  backgroundColor: 'red'
+};
 
 class SignUpPage extends React.Component {
   constructor(props) {
@@ -28,107 +35,28 @@ class SignUpPage extends React.Component {
       user: {
         firstname: '',
         lastname: '',
-        phoneNumber: '',
+        phone: '',
         password: '',
         errorFirstname: '',
         errorLastname: '',
-        errorPhoneNumber: '',
+        errorPhone: '',
         errorPassword: ''
       },
       submitted: false
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    const { name, value } = event.target;
-    const { user } = this.state;
-    this.setState({
-      user: {
-        ...user,
-        [name]: value
-      }
-    });
+  handleChange(e) {
+    // If you are using babel, you can use ES 6 dictionary syntax
+    const change = {
+      [e.target.name]: e.target.value
+    };
+    this.setState(change);
   }
 
-  validate() {
-    const { user } = this.state;
-    let errorFirstname = '';
-    let errorLastname = '';
-    let errorPhoneNumber = '';
-    let errorPassword = '';
-
-    if (!user.firstname) {
-      errorFirstname = 'Name is missing!';
-    } else if (user.firstname.length < 3) {
-      errorFirstname = 'Name cannot be less than 3 characters!';
-    }
-
-    if (!user.lastname) {
-      errorLastname = 'Lastname is missing!';
-    } else if (user.lastname.length < 3) {
-      errorLastname = 'Lastname cannot be less than 3 characters!';
-    }
-
-    if (user.phonenumber !== numberRegex) {
-      errorPhoneNumber = 'Invalid phonenumber!';
-    }
-    // if (user.phoneNumber.length < 12) {
-    //   errorPhoneNumber = 'Invalid phonenumber!';
-    // } else (!user.phoneNumber.includes('+')) {
-    //   errorPhoneNumber = 'Incorrect phone number, (+) is missing';
-    // }
-
-    if (!user.password) {
-      errorPassword = 'Password is missing!';
-    } else if (user.password.length < 6) {
-      errorPassword = 'Password cannot be less than 6 characters!';
-    }
-
-    if (errorPhoneNumber || errorFirstname || errorLastname || errorPassword) {
-      this.setState({
-        user: {
-          ...user,
-          errorFirstname,
-          errorLastname,
-          errorPhoneNumber,
-          errorPassword
-        }
-      });
-      return false;
-    }
-
-    return true;
-  }
-
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const { user } = this.state;
-    const isValid = this.validate();
-    if (isValid) {
-      console.log(user);
-      // clear form
-      this.setState({
-        user: {
-          firstname: '',
-          lastname: '',
-          phoneNumber: '',
-          password: '',
-          errorFirstname: '',
-          errorLastname: '',
-          errorPhoneNumber: '',
-          errorPassword: ''
-        },
-        submitted: true
-      });
-    }
-    // if (user.firstname && user.lastname && user.phoneNumber && user.password) {
-    //   this.props.register(user);
-    // }
-  }
 
   render() {
     const { user, submitted } = this.state;
@@ -145,6 +73,7 @@ class SignUpPage extends React.Component {
               </SignInLink>
             </Title>
           </TextWrapper>
+
           <Input
             type="text"
             name="firstname"
@@ -153,6 +82,7 @@ class SignUpPage extends React.Component {
             onChange={this.handleChange}
           />
           <ErrorMessage>{user.errorFirstname}</ErrorMessage>
+
           <Input
             type="text"
             name="lastname"
@@ -161,14 +91,19 @@ class SignUpPage extends React.Component {
             onChange={this.handleChange}
           />
           <ErrorMessage>{user.errorLastname}</ErrorMessage>
-          <Input
-            type="tel"
-            name="phoneNumber"
-            placeholder="Phone number"
-            value={user.phoneNumber}
-            onChange={this.handleChange}
-          />
-          <ErrorMessage>{user.errorPhoneNumber}</ErrorMessage>
+
+          <Container>
+            <PhoneInput
+              type="tel"
+              name="phone"
+              country="uz"
+              value={user.phone}
+              onChange={this.handleChange}
+              style={style}
+            />
+            <ErrorMessage>{user.errorPhone}</ErrorMessage>
+          </Container>
+
           <Input
             type="password"
             name="password"
@@ -177,6 +112,7 @@ class SignUpPage extends React.Component {
             onChange={this.handleChange}
           />
           <ErrorMessage>{user.errorPassword}</ErrorMessage>
+
           <CheckboxContainer>
             <input type="checkbox" />
             <Label htmlfor="checkbox">
@@ -184,6 +120,7 @@ class SignUpPage extends React.Component {
               You may unsubscribe at any time.
             </Label>
           </CheckboxContainer>
+
           <ButtonPrimary btnForm>Create Account</ButtonPrimary>
           <PrivacyLink to="/privacy-policy">Privacy Policy</PrivacyLink>
         </FormStyled>
