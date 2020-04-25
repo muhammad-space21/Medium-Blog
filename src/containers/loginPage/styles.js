@@ -1,6 +1,6 @@
-import styled from './node_modules/styled-components';
+import styled from 'styled-components';
 
-import { Link } from './node_modules/react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const StyledSignUpPage = styled.div`
     width: 100%;

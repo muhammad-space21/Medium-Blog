@@ -1,7 +1,7 @@
-import React from './node_modules/react';
-import axios from './node_modules/axios';
+import React from 'react';
+import axios from 'axios';
 import PhoneInput from 'react-phone-input-2';
-import './node_modules/react-phone-input-2/lib/style.css';
+import 'react-phone-input-2/lib/style.css';
 
 import {
   StyledSignUpPage,

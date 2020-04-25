@@ -45,13 +45,13 @@ class SignUpPage extends React.Component {
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    const { name, value } = event.target;
+  handleChange(e) {
+    // const { name, value } = event.target;
     const { user } = this.state;
     this.setState({
       user: {
         ...user,
-        [name]: value
+        [e.target.name]: e.target.value
       }
     });
   }

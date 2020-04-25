@@ -10,7 +10,7 @@ import NavbarHeader from '../components/navbar';
 import NavMain from '../containers/Nav';
 import Footer from '../components/footer';
 import SignUpPage from '../containers/SignUpPage';
-import LoginPage from '../containers/LoginPage';
+import LoginPage from '../containers/loginPage';
 
 import ScrollToTop from '../hooks/use-scroll-to-top';
 
