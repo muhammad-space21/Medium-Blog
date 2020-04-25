@@ -8,14 +8,18 @@ import { API_URL } from '../../../config';
 export const getRecommendedArticles = ({
   categoryId, filter, sortDr, page, limit
 }) => (dispatch, getState) => {
-  dispatch({
-    type: actionTypes.GET_CATEGORY_RECOMMENDED,
-    payload: axios({
-      method: 'GET',
-      url: `${API_URL}/categories/${categoryId}/articles?${filter}=${sortDr}&page=${page}&limit=${limit}`,
-      headers: getHeaders(getState)
-    })
-  });
+  const { token } = getState().authReducer;
+
+  if (token) {
+    dispatch({
+      type: actionTypes.GET_CATEGORY_RECOMMENDED,
+      payload: axios({
+        method: 'GET',
+        url: `${API_URL}/categories/${categoryId}/articles?${filter}=${sortDr}&page=${page}&limit=${limit}`,
+        headers: getHeaders(getState)
+      })
+    });
+  }
 };
 
 export const getArticles = ({
@@ -33,6 +37,7 @@ export const getArticles = ({
     limit
   };
   const prevParams = getState().articlesReducer.params;
+  const { token } = getState().authReducer;
   if (prevParams && (prevParams.categoryId !== categoryId || prevParams.filter !== filter)) {
     dispatch({
       type: actionTypes.CLEAR_DATA
@@ -48,7 +53,7 @@ export const getArticles = ({
       limit
     }
   });
-  if (JSON.stringify(obj) !== JSON.stringify(prevParams)) {
+  if ((JSON.stringify(obj) !== JSON.stringify(prevParams) && token)) {
     dispatch({
       type: actionTypes.GET_CATEGORY,
       payload: axios({

@@ -12,27 +12,13 @@ import { StyledNav, LinkContainer, LinkStyled } from './style';
 
 const NavMain = ({
   list,
-  getNav,
-  history
+  getNav
 }) => {
   useEffect(() => {
     if (!list.length) {
       getNav();
     }
   }, []);
-
-  useEffect(() => {
-    async function fetchData() {
-      // You can await here
-      const response = await axios(
-        'https://webhook.makhmudjon.me/with-cors'
-      );
-      return response;
-      // ...
-    }
-    fetchData();
-  }, []);
-
 
   return (
     <StyledNav>

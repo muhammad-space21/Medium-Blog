@@ -6,12 +6,15 @@ import actionTypes from '../../../constants/action-types';
 import { API_URL } from '../../../config';
 
 export const getNav = () => (dispatch, getState) => {
-  dispatch({
-    type: actionTypes.GET_NAVBAR,
-    payload: axios({
-      method: 'GET',
-      url: `${API_URL}/categories`,
-      headers: getHeaders(getState)
-    })
-  });
+  const { token } = getState().authReducer;
+  if (token) {
+    dispatch({
+      type: actionTypes.GET_NAVBAR,
+      payload: axios({
+        method: 'GET',
+        url: `${API_URL}/categories`,
+        headers: getHeaders(getState)
+      })
+    });
+  }
 };
