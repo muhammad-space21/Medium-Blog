@@ -9,6 +9,7 @@ export const TopArticlesStyled = styled.div`
     justify-content: space-evenly;
     border-bottom:1px solid #D5D7D8;
     margin-bottom:20px;
+    margin-top:20px;
     
     @media screen and ( max-width: 950px ) {
         padding-right: 20px;

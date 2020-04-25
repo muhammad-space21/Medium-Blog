@@ -11,5 +11,5 @@ const createFormattedNavbar = (item) => ({
 
 export const navbarSelector = createSelector(
   navbarList,
-  (list) => []
+  (list) => list.map(createFormattedNavbar)
 );

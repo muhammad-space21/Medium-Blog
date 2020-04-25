@@ -5,12 +5,15 @@ import { getHeaders } from '../../../utils';
 import { API_URL } from '../../../config';
 
 export const getHome = () => (dispatch, getState) => {
-  dispatch({
-    type: actionTypes.GET_HOME,
-    payload: axios({
-      method: 'GET',
-      url: `${API_URL}/home`,
-      headers: getHeaders(getState)
-    })
-  });
+  const { token } = getState().authReducer;
+  if (token) {
+    dispatch({
+      type: actionTypes.GET_HOME,
+      payload: axios({
+        method: 'GET',
+        url: `${API_URL}/home`,
+        headers: getHeaders(getState)
+      })
+    });
+  }
 };
