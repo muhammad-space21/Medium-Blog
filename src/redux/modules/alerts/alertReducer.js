@@ -1,23 +1,17 @@
 import actionTypes from '../../../constants/action-types';
 
 
-const alertReducer = (state = {}, action) => {
-  switch (action.type) {
-  case actionTypes.ALERT_SUCCESS:
-    return {
-      type: 'alert-success',
-      message: action.message
-    };
-  case actionTypes.ALERT_ERROR:
-    return {
-      type: 'alert-danger',
-      message: action.message
-    };
-  case actionTypes.ALERT_CLEAR:
-    return {};
-  default:
-    return state;
-  }
+const map = {
+  [`${actionTypes.ALERT}${actionTypes.FULFILLED}`]: (payload) => ({
+    type: 'alert-success',
+    message: payload.message
+  }),
+  [`${actionTypes.ALERT}${actionTypes.REJECTED}`]: (payload) => ({
+    type: 'alert-danger',
+    message: payload.message
+  })
 };
 
-export default alertReducer;
+export default function alertReducer(state = {}, action) {
+  return (map[action.type] && map[action.type](state, action)) || state;
+}

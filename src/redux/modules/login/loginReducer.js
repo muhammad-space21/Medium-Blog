@@ -1,33 +1,32 @@
 import actionTypes from '../../../constants/action-types';
+import alert from '../alerts/alertActions';
 
-const initialState = {
+const defaultState = {
   loading: false,
-  error: false
+  error: false,
+  token: '',
+  alert: {}
 };
 
-const loginReducer = (state = initialState, action) => {
-  switch (action.type) {
-  case actionTypes.LOGIN_REQUEST:
-    return {
-      loading: true,
-      error: false,
-      user: action.payload
-    };
-  case actionTypes.LOGIN_SUCCESS:
-    return {
-      loading: false,
-      error: false,
-      user: action.payload
-    };
-  case actionTypes.LOGIN_FAILURE:
-    return {
-      loading: false,
-      error: true,
-      user: action.payload
-    };
-  default:
-    return state;
-  }
+const map = {
+  [`${actionTypes.LOGIN}${actionTypes.PENDING}`]: (state) => ({
+    ...state,
+    loading: true
+  }),
+  [`${actionTypes.LOGIN}${actionTypes.FULFILLED}`]: (state, { payload }) => ({
+    ...state,
+    loading: false,
+    token: payload.data,
+    alert: alert('You logged in successfully')
+  }),
+  [`${actionTypes.LOGIN}${actionTypes.REJECTED}`]: (state) => ({
+    ...state,
+    loading: false,
+    error: true,
+    alert: alert(toString())
+  })
 };
 
-export default loginReducer;
+export default function loginReducer(state = defaultState, action) {
+  return (map[action.type] && map[action.type](state, action)) || state;
+}
