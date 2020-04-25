@@ -22,10 +22,6 @@ import {
 
 import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
 
-const style = {
-  width: '100%',
-  backgroundColor: 'red'
-};
 
 class SignUpPage extends React.Component {
   constructor(props) {
@@ -49,12 +45,15 @@ class SignUpPage extends React.Component {
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
-    // If you are using babel, you can use ES 6 dictionary syntax
-    const change = {
-      [e.target.name]: e.target.value
-    };
-    this.setState(change);
+  handleChange(event) {
+    const { name, value } = event.target;
+    const { user } = this.state;
+    this.setState({
+      user: {
+        ...user,
+        [name]: value
+      }
+    });
   }
 
 
@@ -99,7 +98,6 @@ class SignUpPage extends React.Component {
               country="uz"
               value={user.phone}
               onChange={this.handleChange}
-              style={style}
             />
             <ErrorMessage>{user.errorPhone}</ErrorMessage>
           </Container>

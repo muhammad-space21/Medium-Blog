@@ -1,6 +1,7 @@
-import React from 'react';
-
-import axios from 'axios';
+import React from './node_modules/react';
+import axios from './node_modules/axios';
+import PhoneInput from 'react-phone-input-2';
+import './node_modules/react-phone-input-2/lib/style.css';
 
 import {
   StyledSignUpPage,
@@ -8,12 +9,13 @@ import {
   FormStyled,
   TextWrapper,
   Input,
-  ForgotPasswordLink
+  ForgotPasswordLink,
+  Container
 } from './styles';
 
 import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
 
-class SignInPage extends React.Component {
+class LoginPage extends React.Component {
   constructor() {
     super();
 
@@ -53,14 +55,15 @@ class SignInPage extends React.Component {
           <TextWrapper>
             <Heading>Login to your BiznesRivoj account.</Heading>
           </TextWrapper>
-          <Input
-            type="contact"
-            name="phone"
-            placeholder="Phone number"
-            value={phone}
-            onChange={this.handleChange}
-            required
-          />
+          <Container>
+            <PhoneInput
+              type="tel"
+              name="phone"
+              country="uz"
+              value={phone}
+              onChange={this.handleChange}
+            />
+          </Container>
           <Input
             type="password"
             name="password"
@@ -77,4 +80,4 @@ class SignInPage extends React.Component {
   }
 }
 
-export default SignInPage;
+export default LoginPage;

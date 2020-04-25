@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from './node_modules/styled-components';
 
-import { Link } from 'react-router-dom';
+import { Link } from './node_modules/react-router-dom';
 
 export const StyledSignUpPage = styled.div`
     width: 100%;
@@ -83,4 +83,11 @@ export const ForgotPasswordLink = styled(Link)`
         text-decoration: none;
         color: #77D89E;
     }
+`;
+
+export const Container = styled.div`
+    width: 350px;
+    height: fit-content;
+    margin-top: 12px;
+    margin-bottom: 12px;
 `;
