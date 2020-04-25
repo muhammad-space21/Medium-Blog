@@ -1,9 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
+import { signUp } from  '../../redux/modules/signUp/signupAction';
 
 import {
   StyledSignUpPage,
@@ -32,20 +35,16 @@ class SignUpPage extends React.Component {
         firstname: '',
         lastname: '',
         phone: '',
-        password: '',
-        errorFirstname: '',
-        errorLastname: '',
-        errorPhone: '',
-        errorPassword: ''
+        password: ''
       },
       submitted: false
     };
 
     this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     // const { name, value } = event.target;
     const { user } = this.state;
     this.setState({
@@ -56,6 +55,22 @@ class SignUpPage extends React.Component {
     });
   }
 
+  handleSubmit = e => {
+    e.preventDefault();
+    const { user } = this.state;
+    console.log(user);
+    if(user) {
+      this.setState({
+        firstname: '',
+        lastname: '',
+        phone: '',
+        password: ''
+      })
+    }
+    if (user.firstname && user.lastname && user.phone && user.password) {
+      this.props.signUp(user);
+    }
+  }
 
   render() {
     const { user, submitted } = this.state;
@@ -80,7 +95,10 @@ class SignUpPage extends React.Component {
             value={user.firstname}
             onChange={this.handleChange}
           />
-          <ErrorMessage>{user.errorFirstname}</ErrorMessage>
+          { 
+            submitted && !user.firstname &&
+            <ErrorMessage>Name is missing!</ErrorMessage>
+          }
 
           <Input
             type="text"
@@ -89,7 +107,10 @@ class SignUpPage extends React.Component {
             value={user.lastname}
             onChange={this.handleChange}
           />
-          <ErrorMessage>{user.errorLastname}</ErrorMessage>
+          { 
+            submitted && !user.lastname && 
+            <ErrorMessage>Lastname is missing!</ErrorMessage>
+          }
 
           <Container>
             <PhoneInput
@@ -99,7 +120,10 @@ class SignUpPage extends React.Component {
               value={user.phone}
               onChange={this.handleChange}
             />
-            <ErrorMessage>{user.errorPhone}</ErrorMessage>
+            { 
+              submitted && !user.phone && 
+              <ErrorMessage>Phone number is missing!</ErrorMessage>
+            }
           </Container>
 
           <Input
@@ -109,7 +133,10 @@ class SignUpPage extends React.Component {
             value={user.password}
             onChange={this.handleChange}
           />
-          <ErrorMessage>{user.errorPassword}</ErrorMessage>
+          { 
+            submitted && !user.password && 
+            <ErrorMessage>Password is missing!</ErrorMessage>
+          }
 
           <CheckboxContainer>
             <input type="checkbox" />
@@ -127,4 +154,34 @@ class SignUpPage extends React.Component {
   }
 }
 
-export default SignUpPage;
+SignUpPage.defaultProps = {
+  loading: false,
+  error: false,
+  token: '',
+  alert: {},
+  signUp: () => {}
+}
+
+SignUpPage.propTypes = {
+  loading: PropTypes.bool,
+  error: PropTypes.bool,
+  token: PropTypes.string,
+  alert: PropTypes.object,
+  signUp: PropTypes.func
+}
+
+
+const mapStateToProps = (state) => ({
+  loading: state.signupReducer.loading,
+  error: state.signupReducer.error,
+  token: state.signupReducer.token,
+  alert: state.signupReducer.alert
+})
+
+
+const mapDispatchToProps = (dispatch) => ({
+  signup: () => dispatch(signUp())
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpPage);
