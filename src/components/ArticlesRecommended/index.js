@@ -14,7 +14,6 @@ import {
 } from '../constant.styles';
 
 import ButtonCustom from '../buttons/ButtonCustom';
-import SocialShareButton from '../SocialMediaShare/index';
 
 import ImageArticle from '../../assets/images/asset1-min.jpg';
 
@@ -31,7 +30,6 @@ const RecommendedArticle = () => (
         <ButtonCustom viewDetails>View Details</ButtonCustom>
       </Col2>
     </Row>
-    <SocialShareButton />
   </StyledContainer>
 );
 
