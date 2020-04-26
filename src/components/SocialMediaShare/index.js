@@ -1,8 +1,12 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import {
   StyledContainer,
   Component,
+  Container,
+  Row,
   TitleContainer,
   Title,
   UrlWrapper,
@@ -11,8 +15,7 @@ import {
   ButtonsContainer,
   IconContainer,
   PrimaryButton,
-  Button,
-  IconShare
+  Button
 } from './styles';
 
 import CloseIcon from '../../assets/icons/close.png';
@@ -42,57 +45,71 @@ const networks = [
   }
 ];
 
-const SocialMediaShare = () => {
+const SocialMediaShare = ({ article, ...props }) => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(networks[0]);
 
 
   return (
     <>
-      <IconShare src={ShareIcon} onClick={() => setOpen(true)} alt="icon-share" />
+      <Row onClick={() => setOpen(true)}>
+        <img src={ShareIcon} alt="icon-share" />
+        <span>Share</span>
+      </Row>
       {
         open && (
-          <StyledContainer>
-            <Component>
-              <TitleContainer>
-                <span>Share</span>
-                <Title>Articles Long Title</Title>
-                <img src={CloseIcon} onClick={() => setOpen(false)} alt="close"/>
-              </TitleContainer>
-              <UrlWrapper>
-                <span>URL</span>
-                <UrlContainer>
-                  <Url>{active.shareUrl + window.location.href}</Url>
-                </UrlContainer>
-              </UrlWrapper>
-              <ButtonsContainer>
-                {
-                  networks.map((item) => (
-                    <li key={item.id}>
-                      <Button onClick={() => setActive(item)}>
-                        {item.text}
-                      </Button>
-                    </li>
-                  ))
-                }
-              </ButtonsContainer>
-              <IconContainer>
-                <img src={active.img} alt="social-media-icons" />
-              </IconContainer>
-              <PrimaryButton href={active.shareUrl + window.location.href}>
-                <span>
-                  Connect with
-                </span>
-                <text>
-                  {active.text}
-                </text>
-              </PrimaryButton>
-            </Component>
+          <StyledContainer {...props}>
+            <Container>
+              <Component>
+                <TitleContainer>
+                  <span>Share</span>
+                  <Title>{article.title_uz}</Title>
+                  <img src={CloseIcon} onClick={() => setOpen(false)} alt="close"/>
+                </TitleContainer>
+                <UrlWrapper>
+                  <span>URL</span>
+                  <UrlContainer>
+                    <Url>{active.shareUrl + window.location.href}</Url>
+                  </UrlContainer>
+                </UrlWrapper>
+                <ButtonsContainer>
+                  {
+                    networks.map((item) => (
+                      <li key={item.id}>
+                        <Button onClick={() => setActive(item)}>
+                          {item.text}
+                        </Button>
+                      </li>
+                    ))
+                  }
+                </ButtonsContainer>
+                <IconContainer>
+                  <img src={active.img} alt="social-media-icons" />
+                </IconContainer>
+                <PrimaryButton href={active.shareUrl + window.location.href}>
+                  <span>
+                    Connect with
+                  </span>
+                  <text>
+                    {active.text}
+                  </text>
+                </PrimaryButton>
+              </Component>
+            </Container>
           </StyledContainer>
         )
       }
     </>
   );
+};
+
+SocialMediaShare.propTypes = {
+  article: PropTypes.objectOf(PropTypes.any)
+
+};
+
+SocialMediaShare.defaultProps = {
+  article: {}
 };
 
 export default SocialMediaShare;

@@ -13,7 +13,8 @@ import {
   DescribeStyled
 } from './style';
 
-import ButtonString from '../buttons/ButtonString/index'
+import ButtonString from '../buttons/ButtonString';
+import SocialMediaShare from '../SocialMediaShare';
 import ImageArticle from '../../assets/images/coronavirus-1.jpg';
 
 const ArticleMain = ({ article, ...props }) => (
@@ -38,7 +39,7 @@ const ArticleMain = ({ article, ...props }) => (
       <DescribeStyled dangerouslySetInnerHTML={createMarkup(article.description_uz)} />
       <ButtonsWrapper>
         <ButtonString homePageBtn saveShare save />
-        <ButtonString homePageBtn saveShare />
+        <SocialMediaShare />
       </ButtonsWrapper>
     </Col1>
     <img src={ImageArticle} alt="article" />

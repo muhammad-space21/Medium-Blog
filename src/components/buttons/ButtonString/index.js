@@ -10,13 +10,13 @@ import IconPrint from '../../../assets/icons/print.svg';
 import IconSave from '../../../assets/icons/save.svg';
 import IconShare from '../../../assets/icons/share.svg';
 
-const ButtonString = (props) => {
-    return (
-        <StyledContainer {...props}>
-            {
-                props.homePageBtn ?
-                (   
-                    props.saveShare ? 
+const ButtonString = (props) => (
+
+    <StyledContainer {...props}>
+      {
+        props.homePageBtn ?
+          (   
+            props.saveShare ? 
                     (
                         props.save ? 
                         <Row> 
@@ -57,7 +57,6 @@ const ButtonString = (props) => {
                 ) 
             }
         </StyledContainer>
-    )
-};
+    );
 
 export default ButtonString;

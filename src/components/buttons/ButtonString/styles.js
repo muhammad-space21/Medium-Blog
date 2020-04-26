@@ -18,7 +18,7 @@ export const Row = styled.div`
     display: flex;
     flex-direction: row;
     margin-right: 20px;
-    text-align: ${props => (props.center ? 'center' : 'end')};
+    text-align: ${(props) => (props.center ? 'center' : 'end')};
     span {
         font-size: 13px;
     }

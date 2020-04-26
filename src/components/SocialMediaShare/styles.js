@@ -1,8 +1,21 @@
 import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: table;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background-color: rgb(0, 0, 0, 0.2);
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -12,18 +25,32 @@ export const StyledContainer = styled.div`
 export const Component = styled.div`
   width: 330px;
   height: 370px;
+  background-color: white;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   box-shadow: 6px 6px 22px #D5D7D8;
 `;
 
-export const IconShare = styled.img`
-  width: 50px;
-  height: 50px;
-  &:hover {
-    cursor: pointer;
-  }
+export const Row = styled.div`
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    text-align: ${(props) => (props.center ? 'center' : 'end')};
+    span {
+        font-size: 13px;
+    }
+    img {
+        width: 17px;
+        height: 17px;
+        margin-right: 5px;
+    }
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
 `;
 
 export const TitleContainer = styled.div`
