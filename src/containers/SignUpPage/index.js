@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-import { signUp } from  '../../redux/modules/signUp/signupAction';
+// import { signUp } from  '../../redux/modules/signUp/signupAction';
 
 import {
   StyledSignUpPage,
@@ -31,56 +31,51 @@ class SignUpPage extends React.Component {
     super(props);
 
     this.state = {
-      user: {
-        firstname: '',
-        lastname: '',
-        phone: '',
-        password: ''
-      },
+      firstname: '',
+      lastname: '',
+      phone: '',
+      password: '',
       submitted: false
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePhoneChange = this.handlePhoneChange.bind(this);
   }
 
   handleChange = (e) => {
-    const { user } = this.state;
-    this.setState({
-      user: {
-        ...user,
-        [e.target.name]: e.target.value
-      }
-    });
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handlePhoneChange = (e) => {
+    this.setState({ phone: e });
   }
 
 
   handleSubmit = (e) => {
     e.preventDefault();
-
-    const { user } = this.state;
+    const {firstname, lastname, phone, password} = this.state;
     this.setState({ submitted: true })
     // clear form
-    if (user.firstname && user.lastname && user.phone && user.password) {
+    if (firstname && lastname && phone && password) {
       this.setState({
-        user: {
-          firstname: '',
-          lastname: '',
-          phone: '',
-          password: ''
-        }
+        firstname: '',
+        lastname: '',
+        phone: '',
+        password: '',
+        submitted: false
       })
-      console.log(user);
+      console.log(this.state);
     }
-    if (user.firstname && user.lastname && user.phone && user.password) {
-      this.props.signUp(user);
+    if (firstname && lastname && phone && password) {
+      // this.props.signUp(user);
     } else {
       console.log('not all inputs are entered')
     }
   }
 
   render() {
-    const { user, submitted } = this.state;
+    const { firstname, lastname, phone, password, submitted } = this.state;
     return (
       <StyledSignUpPage>
         <FormStyled onSubmit={this.handleSubmit}>
@@ -99,15 +94,15 @@ class SignUpPage extends React.Component {
             type="text"
             name="firstname"
             placeholder="Firstname"
-            value={user.firstname}
+            value={firstname}
             onChange={this.handleChange}
           />
           { 
-            submitted && !user.firstname &&
+            submitted && !firstname &&
             <ErrorMessage>Name is missing!</ErrorMessage>
           }
           {
-            submitted && user.firstname.length < 3 ? 
+            submitted && firstname.length < 3 ? 
             <ErrorMessage>Name must be more than 2 characters</ErrorMessage>
             : null
           }
@@ -116,15 +111,15 @@ class SignUpPage extends React.Component {
             type="text"
             name="lastname"
             placeholder="Lastname"
-            value={user.lastname}
+            value={lastname}
             onChange={this.handleChange}
           />
           { 
-            submitted && !user.lastname && 
+            submitted && !lastname && 
             <ErrorMessage>Lastname is missing!</ErrorMessage>
           }
           {
-            submitted && user.lastname.length < 3 ? 
+            submitted && lastname.length < 3 ? 
             <ErrorMessage>Lastname must be more than 2 characters</ErrorMessage>
             : null
           }
@@ -134,12 +129,17 @@ class SignUpPage extends React.Component {
               type="tel"
               name="phone"
               country="uz"
-              value={user.phone}
-              onChange={this.handleChange}
+              value={phone}
+              onChange={this.handlePhoneChange}
             />
             { 
-              submitted && !user.phone && 
+              submitted && !phone && 
               <ErrorMessage>Phone number is missing!</ErrorMessage>
+            }
+            {
+              submitted && phone.length < 12 ? 
+              <ErrorMessage>Invalid phone number</ErrorMessage>
+              : null
             }
           </Container>
 
@@ -147,15 +147,15 @@ class SignUpPage extends React.Component {
             type="password"
             name="password"
             placeholder="Password"
-            value={user.password}
+            value={password}
             onChange={this.handleChange}
           />
           { 
-            submitted && !user.password && 
+            submitted && !password && 
             <ErrorMessage>Password is missing!</ErrorMessage>
           }
           {
-            submitted && user.password.length < 6 ? 
+            submitted && password.length < 6 ? 
             <ErrorMessage>Password must be more than 6 characters</ErrorMessage>
             : null
           }
@@ -180,8 +180,7 @@ SignUpPage.defaultProps = {
   loading: false,
   error: false,
   token: '',
-  alert: {},
-  signUp: () => {}
+  alert: {}
 }
 
 SignUpPage.propTypes = {
@@ -189,7 +188,7 @@ SignUpPage.propTypes = {
   error: PropTypes.bool,
   token: PropTypes.string,
   alert: PropTypes.object,
-  signUp: PropTypes.func
+  signUp: PropTypes.func.isRequired
 }
 
 
@@ -201,9 +200,9 @@ const mapStateToProps = (state) => ({
 })
 
 
-const mapDispatchToProps = (dispatch) => ({
-  signup: () => dispatch(signUp())
-})
+// const mapDispatchToProps = (dispatch) => ({
+//   signup: () => dispatch(signUp())
+// })
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpPage);
+export default connect(mapStateToProps, null)(SignUpPage);

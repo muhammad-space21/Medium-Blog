@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-import { login } from '../../redux/modules/login/loginActions';
-import { logout } from '../../redux/modules/logOut/logoutActions';
+// import { login } from '../../redux/modules/login/loginActions';
+// import { logout } from '../../redux/modules/logOut/logoutActions';
 
 import {
   StyledSignUpPage,
@@ -25,46 +25,43 @@ class LoginPage extends React.Component {
     super();
 
     this.state = {
-      user: {
-        phone: '',
-        password: ''
-      },
+      phone: '',
+      password: '',
       submitted: false
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+    this.handlePhoneChange = this.handlePhoneChange.bind(this);
+  };
 
 
   handleChange = (e) => {
-    const { user } = this.state;
-    this.setState({
-      user: {
-        ...user,
-        [e.target.name]: e.target.value
-      }
-    });
+    this.setState({ [ e.target.name]: e.target.value });
+  }
+
+
+  handlePhoneChange = (e) => {
+    this.setState({ phone: e });
   }
 
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { user } = this.state;
+    const { phone, password, submitted } = this.state;
     this.setState({ submitted: true })
     // clear form
-    if (user.phone && user.password) {
+    if (phone && password) {
       this.setState({
-        user: {
-          phone: '',
-          password: ''
-        }
+        phone: '',
+        password: '',
+        submitted: false
       })
-      console.log(user);
+      console.log(this.state);
     }
-    if (user.phone && user.password) {
-      this.props.login(user.phone, user.password);
+    if (phone && password) {
+      // this.props.login(phone, password);
     } else {
       console.log('not all inputs are entered')
     }
@@ -72,7 +69,7 @@ class LoginPage extends React.Component {
 
 
   render() {
-    const { user, submitted } = this.state; 
+    const { phone, password, submitted } = this.state; 
 
     return (
       <StyledSignUpPage>
@@ -85,23 +82,23 @@ class LoginPage extends React.Component {
               type="tel"
               name="phone"
               country="uz"
-              value={user.phone}
-              onChange={this.handleChange}
+              value={phone}
+              onChange={this.handlePhoneChange}
             />
           </Container>
           <Input
             type="password"
             name="password"
             placeholder="Password"
-            value={user.password}
+            value={password}
             onChange={this.handleChange}
           />
           { 
-            submitted && !user.password && 
+            submitted && !password && 
             <ErrorMessage>Password is missing!</ErrorMessage>
           }
           {
-            submitted && user.password.length < 6 ? 
+            submitted && password.length < 6 ? 
             <ErrorMessage>Password must be more than 6 characters</ErrorMessage>
             : null
           }
@@ -129,10 +126,10 @@ LoginPage.propTypes = {
   alert: PropTypes.object
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  login: () => dispatch(login()),
-  logout: () => dispatch(logout())
-})
+// const mapDispatchToProps = (dispatch) => ({
+//   login: () => dispatch(login()),
+//   logout: () => dispatch(logout())
+// })
 
 const mapStateToProps = (state) => ({
   loading: state.loginReducer.loading,
@@ -141,4 +138,4 @@ const mapStateToProps = (state) => ({
   alert: state.loginReducer.alert
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, null)(LoginPage);

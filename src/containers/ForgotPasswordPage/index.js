@@ -25,14 +25,18 @@ class ForgotPasswordPage extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePhoneChange = this.handlePhoneChange.bind(this);
   }
 
 
   handleChange = (e) => {
-    // const { phone } = this.state;
     this.setState({
       [e.target.name]: e.target.value
     });
+  }
+
+  handlePhoneChange = (e) => {
+    this.setState({ phone: e });
   }
 
 
@@ -44,7 +48,8 @@ class ForgotPasswordPage extends React.Component {
     // clear form
     if (phone) {
       this.setState({
-        phone: ''
+        phone: '',
+        submitted: false
       })
       console.log(this.state);
     }
@@ -67,7 +72,7 @@ class ForgotPasswordPage extends React.Component {
               name="phone"
               country="uz"
               value={phone}
-              onChange={this.handleChange}
+              onChange={this.handlePhoneChange}
             />
           </Container>
           <ButtonPrimary btnForm>Submit</ButtonPrimary>
