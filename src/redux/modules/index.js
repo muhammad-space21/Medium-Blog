@@ -6,3 +6,4 @@ export { default as homeReducer } from './home/homeReducer';
 export { default as loginReducer } from './login/loginReducer';
 export { default as signupReducer } from './signUp/signupReducer';
 export { default as alertReducer } from './alerts/alertReducer';
+export { default as logoutReducer } from './logOut/logoutReducer';

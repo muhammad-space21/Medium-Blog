@@ -7,7 +7,8 @@ import {
   homeReducer,
   loginReducer,
   signupReducer,
-  alertReducer
+  alertReducer,
+  logoutReducer
 } from '../modules';
 
 
@@ -19,5 +20,6 @@ export default combineReducers({
   homeReducer,
   loginReducer,
   signupReducer,
-  alertReducer
+  alertReducer,
+  logoutReducer
 });

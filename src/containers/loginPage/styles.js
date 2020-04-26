@@ -91,3 +91,13 @@ export const Container = styled.div`
     margin-top: 12px;
     margin-bottom: 12px;
 `;
+
+export const ErrorMessage = styled.div`
+    width: 350px;
+    font-size: 14px;
+    line-height: 20px;
+    color: red;
+    text-align: left;
+    margin-top: -15px;
+    margin-bottom: 20px;
+`;

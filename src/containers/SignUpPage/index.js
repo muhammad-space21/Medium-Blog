@@ -45,7 +45,6 @@ class SignUpPage extends React.Component {
   }
 
   handleChange = (e) => {
-    // const { name, value } = event.target;
     const { user } = this.state;
     this.setState({
       user: {
@@ -55,20 +54,28 @@ class SignUpPage extends React.Component {
     });
   }
 
-  handleSubmit = e => {
+
+  handleSubmit = (e) => {
     e.preventDefault();
+
     const { user } = this.state;
-    console.log(user);
-    if(user) {
+    this.setState({ submitted: true })
+    // clear form
+    if (user.firstname && user.lastname && user.phone && user.password) {
       this.setState({
-        firstname: '',
-        lastname: '',
-        phone: '',
-        password: ''
+        user: {
+          firstname: '',
+          lastname: '',
+          phone: '',
+          password: ''
+        }
       })
+      console.log(user);
     }
     if (user.firstname && user.lastname && user.phone && user.password) {
       this.props.signUp(user);
+    } else {
+      console.log('not all inputs are entered')
     }
   }
 
@@ -99,6 +106,11 @@ class SignUpPage extends React.Component {
             submitted && !user.firstname &&
             <ErrorMessage>Name is missing!</ErrorMessage>
           }
+          {
+            submitted && user.firstname.length < 3 ? 
+            <ErrorMessage>Name must be more than 2 characters</ErrorMessage>
+            : null
+          }
 
           <Input
             type="text"
@@ -110,6 +122,11 @@ class SignUpPage extends React.Component {
           { 
             submitted && !user.lastname && 
             <ErrorMessage>Lastname is missing!</ErrorMessage>
+          }
+          {
+            submitted && user.lastname.length < 3 ? 
+            <ErrorMessage>Lastname must be more than 2 characters</ErrorMessage>
+            : null
           }
 
           <Container>
@@ -136,6 +153,11 @@ class SignUpPage extends React.Component {
           { 
             submitted && !user.password && 
             <ErrorMessage>Password is missing!</ErrorMessage>
+          }
+          {
+            submitted && user.password.length < 6 ? 
+            <ErrorMessage>Password must be more than 6 characters</ErrorMessage>
+            : null
           }
 
           <CheckboxContainer>
