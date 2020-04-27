@@ -14,11 +14,13 @@ const map = {
   }),
   [`${actionTypes.SIGNUP}${actionTypes.FULFILLED}`]: (state, { payload }) => ({
     ...state,
-    token: payload.data
+    token: payload.data,
+    loading: false
   }),
   [`${actionTypes.SIGNUP}${actionTypes.REJECTED}`]: (state) => ({
     ...state,
-    error: true
+    error: true,
+    loading: false
   })
 };
 

@@ -14,12 +14,12 @@ const map = {
   [`${actionTypes.LOGIN}${actionTypes.FULFILLED}`]: (state, { payload }) => ({
     ...state,
     loading: false,
-    token: payload.data,
+    token: payload.data
   }),
   [`${actionTypes.LOGIN}${actionTypes.REJECTED}`]: (state) => ({
     ...state,
     loading: false,
-    error: true,
+    error: true
   })
 };
 

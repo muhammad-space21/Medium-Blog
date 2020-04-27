@@ -13,6 +13,7 @@ import {
 } from './styles';
 
 import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
+import SpinnerSmall from '../../components/spinnerSmall';
 
 
 class ResetPasswordPage extends React.Component {
@@ -23,7 +24,8 @@ class ResetPasswordPage extends React.Component {
       code: '',
       new_password: '',
       confirm_password: '',
-      submitted: false
+      submitted: false,
+      loading: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -34,19 +36,30 @@ class ResetPasswordPage extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  passwordMatch() {
+    const { confirm_password, new_password } = this.state;
+
+    if (confirm_password !== new_password) {
+      return false
+    } else {
+      return true
+    }
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
 
+    const valid = this.passwordMatch();
     const { code, new_password, confirm_password } = this.state;
     this.setState({ submitted: true })
     // clear form
-    if (code && new_password && confirm_password) {
+    if (valid && code && new_password && confirm_password) {
       this.setState({
         code: '',
         new_password: '',
         confirm_password: '',
-        submitted: false
+        submitted: false,
+        loading: true
       })
       console.log(this.state);
     }
@@ -58,7 +71,7 @@ class ResetPasswordPage extends React.Component {
   }
 
   render() {
-    const { code, new_password, confirm_password, submitted } = this.state;
+    const { code, new_password, confirm_password, submitted, loading } = this.state;
     return (
       <StyledContainer>
         <FormStyled onSubmit={this.handleSubmit}>
@@ -107,13 +120,16 @@ class ResetPasswordPage extends React.Component {
             submitted && !confirm_password && 
             <ErrorMessage>Confirm the password!</ErrorMessage>
           }
-          {
+          {/* {
             new_password !== '' && new_password !== confirm_password ? 
             <ErrorMessage>Passwords should match</ErrorMessage>
             : null
+          } */}
+          {
+            loading ? <ButtonPrimary btnForm disable><SpinnerSmall /></ButtonPrimary>
+            : 
+            <ButtonPrimary btnForm>Submit</ButtonPrimary>
           }
-
-          <ButtonPrimary btnForm>Submit</ButtonPrimary>
           <HelpLink to="/help">Something is wrong, need help ?</HelpLink>
         </FormStyled>
       </StyledContainer>

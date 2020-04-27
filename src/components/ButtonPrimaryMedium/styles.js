@@ -4,7 +4,7 @@ const getButtonStyles = props => {
     if (props.updateBtn) {
         return  UpdateBtn;
     } else if (props.primaryBig) {
-        return BtnPrimaryBig
+        return BtnPrimaryBig;
     } else if (props.btnLink) {
         return BtnLink;
     } else if (props.btnFollowGreen) {
@@ -13,6 +13,8 @@ const getButtonStyles = props => {
         return BtnFollowGrey;
     } else if (props.btnForm) {
         return BtnForm;
+    } else if (props.disable) {
+        return Disabled;
     } else {
         return StyledButton
     }
@@ -37,6 +39,23 @@ export const StyledButton = styled.button`
         cursor: pointer;
     }
     ${getButtonStyles}
+`;
+
+export const Disabled = css`
+    width: 350px;
+    height: 38px;
+    background: #03A87C;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 3px;
+    &:hover {
+        cursor: not-allowed;
+    }
+    opacity: 0.5; 
 `;
 
 export const BtnForm = css`

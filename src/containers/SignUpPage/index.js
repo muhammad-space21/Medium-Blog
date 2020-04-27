@@ -24,6 +24,7 @@ import {
 } from './styles';
 
 import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
+import SpinnerSmall from '../../components/spinnerSmall';
 
 
 class SignUpPage extends React.Component {
@@ -168,8 +169,11 @@ class SignUpPage extends React.Component {
               You may unsubscribe at any time.
             </Label>
           </CheckboxContainer>
-
-          <ButtonPrimary btnForm>Create Account</ButtonPrimary>
+          {
+            this.props.loading ? <ButtonPrimary btnForm disable><SpinnerSmall /></ButtonPrimary>
+            : 
+            <ButtonPrimary btnForm>Create Account</ButtonPrimary>
+          }
           <PrivacyLink to="/privacy-policy">Privacy Policy</PrivacyLink>
         </FormStyled>
       </StyledSignUpPage>
@@ -179,22 +183,19 @@ class SignUpPage extends React.Component {
 
 SignUpPage.defaultProps = {
   loading: false,
-  error: false,
-  token: ''
+  error: false
 }
 
 SignUpPage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.bool,
-  token: PropTypes.string,
   signup: PropTypes.func.isRequired
 }
 
 
 const mapStateToProps = (state) => ({
   loading: state.signupReducer.loading,
-  error: state.signupReducer.error,
-  token: state.signupReducer.token
+  error: state.signupReducer.error
 })
 
 

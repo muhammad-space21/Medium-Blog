@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
+
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
@@ -19,6 +21,8 @@ import {
 } from './styles';
 
 import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
+import SpinnerSmall from '../../components/spinnerSmall';
+
 
 class LoginPage extends React.Component {
   constructor() {
@@ -27,7 +31,8 @@ class LoginPage extends React.Component {
     this.state = {
       phone: '',
       password: '',
-      submitted: false
+      submitted: false,
+      redirect: false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -50,7 +55,10 @@ class LoginPage extends React.Component {
     e.preventDefault();
 
     const { phone, password } = this.state;
-    this.setState({ submitted: true })
+    this.setState({ 
+      submitted: true,
+      redirect: true
+    })
     // clear form
     if (phone && password) {
       this.setState({
@@ -69,7 +77,11 @@ class LoginPage extends React.Component {
 
 
   render() {
-    const { phone, password, submitted } = this.state; 
+    const { phone, password, submitted, redirect } = this.state; 
+    
+    if (!this.props.loading && !this.props.error && redirect) {
+      return (<Redirect to="/" />)
+    }
 
     return (
       <StyledSignUpPage>
@@ -111,7 +123,12 @@ class LoginPage extends React.Component {
             <ErrorMessage>Password must be more than 6 characters</ErrorMessage>
             : null
           }
-          <ButtonPrimary btnForm>Login</ButtonPrimary>
+          {
+            this.props.loading ? <ButtonPrimary btnForm disable><SpinnerSmall /></ButtonPrimary>
+            : 
+            <ButtonPrimary btnForm>Login</ButtonPrimary>
+          }
+          
           <ForgotPasswordLink to="/forgot-password">Forgot Password ?</ForgotPasswordLink>
         </FormStyled>
       </StyledSignUpPage>
@@ -121,18 +138,14 @@ class LoginPage extends React.Component {
 
 LoginPage.defaultProps = {
   loading: false,
-  error: false,
-  token: '',
-  alert: {}
+  error: false
 }
 
 LoginPage.propTypes = {
   login: PropTypes.func.isRequired,
   logout: PropTypes.func.isRequired,
   loading: PropTypes.bool,
-  error: PropTypes.bool,
-  token: PropTypes.string,
-  alert: PropTypes.object
+  error: PropTypes.bool
 }
 
 const mapDispatchToProps = (dispatch) => ({
@@ -142,9 +155,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   loading: state.loginReducer.loading,
-  error: state.loginReducer.error,
-  token: state.loginReducer.token,
-  alert: state.loginReducer.alert
+  error: state.loginReducer.error
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
