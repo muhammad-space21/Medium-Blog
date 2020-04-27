@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-// import { signUp } from  '../../redux/modules/signUp/signupAction';
+import { signUp } from  '../../redux/modules/signUp/signupAction';
 
 import {
   StyledSignUpPage,
@@ -67,8 +67,9 @@ class SignUpPage extends React.Component {
       })
       console.log(this.state);
     }
+    // sign up user
     if (firstname && lastname && phone && password) {
-      // this.props.signUp(user);
+      this.props.signup(firstname, lastname, phone, password);
     } else {
       console.log('not all inputs are entered')
     }
@@ -102,7 +103,7 @@ class SignUpPage extends React.Component {
             <ErrorMessage>Name is missing!</ErrorMessage>
           }
           {
-            submitted && firstname.length < 3 ? 
+            firstname !== '' && firstname.length < 3 ?
             <ErrorMessage>Name must be more than 2 characters</ErrorMessage>
             : null
           }
@@ -119,7 +120,7 @@ class SignUpPage extends React.Component {
             <ErrorMessage>Lastname is missing!</ErrorMessage>
           }
           {
-            submitted && lastname.length < 3 ? 
+            lastname !== '' && lastname.length < 3 ? 
             <ErrorMessage>Lastname must be more than 2 characters</ErrorMessage>
             : null
           }
@@ -137,7 +138,7 @@ class SignUpPage extends React.Component {
               <ErrorMessage>Phone number is missing!</ErrorMessage>
             }
             {
-              submitted && phone.length < 12 ? 
+              phone !== '' && phone.length < 12 ? 
               <ErrorMessage>Invalid phone number</ErrorMessage>
               : null
             }
@@ -155,7 +156,7 @@ class SignUpPage extends React.Component {
             <ErrorMessage>Password is missing!</ErrorMessage>
           }
           {
-            submitted && password.length < 6 ? 
+            password !== '' && password.length < 6 ? 
             <ErrorMessage>Password must be more than 6 characters</ErrorMessage>
             : null
           }
@@ -179,30 +180,27 @@ class SignUpPage extends React.Component {
 SignUpPage.defaultProps = {
   loading: false,
   error: false,
-  token: '',
-  alert: {}
+  token: ''
 }
 
 SignUpPage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.bool,
   token: PropTypes.string,
-  alert: PropTypes.object,
-  signUp: PropTypes.func.isRequired
+  signup: PropTypes.func.isRequired
 }
 
 
 const mapStateToProps = (state) => ({
   loading: state.signupReducer.loading,
   error: state.signupReducer.error,
-  token: state.signupReducer.token,
-  alert: state.signupReducer.alert
+  token: state.signupReducer.token
 })
 
 
-// const mapDispatchToProps = (dispatch) => ({
-//   signup: () => dispatch(signUp())
-// })
+const mapDispatchToProps = (dispatch) => ({
+  signup: () => dispatch(signUp())
+})
 
 
-export default connect(mapStateToProps, null)(SignUpPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpPage);

@@ -95,4 +95,5 @@ export const ErrorMessage = styled.div`
     line-height: 20px;
     color: red;
     text-align: left;
+    margin-bottom: 10px;
 `;

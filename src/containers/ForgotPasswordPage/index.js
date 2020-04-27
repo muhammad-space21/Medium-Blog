@@ -9,7 +9,8 @@ import {
   TextWrapper,
   ResendCodeBtn,
   Container,
-  Title
+  Title,
+  ErrorMessage
 } from './styles';
 
 import ButtonPrimary from '../../components/ButtonPrimaryMedium/index';
@@ -57,7 +58,7 @@ class ForgotPasswordPage extends React.Component {
 
 
   render() {
-    const { phone } = this.state; 
+    const { phone, submitted } = this.state; 
 
     return (
       <StyledContainer>
@@ -74,6 +75,15 @@ class ForgotPasswordPage extends React.Component {
               value={phone}
               onChange={this.handlePhoneChange}
             />
+            { 
+              submitted && !phone && 
+              <ErrorMessage>Phone number is missing!</ErrorMessage>
+            }
+            {
+              phone !== '' && phone.length < 12 ? 
+              <ErrorMessage>Invalid phone number</ErrorMessage>
+              : null
+            }
           </Container>
           <ButtonPrimary btnForm>Submit</ButtonPrimary>
           <ResendCodeBtn>Resend the code</ResendCodeBtn>

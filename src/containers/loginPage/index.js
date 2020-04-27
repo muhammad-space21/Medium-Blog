@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-// import { login } from '../../redux/modules/login/loginActions';
-// import { logout } from '../../redux/modules/logOut/logoutActions';
+import { login } from '../../redux/modules/login/loginActions';
+import { logout } from '../../redux/modules/logOut/logoutActions';
 
 import {
   StyledSignUpPage,
@@ -49,7 +49,7 @@ class LoginPage extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { phone, password, submitted } = this.state;
+    const { phone, password } = this.state;
     this.setState({ submitted: true })
     // clear form
     if (phone && password) {
@@ -61,7 +61,7 @@ class LoginPage extends React.Component {
       console.log(this.state);
     }
     if (phone && password) {
-      // this.props.login(phone, password);
+      this.props.login(phone, password);
     } else {
       console.log('not all inputs are entered')
     }
@@ -86,6 +86,15 @@ class LoginPage extends React.Component {
               onChange={this.handlePhoneChange}
             />
           </Container>
+            { 
+              submitted && !phone && 
+              <ErrorMessage>Phone number is missing!</ErrorMessage>
+            }
+            {
+              phone !== '' && phone.length < 12 ? 
+              <ErrorMessage>Invalid phone number</ErrorMessage>
+              : null
+            }
           <Input
             type="password"
             name="password"
@@ -98,7 +107,7 @@ class LoginPage extends React.Component {
             <ErrorMessage>Password is missing!</ErrorMessage>
           }
           {
-            submitted && password.length < 6 ? 
+            password !== '' && password.length < 6 ? 
             <ErrorMessage>Password must be more than 6 characters</ErrorMessage>
             : null
           }
@@ -126,10 +135,10 @@ LoginPage.propTypes = {
   alert: PropTypes.object
 }
 
-// const mapDispatchToProps = (dispatch) => ({
-//   login: () => dispatch(login()),
-//   logout: () => dispatch(logout())
-// })
+const mapDispatchToProps = (dispatch) => ({
+  login: () => dispatch(login()),
+  logout: () => dispatch(logout())
+})
 
 const mapStateToProps = (state) => ({
   loading: state.loginReducer.loading,
@@ -138,4 +147,4 @@ const mapStateToProps = (state) => ({
   alert: state.loginReducer.alert
 })
 
-export default connect(mapStateToProps, null)(LoginPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

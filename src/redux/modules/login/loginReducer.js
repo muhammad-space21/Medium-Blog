@@ -1,11 +1,9 @@
 import actionTypes from '../../../constants/action-types';
-import alert from '../alerts/alertActions';
 
 const defaultState = {
   loading: false,
   error: false,
-  token: '',
-  alert: {}
+  token: ''
 };
 
 const map = {
@@ -17,13 +15,11 @@ const map = {
     ...state,
     loading: false,
     token: payload.data,
-    alert: alert('You logged in successfully')
   }),
   [`${actionTypes.LOGIN}${actionTypes.REJECTED}`]: (state) => ({
     ...state,
     loading: false,
     error: true,
-    alert: alert(toString())
   })
 };
 

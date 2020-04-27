@@ -1,6 +1,6 @@
 import actionTypes from '../../../constants/action-types';
 
-const alert = (dispatch, message) => {
+const alert = (message) => (dispatch) => {
   dispatch({
     type: actionTypes.ALERT,
     payload: message

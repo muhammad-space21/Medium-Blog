@@ -89,7 +89,7 @@ export const Container = styled.div`
     width: 350px;
     height: fit-content;
     margin-top: 12px;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 `;
 
 export const ErrorMessage = styled.div`
@@ -98,6 +98,6 @@ export const ErrorMessage = styled.div`
     line-height: 20px;
     color: red;
     text-align: left;
-    margin-top: -15px;
+    margin-top: -10px;
     margin-bottom: 20px;
 `;

@@ -20,11 +20,9 @@ class ResetPasswordPage extends React.Component {
     super(props);
 
     this.state = {
-      user: {
-        code: '',
-        new_password: '',
-        confirm_password: ''
-      },
+      code: '',
+      new_password: '',
+      confirm_password: '',
       submitted: false
     };
 
@@ -33,34 +31,26 @@ class ResetPasswordPage extends React.Component {
   }
 
   handleChange = (e) => {
-    const { user } = this.state;
-    this.setState({
-      user: {
-        ...user,
-        [e.target.name]: e.target.value
-      }
-    });
+    this.setState({ [e.target.name]: e.target.value });
   }
 
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { user } = this.state;
+    const { code, new_password, confirm_password } = this.state;
     this.setState({ submitted: true })
     // clear form
-    if (user.code && user.new_password && user.confirm_password) {
+    if (code && new_password && confirm_password) {
       this.setState({
-        user: {
-          code: '',
-          new_password: '',
-          confirm_password: ''
-        },
+        code: '',
+        new_password: '',
+        confirm_password: '',
         submitted: false
       })
-      console.log(user);
+      console.log(this.state);
     }
-    if (user.code && user.new_password && user.confirm_password) {
+    if (code && new_password && confirm_password) {
       // this.props.signUp(user);
     } else {
       console.log('not all inputs are entered')
@@ -68,7 +58,7 @@ class ResetPasswordPage extends React.Component {
   }
 
   render() {
-    const { user, submitted } = this.state;
+    const { code, new_password, confirm_password, submitted } = this.state;
     return (
       <StyledContainer>
         <FormStyled onSubmit={this.handleSubmit}>
@@ -81,11 +71,11 @@ class ResetPasswordPage extends React.Component {
             type="text"
             name="code"
             placeholder="Code"
-            value={user.code}
+            value={code}
             onChange={this.handleChange}
           />
           { 
-            submitted && !user.code &&
+            submitted && !code &&
             <ErrorMessage>Code is required!</ErrorMessage>
           }
 
@@ -93,15 +83,15 @@ class ResetPasswordPage extends React.Component {
             type="password"
             name="new_password"
             placeholder="New Password"
-            value={user.new_password}
+            value={new_password}
             onChange={this.handleChange}
           />
           { 
-            submitted && !user.new_password && 
+            submitted && !new_password && 
             <ErrorMessage>New password is required!</ErrorMessage>
           }
           {
-            submitted && user.new_password.length < 6 ? 
+            new_password !== '' && new_password.length < 6 ? 
             <ErrorMessage>New password must be more than 6 characters</ErrorMessage>
             : null
           }
@@ -110,16 +100,16 @@ class ResetPasswordPage extends React.Component {
             type="password"
             name="confirm_password"
             placeholder="Confirm Password"
-            value={user.confirm_password}
+            value={confirm_password}
             onChange={this.handleChange}
           />
           { 
-            submitted && !user.confirm_password && 
+            submitted && !confirm_password && 
             <ErrorMessage>Confirm the password!</ErrorMessage>
           }
           {
-            submitted && user.new_password !== user.confirm_password ? 
-            <ErrorMessage>Passwords don't match</ErrorMessage>
+            new_password !== '' && new_password !== confirm_password ? 
+            <ErrorMessage>Passwords should match</ErrorMessage>
             : null
           }
 

@@ -77,3 +77,11 @@ export const Title = styled.span`
         }
     }
 `;
+
+export const ErrorMessage = styled.div`
+    width: 350px;
+    font-size: 14px;
+    line-height: 20px;
+    color: red;
+    text-align: left;
+`;
