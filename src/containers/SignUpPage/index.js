@@ -33,7 +33,7 @@ class SignUpPage extends React.Component {
 
     this.state = {
       firstname: '',
-      lastname: '',
+      secondname: '',
       phone: '',
       password: '',
       submitted: false
@@ -55,13 +55,13 @@ class SignUpPage extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const {firstname, lastname, phone, password} = this.state;
+    const {firstname, secondname, phone, password} = this.state;
     this.setState({ submitted: true })
     // clear form
-    if (firstname && lastname && phone && password) {
+    if (firstname && secondname && phone && password) {
       this.setState({
         firstname: '',
-        lastname: '',
+        secondname: '',
         phone: '',
         password: '',
         submitted: false
@@ -69,15 +69,15 @@ class SignUpPage extends React.Component {
       console.log(this.state);
     }
     // sign up user
-    if (firstname && lastname && phone && password) {
-      this.props.signup(firstname, lastname, phone, password);
+    if (firstname && secondname && phone && password) {
+      this.props.signup(firstname, secondname, phone, password);
     } else {
       console.log('not all inputs are entered')
     }
   }
 
   render() {
-    const { firstname, lastname, phone, password, submitted } = this.state;
+    const { firstname, secondname, phone, password, submitted } = this.state;
     return (
       <StyledSignUpPage>
         <FormStyled onSubmit={this.handleSubmit}>
@@ -111,17 +111,17 @@ class SignUpPage extends React.Component {
 
           <Input
             type="text"
-            name="lastname"
+            name="secondname"
             placeholder="Lastname"
-            value={lastname}
+            value={secondname}
             onChange={this.handleChange}
           />
           { 
-            submitted && !lastname && 
+            submitted && !secondname && 
             <ErrorMessage>Lastname is missing!</ErrorMessage>
           }
           {
-            lastname !== '' && lastname.length < 3 ? 
+            secondname !== '' && secondname.length < 3 ? 
             <ErrorMessage>Lastname must be more than 2 characters</ErrorMessage>
             : null
           }

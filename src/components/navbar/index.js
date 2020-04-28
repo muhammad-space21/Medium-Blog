@@ -1,12 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
+
+
+import { logout } from '../../redux/modules/logOut/logoutActions';
+
 
 import {
   StyledNavbar,
   BrandContainer,
-  BrandName,
   StyledNav,
   StyledLink,
   HR,
@@ -17,7 +22,7 @@ import BrandLogo from '../../assets/images/logo.png';
 import IconSearch from '../../assets/icons/search.svg';
 
 
-const NavbarMain = () => (
+const NavbarMain = (loggedin) => (
   <>
     <StyledNavbar>
       <BrandContainer>
@@ -32,8 +37,16 @@ const NavbarMain = () => (
           {' '}
         </StyledLink>
         <StyledLink>
-          <Nav.Link href="#">Sign in</Nav.Link>
-          {' '}
+          {
+            !loggedin
+              ? <Nav.Link href="/sign-up">Sign up</Nav.Link>
+              : <Nav.Link href="/login">Login</Nav.Link>
+          }
+          {
+            loggedin
+              ? <Nav.Link onClick={() => logout()}>Logout</Nav.Link>
+              : null
+          }
         </StyledLink>
         <HR />
         <StyledLink>
@@ -46,4 +59,20 @@ const NavbarMain = () => (
   </>
 );
 
-export default NavbarMain;
+
+NavbarMain.propTypes = {
+  loggedin: PropTypes.bool.isRequired,
+  logout: PropTypes.func.isRequired
+};
+
+
+const mapStateToProps = (state) => ({
+  loggedin: state.loginReducer.loggedin
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => dispatch(logout())
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavbarMain);
