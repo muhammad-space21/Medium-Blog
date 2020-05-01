@@ -6,7 +6,6 @@ import { homeSelector } from '../../redux/selectors/homeSelector';
 import {
   MainPageStyled,
   Content,
-  HR,
   LoaderWrapper
 } from './style';
 
