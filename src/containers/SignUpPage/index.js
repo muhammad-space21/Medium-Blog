@@ -50,45 +50,71 @@ class SignUpPage extends React.Component {
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-  };
+  }
 
   handlePhoneChange = (e) => {
     this.setState({ phone: e });
   }
 
   handleChoose = (e) => {
-    const {value} = e.target.value;
     this.setState({
-      genderId: value
+      genderId: e.target.value 
     });
-    console.log(value)
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const {firstname, secondname, phone, password, roloeId, genderId} = this.state;
+    const {
+      firstname, 
+      secondname, 
+      phone, 
+      password, 
+      roloeId, 
+      genderId
+    } = this.state;
     this.setState({ submitted: true })
     // clear form
-    if (firstname && secondname && phone && password) {
+    if (firstname && secondname && phone && password && genderId) {
       this.setState({
         firstname: '',
         secondname: '',
         phone: '',
         password: '',
+        genderId: 0,
         submitted: false
       })
       console.log(this.state);
     }
     // sign up user
-    if (firstname && secondname && phone && password && genderId) {
-      this.props.signup(firstname, secondname, phone, password, roloeId, genderId);
+    if (
+      firstname 
+      && secondname 
+      && phone
+      && password
+      && genderId
+      ) {
+      this.props.signup(
+        firstname, 
+        secondname, 
+        phone, 
+        password, 
+        roloeId, 
+        genderId
+      );
     } else {
       console.log('not all inputs are entered')
     }
   }
 
   render() {
-    const { firstname, secondname, phone, password, submitted, genderId } = this.state;
+    const {
+      firstname, 
+      secondname, 
+      phone, 
+      password, 
+      submitted, 
+      genderId 
+    } = this.state;
     return (
       <StyledSignUpPage>
         <FormStyled onSubmit={this.handleSubmit}>
@@ -156,16 +182,16 @@ class SignUpPage extends React.Component {
             }
           </Container>
 
-            <Select 
+            <Select
               value={genderId} 
               onChange={this.handleChoose}
               name="Genders"
             >
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value={1}>Male</option>
+              <option value={2}>Female</option>
             </Select>
             {
-              submitted && !genderId &&
+              submitted && !genderId && genderId === 0 &&
               <ErrorMessage>Gender is required!</ErrorMessage>
             }
 
