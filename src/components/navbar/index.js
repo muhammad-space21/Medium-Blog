@@ -38,14 +38,14 @@ const NavbarMain = (loggedin) => (
         </StyledLink>
         <StyledLink>
           {
-            !loggedin
-              ? <Nav.Link href="/sign-up">Sign up</Nav.Link>
-              : <Nav.Link href="/login">Login</Nav.Link>
-          }
-          {
+            // eslint-disable-next-line no-nested-ternary
             loggedin
-              ? <Nav.Link onClick={() => logout()}>Logout</Nav.Link>
-              : null
+              ? (loggedin
+                ? <Nav.Link onClick={() => logout()}>Logout</Nav.Link>
+                : null)
+              : (!loggedin
+                ? <Nav.Link href="/sign-up">Sign up</Nav.Link>
+                : <Nav.Link href="/login">Login</Nav.Link>)
           }
         </StyledLink>
         <HR />

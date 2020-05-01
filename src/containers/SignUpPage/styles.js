@@ -30,6 +30,28 @@ export const Input = styled.input`
     border: 1px solid #CCCCCC;
     margin-top: 12px;
     margin-bottom: 12px;
+    border-radius: 3px;
+
+    &::placeholder {
+        font-size: 14px;
+        color: #CCCCCC;
+        font-weight: 400;
+        line-height: normal;
+        text-indent: 10px;
+    }
+    &:hover {
+        border-color: #CCCCCC;
+        cursor: pointer;
+    }
+`;
+
+export const Select = styled.select`
+    width: 350px;
+    height: 40px;
+    border: 1px solid #CCCCCC;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border-radius: 3px;
 
     &::placeholder {
         font-size: 14px;

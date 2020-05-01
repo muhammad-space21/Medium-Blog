@@ -30,6 +30,7 @@ export const Input = styled.input`
     border: 1px solid #CCCCCC;
     margin-top: 4px;
     margin-bottom: 20px;
+    border-radius: 3px;
 
     &::placeholder {
         font-size: 14px;
