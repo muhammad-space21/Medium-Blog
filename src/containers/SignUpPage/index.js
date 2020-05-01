@@ -176,7 +176,7 @@ class SignUpPage extends React.Component {
               <ErrorMessage>Phone number is missing!</ErrorMessage>
             }
             {
-              phone !== '' && phone.length < 12 ? 
+              phone !== '' && phone.length < 12 ?
               <ErrorMessage>Invalid phone number</ErrorMessage>
               : null
             }
